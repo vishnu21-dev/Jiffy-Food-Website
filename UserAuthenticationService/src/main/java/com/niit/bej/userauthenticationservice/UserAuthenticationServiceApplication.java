@@ -1,13 +1,13 @@
-package com.niit.bej.authentificationservice;
+package com.niit.bej.userauthenticationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuthentificationServiceApplication {
+public class UserAuthenticationServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthentificationServiceApplication.class, args);
+        SpringApplication.run(UserAuthenticationServiceApplication.class, args);
     }
 
 }

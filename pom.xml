@@ -18,7 +18,7 @@
   <url>http://maven.apache.org</url>
 
   <modules>
-    <module>AuthentificationService</module>
+    <module>UserAuthenticationService</module>
   </modules>
 
   <properties>

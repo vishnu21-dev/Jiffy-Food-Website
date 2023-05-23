@@ -103,7 +103,7 @@ public class MerchantController {
         }
     }
 
-    @PutMapping("/merchant/updateDish/{cuisineName}/{updatedDish}")
+    @PutMapping("/merchant/updateDish/{cuisineName}")
     public ResponseEntity<?> updateDish(@PathVariable String cuisineName, @PathVariable Dish updatedDish, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
@@ -129,7 +129,7 @@ public class MerchantController {
     public ResponseEntity<?> deleteCuisine(@PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            boolean deleteOneCuisine = merchantService.deleteCuisine(cuisineName, emailId);
+            Merchant deleteOneCuisine = merchantService.deleteCuisine(cuisineName, emailId);
             return new ResponseEntity<>(deleteOneCuisine, HttpStatus.ACCEPTED);
         } catch (MerchantNotFoundException | CuisineNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);

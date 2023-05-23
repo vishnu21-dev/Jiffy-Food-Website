@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="UserAuthenticationServiceApplication is created">
-      <change beforePath="$PROJECT_DIR$/UserAuthenticationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthenticationService/pom.xml" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="MerchantServiceApplication is created">
+      <change beforePath="$PROJECT_DIR$/MerchantService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/MerchantServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/MerchantServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp/AuthentificationService",
+    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp/UserAuthenticationService",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -39,6 +43,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Final Project NIIT\FoodieApp\UserAuthenticationService" />
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
@@ -46,6 +51,13 @@
     <configuration name="AuthentificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AuthentificationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.authentificationservice.AuthentificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MerchantServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MerchantService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.merchantservice.MerchantServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684825682975</updated>
-      <workItem from="1684825683834" duration="1522000" />
+      <workItem from="1684825683834" duration="2020000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -96,7 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684827139977</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dependencies are added">
+      <created>1684827351585</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827351585</updated>
+    </task>
+    <task id="LOCAL-00006" summary="MerchantServiceApplication is created">
+      <created>1684827615386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827615386</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,9 +132,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="AuthentificationService module is created" />
-    <MESSAGE value="Dependencies are added" />
     <MESSAGE value="UserAuthenticationServiceApplication is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserAuthenticationServiceApplication is created" />
+    <MESSAGE value="Dependencies are added" />
+    <MESSAGE value="MerchantServiceApplication is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="MerchantServiceApplication is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

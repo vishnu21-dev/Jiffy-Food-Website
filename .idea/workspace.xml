@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Dependencies are added">
-      <change beforePath="$PROJECT_DIR$/AuthentificationService/src/main/java/com/niit/bej/authentificationservice/AuthentificationServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthentificationService/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthentificationService/src/test/java/com/niit/bej/authentificationservice/AuthentificationServiceApplicationTests.java" beforeDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="UserAuthenticationServiceApplication is created">
+      <change beforePath="$PROJECT_DIR$/UserAuthenticationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthenticationService/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +29,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/Project Finale NIIT/FoodApplication",
+    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp/AuthentificationService",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -39,10 +37,22 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UserAuthenticationServiceApplication">
     <configuration name="AuthentificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AuthentificationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.authentificationservice.AuthentificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="UserAuthenticationService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.userauthenticationservice.UserAuthenticationServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -56,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684825682975</updated>
-      <workItem from="1684825683834" duration="1040000" />
+      <workItem from="1684825683834" duration="1522000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -79,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684826689881</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="UserAuthenticationServiceApplication is created">
+      <created>1684827139977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827139977</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,7 +107,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="AuthentificationService module is created" />
     <MESSAGE value="Dependencies are added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dependencies are added" />
+    <MESSAGE value="UserAuthenticationServiceApplication is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserAuthenticationServiceApplication is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

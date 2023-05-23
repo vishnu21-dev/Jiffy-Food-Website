@@ -20,6 +20,7 @@
   <modules>
     <module>UserAuthenticationService</module>
     <module>MerchantService</module>
+    <module>EurekaServer</module>
   </modules>
 
   <properties>

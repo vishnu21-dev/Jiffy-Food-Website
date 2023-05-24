@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="OrderService interface is created" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="registerUser method is created">
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/exception/UserAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,14 +120,7 @@
       <updated>1684825682975</updated>
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
-      <workItem from="1684906025174" duration="10840000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1684825967283</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684825967283</updated>
+      <workItem from="1684906025174" duration="11338000" />
     </task>
     <task id="LOCAL-00002" summary="AuthentificationService module is created">
       <created>1684826314848</created>
@@ -462,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684931696212</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="registerUser method is created">
+      <created>1684931874609</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1684931874610</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +484,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Methods are modified" />
     <MESSAGE value="OrderServiceApplication is created" />
     <MESSAGE value="domain class User is created" />
     <MESSAGE value="Attributes are added to User" />
@@ -506,7 +508,8 @@
     <MESSAGE value="toString method is added" />
     <MESSAGE value="OrderRepository.java is created" />
     <MESSAGE value="OrderService interface is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="OrderService interface is created" />
+    <MESSAGE value="registerUser method is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="registerUser method is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

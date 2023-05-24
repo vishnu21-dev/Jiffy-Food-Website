@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="OrderServiceApplication is created">
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Order class is created">
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,7 @@
       <updated>1684825682975</updated>
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
-      <workItem from="1684906025174" duration="574000" />
+      <workItem from="1684906025174" duration="3325000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -212,7 +214,35 @@
       <option name="project" value="LOCAL" />
       <updated>1684906094253</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="domain class User is created">
+      <created>1684906626961</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684906626961</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Attributes are added to User">
+      <created>1684906875499</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684906875499</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Address class is created and attributes are added">
+      <created>1684907129723</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684907129723</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Order class is created">
+      <created>1684907784780</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684907784780</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +271,11 @@
     <MESSAGE value="Modules are added" />
     <MESSAGE value="Methods are modified" />
     <MESSAGE value="OrderServiceApplication is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="OrderServiceApplication is created" />
+    <MESSAGE value="domain class User is created" />
+    <MESSAGE value="Attributes are added to User" />
+    <MESSAGE value="Address class is created and attributes are added" />
+    <MESSAGE value="Order class is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Order class is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

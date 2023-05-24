@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Order class is created">
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" afterDir="false" />
-    </list>
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Dish is created" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +117,7 @@
       <updated>1684825682975</updated>
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
-      <workItem from="1684906025174" duration="3325000" />
+      <workItem from="1684906025174" duration="4022000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -242,7 +238,42 @@
       <option name="project" value="LOCAL" />
       <updated>1684907784780</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Attributes are added">
+      <created>1684909698188</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909698188</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Attributes are modified">
+      <created>1684909720501</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909720501</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Restaurant.java is created">
+      <created>1684909746553</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909746553</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Cuisine is created">
+      <created>1684909771793</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909771793</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Dish is created">
+      <created>1684909784262</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909784262</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +306,12 @@
     <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order class is created" />
+    <MESSAGE value="Attributes are added" />
+    <MESSAGE value="Attributes are modified" />
+    <MESSAGE value="Restaurant.java is created" />
+    <MESSAGE value="Cuisine is created" />
+    <MESSAGE value="Dish is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dish is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

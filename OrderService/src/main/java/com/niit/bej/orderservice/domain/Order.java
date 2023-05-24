@@ -1,6 +1,7 @@
 package com.niit.bej.orderservice.domain;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Order {
 
@@ -29,5 +30,18 @@ public class Order {
 
     public void setRestaurants(List<Restaurant> restaurants) {
         this.restaurants = restaurants;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return orderId == order.orderId && Objects.equals(restaurants, order.restaurants);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderId, restaurants);
     }
 }

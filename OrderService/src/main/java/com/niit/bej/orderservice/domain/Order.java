@@ -44,4 +44,12 @@ public class Order {
     public int hashCode() {
         return Objects.hash(orderId, restaurants);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", restaurants=" + restaurants +
+                '}';
+    }
 }

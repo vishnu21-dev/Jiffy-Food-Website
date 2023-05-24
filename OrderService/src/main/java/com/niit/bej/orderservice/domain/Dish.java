@@ -1,5 +1,7 @@
 package com.niit.bej.orderservice.domain;
 
+import java.util.Objects;
+
 public class Dish {
 
     private String name;
@@ -59,4 +61,16 @@ public class Dish {
         this.description = description;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dish dish = (Dish) o;
+        return price == dish.price && Objects.equals(name, dish.name) && Objects.equals(category, dish.category) && Objects.equals(imageUrl, dish.imageUrl) && Objects.equals(description, dish.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, category, imageUrl, description);
+    }
 }

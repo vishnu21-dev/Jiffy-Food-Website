@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.List;
+import java.util.Objects;
 
 @Document
 public class User {
@@ -74,5 +75,18 @@ public class User {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(emailId, user.emailId) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(address, user.address) && Objects.equals(restaurants, user.restaurants) && Objects.equals(orders, user.orders);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailId, password, phoneNo, address, restaurants, orders);
     }
 }

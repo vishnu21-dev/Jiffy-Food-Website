@@ -44,4 +44,12 @@ public class Cuisine {
     public int hashCode() {
         return Objects.hash(name, dishes);
     }
+
+    @Override
+    public String toString() {
+        return "Cuisine{" +
+                "name='" + name + '\'' +
+                ", dishes=" + dishes +
+                '}';
+    }
 }

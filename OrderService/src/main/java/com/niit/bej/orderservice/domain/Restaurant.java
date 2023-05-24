@@ -54,4 +54,13 @@ public class Restaurant {
     public int hashCode() {
         return Objects.hash(name, cuisines, address);
     }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "name='" + name + '\'' +
+                ", cuisines=" + cuisines +
+                ", address=" + address +
+                '}';
+    }
 }

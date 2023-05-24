@@ -8,4 +8,12 @@ public class Restaurant {
     private List<Cuisine> cuisines;
     private Address address;
 
+    public Restaurant(String name, List<Cuisine> cuisines, Address address) {
+        this.name = name;
+        this.cuisines = cuisines;
+        this.address = address;
+    }
+
+    public Restaurant() {
+    }
 }

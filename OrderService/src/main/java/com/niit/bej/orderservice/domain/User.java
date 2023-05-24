@@ -89,4 +89,16 @@ public class User {
     public int hashCode() {
         return Objects.hash(emailId, password, phoneNo, address, restaurants, orders);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "emailId='" + emailId + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", address=" + address +
+                ", restaurants=" + restaurants +
+                ", orders=" + orders +
+                '}';
+    }
 }

@@ -21,6 +21,7 @@
     <module>UserAuthenticationService</module>
     <module>MerchantService</module>
     <module>EurekaServer</module>
+    <module>OrderService</module>
   </modules>
 
   <properties>

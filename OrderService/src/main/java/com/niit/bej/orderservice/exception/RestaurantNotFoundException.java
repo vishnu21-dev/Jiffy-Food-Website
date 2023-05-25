@@ -5,4 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Restaurant not found in database!")
 public class RestaurantNotFoundException extends Exception {
+    public RestaurantNotFoundException(String message) {
+        super(message);
+    }
 }

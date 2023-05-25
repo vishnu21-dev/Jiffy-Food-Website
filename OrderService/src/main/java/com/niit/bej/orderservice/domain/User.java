@@ -13,10 +13,10 @@ public class User {
     private String emailId;
     private String password;
     private String phoneNo;
-    private List<Address> address;
+    private String address;
     private List<Order> orders;
 
-    public User(String emailId, String password, String phoneNo, List<Address> address, List<Order> orders) {
+    public User(String emailId, String password, String phoneNo, String address, List<Order> orders) {
         this.emailId = emailId;
         this.password = password;
         this.phoneNo = phoneNo;
@@ -51,11 +51,11 @@ public class User {
         this.phoneNo = phoneNo;
     }
 
-    public List<Address> getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(List<Address> address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -82,6 +82,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "emailId='" + emailId + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", address=" + address + ", orders=" + orders + '}';
+        return "User{" +
+                "emailId='" + emailId + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", address='" + address + '\'' +
+                ", orders=" + orders +
+                '}';
     }
 }

@@ -6,14 +6,14 @@ import java.util.Objects;
 public class Order {
 
     private int orderId;
-    private List<Restaurant> restaurants;
-
-    public Order(int orderId, List<Restaurant> restaurants) {
-        this.orderId = orderId;
-        this.restaurants = restaurants;
-    }
+    private List<Dish> dishes;
 
     public Order() {
+    }
+
+    public Order(int orderId, List<Dish> dishes) {
+        this.orderId = orderId;
+        this.dishes = dishes;
     }
 
     public int getOrderId() {
@@ -24,12 +24,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public List<Restaurant> getRestaurants() {
-        return restaurants;
+    public List<Dish> getDishes() {
+        return dishes;
     }
 
-    public void setRestaurants(List<Restaurant> restaurants) {
-        this.restaurants = restaurants;
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 
     @Override
@@ -37,19 +37,19 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return orderId == order.orderId && Objects.equals(restaurants, order.restaurants);
+        return orderId == order.orderId && Objects.equals(dishes, order.dishes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, restaurants);
+        return Objects.hash(orderId, dishes);
     }
 
     @Override
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", restaurants=" + restaurants +
+                ", dishes=" + dishes +
                 '}';
     }
 }

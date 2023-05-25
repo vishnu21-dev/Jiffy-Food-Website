@@ -16,11 +16,5 @@ public interface OrderService {
 
     boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException;
 
-    //User getRestaurantByUserLocation(User user, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException;
-
-//    Restaurant getRestaurantByPreference(Restaurant restaurant, String userId) throws UserNotFoundException, RestaurantNotFoundException;
-//
-//    List<Cuisine> getRestaurantByCuisine(Cuisine cuisine, String restaurantName) throws CuisineNotFoundException, RestaurantNotFoundException;
-
     boolean deleteOrder(Integer orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
 }

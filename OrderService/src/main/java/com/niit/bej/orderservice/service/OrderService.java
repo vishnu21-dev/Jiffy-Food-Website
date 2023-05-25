@@ -21,4 +21,6 @@ public interface OrderService {
     Restaurant getRestaurantByPreference(Restaurant restaurant, String userId) throws UserNotFoundException, RestaurantNotFoundException;
 
     List<Cuisine> getRestaurantByCuisine(Cuisine cuisine, String restaurantName) throws CuisineNotFoundException, RestaurantNotFoundException;
+
+    boolean deleteOrder(Integer orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
 }

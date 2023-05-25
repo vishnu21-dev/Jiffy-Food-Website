@@ -54,6 +54,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.niit.bej.orderservice.exception" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
@@ -62,6 +65,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MerchantServiceApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Api-Gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="apiGateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthentificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AuthentificationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.authentificationservice.AuthentificationServiceApplication" />

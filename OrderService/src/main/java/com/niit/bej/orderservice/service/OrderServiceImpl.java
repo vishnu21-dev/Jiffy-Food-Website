@@ -71,6 +71,27 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public boolean deleteOrder(Integer orderId, String userId) throws UserNotFoundException, OrderNotFoundException {
-        return false;
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Order> orders = user.getOrders();
+            Optional<Order> optionalOrder = orders.stream()
+                    .filter(order -> order.getOrderId() == (orderId))
+                    .findFirst();
+
+            if (optionalOrder.isPresent()) {
+                Order order = optionalOrder.get();
+
+                orders.remove(order);
+
+                orderRepository.save(user);
+                return true;
+            } else {
+                throw new OrderNotFoundException("Order not found with ID: " + orderId);
+            }
+        } else {
+            throw new UserNotFoundException("User not found");
+        }
+
+    }
     }
 }

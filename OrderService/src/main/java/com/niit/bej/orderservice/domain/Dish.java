@@ -1,8 +1,14 @@
 package com.niit.bej.orderservice.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
+
 import java.util.Objects;
 
+@Document
+
 public class Dish {
+    @MongoId
 
     private String name;
     private int price;

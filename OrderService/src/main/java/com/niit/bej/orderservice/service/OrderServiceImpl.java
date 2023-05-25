@@ -6,11 +6,13 @@ import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.proxy.UserProxy;
 import com.niit.bej.orderservice.repository.OrderRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;

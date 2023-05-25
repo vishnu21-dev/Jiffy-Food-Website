@@ -1,10 +1,14 @@
 package com.niit.bej.orderservice.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
+
 import java.util.List;
 import java.util.Objects;
 
+@Document
 public class Order {
-
+    @MongoId
     private int orderId;
     private List<Dish> dishes;
 

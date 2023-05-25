@@ -5,6 +5,7 @@ import com.niit.bej.orderservice.domain.Order;
 import com.niit.bej.orderservice.domain.Restaurant;
 import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
+import com.niit.bej.orderservice.proxy.UserProxy;
 import com.niit.bej.orderservice.repository.OrderRepository;
 
 import java.util.List;
@@ -13,16 +14,21 @@ import java.util.Optional;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final UserProxy userProxy;
 
-    public OrderServiceImpl(OrderRepository orderRepository) {
+    public OrderServiceImpl(OrderRepository orderRepository, UserProxy userProxy) {
         this.orderRepository = orderRepository;
+        this.userProxy = userProxy;
     }
+
 
     @Override
     public User registerUser(User user) throws UserAlreadyExistsException {
         Optional<User> userOptional = orderRepository.findById(user.getEmailId());
         if (userOptional.isEmpty()) {
+
             orderRepository.save(user);
+            userProxy.registerUserProxy(user);
             return user;
         }
 

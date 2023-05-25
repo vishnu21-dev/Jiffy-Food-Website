@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="constructor is created" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="toString method  added">
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/repository/OrderRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,9 +57,6 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.niit.bej.orderservice.exception" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
@@ -381,63 +383,7 @@
       <option name="project" value="LOCAL" />
       <updated>1684916414846</updated>
     </task>
-    <task id="LOCAL-00037" summary="Changes made in Restaurant.java">
-      <created>1684992491976</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1684992491976</updated>
-    </task>
-    <task id="LOCAL-00038" summary="properties are added to application.yml">
-      <created>1684993134275</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1684993134275</updated>
-    </task>
-    <task id="LOCAL-00039" summary="OrderNotFoundException class is created">
-      <created>1684993632370</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1684993632370</updated>
-    </task>
-    <task id="LOCAL-00040" summary="constructor is added">
-      <created>1684993789089</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1684993789089</updated>
-    </task>
-    <task id="LOCAL-00041" summary="constructor is added">
-      <created>1684994182573</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1684994182573</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Methods are created">
-      <created>1684994614831</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1684994614831</updated>
-    </task>
-    <task id="LOCAL-00043" summary="RestaurantNotFoundException class is created">
-      <created>1684994693894</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1684994693894</updated>
-    </task>
-    <task id="LOCAL-00044" summary="constructor is created">
-      <created>1684994725467</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1684994725467</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,6 +402,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="EurekaServerApplication is created" />
+    <MESSAGE value="Files are added" />
+    <MESSAGE value="Modules are added" />
+    <MESSAGE value="Methods are modified" />
+    <MESSAGE value="OrderServiceApplication is created" />
+    <MESSAGE value="domain class User is created" />
+    <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
     <MESSAGE value="Attributes are modified" />
@@ -474,14 +427,7 @@
     <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
-    <MESSAGE value="Changes made in Restaurant.java" />
-    <MESSAGE value="properties are added to application.yml" />
-    <MESSAGE value="OrderNotFoundException class is created" />
-    <MESSAGE value="constructor is added" />
-    <MESSAGE value="Methods are created" />
-    <MESSAGE value="RestaurantNotFoundException class is created" />
-    <MESSAGE value="constructor is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="constructor is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="toString method  added" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

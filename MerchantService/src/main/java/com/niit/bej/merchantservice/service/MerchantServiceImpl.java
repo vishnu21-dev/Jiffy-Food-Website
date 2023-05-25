@@ -34,23 +34,13 @@ public class MerchantServiceImpl implements MerchantService {
     public Merchant register(Merchant merchant) throws MerchantAlreadyExistsException {
         Optional<Merchant> merchantOptional = merchantRepository.findById(merchant.getEmailId());
         if (merchantOptional.isEmpty()) {
+            merchantProxy.registerProxy(merchant);
+            return merchantRepository.save(merchant);
+
+        } else
             throw new MerchantAlreadyExistsException(" Merchant already exists ");
-        }
-        merchantProxy.registerProxy(merchant);
-        return merchantRepository.save(merchant);
     }
 
-//    @Override
-//    public Merchant login(Merchant merchant) throws MerchantNotFoundException {
-//        if (merchantRepository.findById(merchant.getEmailId()).isPresent()) {
-//            Merchant loggedInMerchant = merchantRepository.findById(merchant.getEmailId()).get();
-//            if (loggedInMerchant.getEmailId().equals(merchant.getEmailId()) && loggedInMerchant.getPassword().equals(merchant.getPassword()))
-//                return loggedInMerchant;
-//            else throw new MerchantNotFoundException("Merchant not found in database!");
-//        } else {
-//            throw new MerchantNotFoundException("User does not exists!");
-//        }
-//    }
 
     @Override
     public Merchant addCuisines(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineAlreadyExistsException {

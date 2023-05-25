@@ -1,8 +1,6 @@
 package com.niit.bej.orderservice.service;
 
-import com.niit.bej.orderservice.domain.Cuisine;
 import com.niit.bej.orderservice.domain.Order;
-import com.niit.bej.orderservice.domain.Restaurant;
 import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.proxy.UserProxy;
@@ -55,19 +53,24 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User getRestaurantByUserLocation(User user, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException {
-        return null;
+    public boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException {
+        return false;
     }
 
-    @Override
-    public Restaurant getRestaurantByPreference(Restaurant restaurant, String userId) throws UserNotFoundException, RestaurantNotFoundException {
-        return null;
-    }
-
-    @Override
-    public List<Cuisine> getRestaurantByCuisine(Cuisine cuisine, String restaurantName) throws CuisineNotFoundException, RestaurantNotFoundException {
-        return null;
-    }
+//    @Override
+//    public User getRestaurantByUserLocation(User user, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException {
+//        return null;
+//    }
+//
+//    @Override
+//    public Restaurant getRestaurantByPreference(Restaurant restaurant, String userId) throws UserNotFoundException, RestaurantNotFoundException {
+//        return null;
+//    }
+//
+//    @Override
+//    public List<Cuisine> getRestaurantByCuisine(Cuisine cuisine, String restaurantName) throws CuisineNotFoundException, RestaurantNotFoundException {
+//        return null;
+//    }
 
     @Override
     public boolean deleteOrder(Integer orderId, String userId) throws UserNotFoundException, OrderNotFoundException {
@@ -89,7 +92,7 @@ public class OrderServiceImpl implements OrderService {
                 throw new OrderNotFoundException("Order not found with ID: " + orderId);
             }
         } else {
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException("User Not FWound");
         }
 
     }

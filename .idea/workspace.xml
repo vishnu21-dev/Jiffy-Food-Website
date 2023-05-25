@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="changes done">
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/filter/JWTFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/proxy/UserProxy.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Jwt filter is done">
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/apiGateway/ApiGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/apiGateway/Config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/src/test/java/apiGateway/ApiGateway/ApiGatewayApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/proxy/UserProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/proxy/UserProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684916414846</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Jwt filter is done">
+      <created>1684993053292</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1684993053292</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +408,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="EurekaServerApplication is created" />
     <MESSAGE value="Files are added" />
     <MESSAGE value="Modules are added" />
     <MESSAGE value="Methods are modified" />
@@ -417,7 +432,8 @@
     <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
-    <option name="LAST_COMMIT_MESSAGE" value="toString method  added" />
+    <MESSAGE value="Jwt filter is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jwt filter is done" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

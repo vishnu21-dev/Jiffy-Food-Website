@@ -13,10 +13,13 @@ public class User {
     private String emailId;
     private String password;
     private String phoneNo;
-    private Address address;
+    private List<Address> address;
     private List<Order> orders;
 
-    public User(String emailId, String password, String phoneNo, Address address, List<Order> orders) {
+    public User() {
+    }
+
+    public User(String emailId, String password, String phoneNo, List<Address> address, List<Order> orders) {
         this.emailId = emailId;
         this.password = password;
         this.phoneNo = phoneNo;
@@ -24,7 +27,22 @@ public class User {
         this.orders = orders;
     }
 
-    public User() {
+    @Override
+    public String toString() {
+        return "User{" + "emailId='" + emailId + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", address=" + address + ", orders=" + orders + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(emailId, user.emailId) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailId, password, phoneNo, address, orders);
     }
 
     public String getEmailId() {
@@ -51,11 +69,11 @@ public class User {
         this.phoneNo = phoneNo;
     }
 
-    public Address getAddress() {
+    public List<Address> getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(List<Address> address) {
         this.address = address;
     }
 
@@ -65,29 +83,5 @@ public class User {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(emailId, user.emailId) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(emailId, password, phoneNo, address, orders);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "emailId='" + emailId + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNo='" + phoneNo + '\'' +
-                ", address=" + address +
-                ", orders=" + orders +
-                '}';
     }
 }

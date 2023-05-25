@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="addOrder method is created">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="toString method  added">
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,30 +33,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Final Project NIIT/FoodieApp/EurekaServer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;bbb68e9216adcefa161ce209122062ae&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp/EurekaServer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "bbb68e9216adcefa161ce209122062ae",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.niit.bej.orderservice.exception" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
@@ -122,8 +119,63 @@
       <updated>1684825682975</updated>
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
-      <workItem from="1684906025174" duration="13473000" />
-      <workItem from="1684987029001" duration="1315000" />
+      <workItem from="1684906025174" duration="8451000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1684825967283</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684825967283</updated>
+    </task>
+    <task id="LOCAL-00002" summary="AuthentificationService module is created">
+      <created>1684826314848</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684826314848</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dependencies are added">
+      <created>1684826689881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684826689881</updated>
+    </task>
+    <task id="LOCAL-00004" summary="UserAuthenticationServiceApplication is created">
+      <created>1684827139977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827139977</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Dependencies are added">
+      <created>1684827351585</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827351585</updated>
+    </task>
+    <task id="LOCAL-00006" summary="MerchantServiceApplication is created">
+      <created>1684827615386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827615386</updated>
+    </task>
+    <task id="LOCAL-00007" summary="EurekaServerApplication is created">
+      <created>1684827930702</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827930702</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Files are added">
+      <created>1684827981757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827981757</updated>
     </task>
     <task id="LOCAL-00009" summary="Modules are added">
       <created>1684828028395</created>
@@ -321,154 +373,7 @@
       <option name="project" value="LOCAL" />
       <updated>1684916414846</updated>
     </task>
-    <task id="LOCAL-00037" summary="Constructors are added">
-      <created>1684916927460</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1684916927460</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Getters &amp; Setters, Equals &amp; hashCode are added">
-      <created>1684917007878</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917007878</updated>
-    </task>
-    <task id="LOCAL-00039" summary="toString method is added">
-      <created>1684917107892</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917107892</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Constructors are added">
-      <created>1684917295198</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917295198</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Getters &amp; Setters are added">
-      <created>1684917482064</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917482064</updated>
-    </task>
-    <task id="LOCAL-00042" summary="equals &amp; hashCode are added">
-      <created>1684917551429</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917551429</updated>
-    </task>
-    <task id="LOCAL-00043" summary="toString method is added">
-      <created>1684917605594</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917605594</updated>
-    </task>
-    <task id="LOCAL-00044" summary="constructors are added">
-      <created>1684917689555</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917689555</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Getters &amp; Setters are added">
-      <created>1684917739006</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917739006</updated>
-    </task>
-    <task id="LOCAL-00046" summary="equals &amp; hashCode are added">
-      <created>1684917806235</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917806235</updated>
-    </task>
-    <task id="LOCAL-00047" summary="toString method is added">
-      <created>1684917896502</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1684917896502</updated>
-    </task>
-    <task id="LOCAL-00048" summary="OrderRepository.java is created">
-      <created>1684918296802</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1684918296802</updated>
-    </task>
-    <task id="LOCAL-00049" summary="OrderService interface is created">
-      <created>1684931696212</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1684931696212</updated>
-    </task>
-    <task id="LOCAL-00050" summary="registerUser method is created">
-      <created>1684931874609</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1684931874610</updated>
-    </task>
-    <task id="LOCAL-00051" summary="UserAlreadyExistsException class is created">
-      <created>1684932429846</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1684932429846</updated>
-    </task>
-    <task id="LOCAL-00052" summary="UserAlreadyExistsException class is created">
-      <created>1684932523538</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1684932523538</updated>
-    </task>
-    <task id="LOCAL-00053" summary="UserNotFoundException is created">
-      <created>1684933832593</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1684933832593</updated>
-    </task>
-    <task id="LOCAL-00054" summary="constructor is added">
-      <created>1684933878468</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1684933878469</updated>
-    </task>
-    <task id="LOCAL-00055" summary="OrderAlreadyExistsException is created">
-      <created>1684934244222</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1684934244222</updated>
-    </task>
-    <task id="LOCAL-00056" summary="constructor is added">
-      <created>1684934295576</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1684934295576</updated>
-    </task>
-    <task id="LOCAL-00057" summary="addOrder method is created">
-      <created>1684934325072</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1684934325072</updated>
-    </task>
-    <option name="localTasksCounter" value="58" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,32 +392,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="EurekaServerApplication is created" />
+    <MESSAGE value="Files are added" />
+    <MESSAGE value="Modules are added" />
+    <MESSAGE value="Methods are modified" />
+    <MESSAGE value="OrderServiceApplication is created" />
+    <MESSAGE value="domain class User is created" />
+    <MESSAGE value="Attributes are added to User" />
+    <MESSAGE value="Address class is created and attributes are added" />
+    <MESSAGE value="Order class is created" />
     <MESSAGE value="Attributes are modified" />
     <MESSAGE value="Restaurant.java is created" />
     <MESSAGE value="Cuisine is created" />
     <MESSAGE value="Dish is created" />
     <MESSAGE value="Attributes are added" />
+    <MESSAGE value="Constructors are added" />
+    <MESSAGE value="Getters &amp; Setters are added" />
+    <MESSAGE value="equals &amp; hashCode are added" />
+    <MESSAGE value="toString method is added" />
     <MESSAGE value="User class is modified" />
     <MESSAGE value="Attributes are added to Dish class" />
     <MESSAGE value="constructors, Getters &amp; Setters are added" />
     <MESSAGE value="equals &amp; hashCode &amp; toString methods are added" />
+    <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
-    <MESSAGE value="Getters &amp; Setters, Equals &amp; hashCode are added" />
-    <MESSAGE value="Constructors are added" />
-    <MESSAGE value="constructors are added" />
-    <MESSAGE value="Getters &amp; Setters are added" />
-    <MESSAGE value="equals &amp; hashCode are added" />
-    <MESSAGE value="toString method is added" />
-    <MESSAGE value="OrderRepository.java is created" />
-    <MESSAGE value="OrderService interface is created" />
-    <MESSAGE value="registerUser method is created" />
-    <MESSAGE value="UserAlreadyExistsException class is created" />
-    <MESSAGE value="UserNotFoundException is created" />
-    <MESSAGE value="OrderAlreadyExistsException is created" />
-    <MESSAGE value="constructor is added" />
-    <MESSAGE value="addOrder method is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="addOrder method is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="toString method  added" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

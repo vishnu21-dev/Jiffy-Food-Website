@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="toString method  added">
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,26 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp/EurekaServer",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "bbb68e9216adcefa161ce209122062ae",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Final Project NIIT/FoodieApp/EurekaServer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;bbb68e9216adcefa161ce209122062ae&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />

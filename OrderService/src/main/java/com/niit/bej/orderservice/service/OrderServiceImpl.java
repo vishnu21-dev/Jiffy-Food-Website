@@ -7,6 +7,7 @@ import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.proxy.UserProxy;
 import com.niit.bej.orderservice.repository.OrderRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +37,20 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
-        return null;
+        if (orderRepository.findById(userId).isEmpty()) {
+            throw new UserNotFoundException("User not found");
+        }
+        User user = orderRepository.findByEmailId(userId);
+        if (user.getOrders() == null) {
+            user.setOrders(Collections.singletonList(order));
+        } else {
+            List<Order> addToOrderList = user.getOrders();
+            addToOrderList.add(order);
+            user.setOrders(addToOrderList);
+        }
+
+
+        return orderRepository.save(user);
     }
 
     @Override
@@ -46,7 +60,6 @@ public class OrderServiceImpl implements OrderService {
             List<Order> orders = user.getOrders();
             if (orders.isEmpty()) {
                 throw new OrderNotFoundException("There is no order present");
-
             }
             return orders;
         } else

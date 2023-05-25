@@ -1,5 +1,6 @@
 package com.niit.bej.orderservice.service;
 
+import com.niit.bej.orderservice.domain.Dish;
 import com.niit.bej.orderservice.domain.Order;
 import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
@@ -54,48 +55,50 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException {
-        return false;
-    }
-
-//    @Override
-//    public User getRestaurantByUserLocation(User user, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException {
-//        return null;
-//    }
-//
-//    @Override
-//    public Restaurant getRestaurantByPreference(Restaurant restaurant, String userId) throws UserNotFoundException, RestaurantNotFoundException {
-//        return null;
-//    }
-//
-//    @Override
-//    public List<Cuisine> getRestaurantByCuisine(Cuisine cuisine, String restaurantName) throws CuisineNotFoundException, RestaurantNotFoundException {
-//        return null;
-//    }
-
-    @Override
-    public boolean deleteOrder(Integer orderId, String userId) throws UserNotFoundException, OrderNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
+            Optional<Dish> requestedDish;
             User user = orderRepository.findById(userId).get();
-            List<Order> orders = user.getOrders();
-            Optional<Order> optionalOrder = orders.stream()
-                    .filter(order -> order.getOrderId() == (orderId))
-                    .findFirst();
+            List<Order> orderList = user.getOrders();
+            Optional<Order> requestedOrder = orderList.stream().filter(f -> f.getOrderId() == orderId).findFirst();
+            if (requestedOrder.isPresent()) {
+                Order order = requestedOrder.get();
+                List<Dish> dishList = order.getDishes();
+                if (dishList.isEmpty()) {
+                    throw new DishNotFoundException("The Requested Dish is not present");
 
-            if (optionalOrder.isPresent()) {
-                Order order = optionalOrder.get();
+                } else
+                    requestedDish = dishList.stream().filter(f -> f.getName().equals(dishName)).findAny();
+                if (requestedDish.isPresent()) {
+                    dishList.remove(requestedDish);
+                    order.setDishes(dishList);
+                    orderRepository.save(user);
+                    return true;
+                }
 
-                orders.remove(order);
 
-                orderRepository.save(user);
-                return true;
-            } else {
-                throw new OrderNotFoundException("Order not found with ID: " + orderId);
-            }
-        } else {
-            throw new UserNotFoundException("User Not FWound");
+            } else throw new OrderNotFoundException("The Requested Order is not Present");
         }
 
+        throw new UserNotFoundException("User Not Found");
     }
+
+    @Override
+    public boolean deleteOrder(int orderId, String userId) throws UserNotFoundException, OrderNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Order> orderList = user.getOrders();
+            Optional<Order> requestedOrder = orderList.stream().filter(f -> f.getOrderId() == orderId).findFirst();
+            if (requestedOrder.isPresent()) {
+                orderList.remove(requestedOrder);
+                user.setOrders(orderList);
+                orderRepository.save(user);
+                return true;
+            }
+            throw new OrderNotFoundException("The requested order is not Found");
+
+        }
+        throw new UserNotFoundException("User Not found");
     }
+}
 
 

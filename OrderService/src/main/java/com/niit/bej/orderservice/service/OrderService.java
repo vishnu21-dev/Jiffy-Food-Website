@@ -16,5 +16,5 @@ public interface OrderService {
 
     boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException;
 
-    boolean deleteOrder(Integer orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
+    boolean deleteOrder(int orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
 }

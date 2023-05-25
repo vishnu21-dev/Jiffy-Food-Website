@@ -11,4 +11,5 @@ public interface OrderService {
     User registerUser(User user) throws UserAlreadyExistsException;
 
     User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException;
+
 }

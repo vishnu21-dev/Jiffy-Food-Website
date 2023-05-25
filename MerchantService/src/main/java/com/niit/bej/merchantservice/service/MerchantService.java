@@ -11,8 +11,6 @@ public interface MerchantService {
 
     Merchant register(Merchant merchant) throws MerchantAlreadyExistsException;
 
-//    Merchant login(Merchant merchant) throws MerchantNotFoundException;
-
     Merchant addCuisines(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineAlreadyExistsException;
 
     List<Cuisine> getAllCuisines(String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;

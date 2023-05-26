@@ -12,9 +12,9 @@ public class Config {
     public RouteLocator myroute(RouteLocatorBuilder builder) {
 
         return builder.routes()
-                .route(p -> p.path("/api/v1/**").uri("http://localhost:8084/"))//authentication
-                .route(p -> p.path("/api/v2/**").uri("http://localhost:8082/"))//merchantService
-                .route(p -> p.path("/api/v2/**").uri("http://localhost:8083/"))//Order Service
+                .route(p -> p.path("/userAuth/**").uri("http://localhost:8084/"))//authentication
+                .route(p -> p.path("/merchantZomato/**").uri("http://localhost:8082/"))//merchantService
+                .route(p -> p.path("/user/**").uri("http://localhost:8083/"))//Order Service
                 .build();
     }
 }

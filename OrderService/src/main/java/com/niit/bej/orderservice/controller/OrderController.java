@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/userOrder")
 public class OrderController {
 
     private OrderService orderService;
@@ -36,17 +36,18 @@ public class OrderController {
 
     }
 
-    @PostMapping("/{userId}/orders")
-    public ResponseEntity<?> addOrder(@RequestBody Order order, @PathVariable("userId") String userId) {
+    @PostMapping("/user/addOrder")
+    public ResponseEntity<?> addOrder(@RequestBody Order order, HttpServletRequest httpServletRequest) {
+        String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            User user = orderService.addOrder(order, userId);
-            return new ResponseEntity<>(user, HttpStatus.CREATED);
+            User user = orderService.addOrder(order, emailId);
+            return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (UserNotFoundException | OrderAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         }
     }
 
-    @GetMapping("/{userId}/orders")
+    @GetMapping("/user/orders")
     public ResponseEntity<?> getAllOrders(HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {

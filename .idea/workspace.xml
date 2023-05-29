@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="SpringEmailApplication is created">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="properties are added">
+      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +192,7 @@
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
-      <workItem from="1685334620028" duration="2728000" />
+      <workItem from="1685334620028" duration="4527000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -473,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685335419135</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="properties are added">
+      <created>1685339010664</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685339010664</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +500,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="OrderServiceApplication is created" />
     <MESSAGE value="domain class User is created" />
     <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
@@ -517,7 +524,8 @@
     <MESSAGE value="controller is done" />
     <MESSAGE value="Changes made in the methods and properties" />
     <MESSAGE value="SpringEmailApplication is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="SpringEmailApplication is created" />
+    <MESSAGE value="properties are added" />
+    <option name="LAST_COMMIT_MESSAGE" value="properties are added" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

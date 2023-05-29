@@ -5,7 +5,7 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/OrderDb
   application:
-    name: merchantService
+    name: orderService
 eureka:
   client:
     service-url:

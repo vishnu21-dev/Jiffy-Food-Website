@@ -22,7 +22,7 @@
     <module>MerchantService</module>
     <module>EurekaServer</module>
     <module>OrderService</module>
-    <module>Api-Gateway</module>
+    <module>ApiGateWay</module>
   </modules>
 
   <properties>

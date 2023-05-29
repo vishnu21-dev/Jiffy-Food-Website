@@ -14,7 +14,7 @@ public class Config {
         return builder.routes()
                 .route(p -> p.path("/userAuth/**").uri("http://localhost:8084/"))//authentication
                 .route(p -> p.path("/merchantZomato/**").uri("http://localhost:8082/"))//merchantService
-                .route(p -> p.path("/user/**").uri("http://localhost:8083/"))//Order Service
+                .route(p -> p.path("/userOrder/**").uri("http://localhost:8083/"))//Order Service
                 .build();
     }
 }

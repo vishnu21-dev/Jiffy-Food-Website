@@ -221,4 +221,17 @@ public class MerchantServiceImpl implements MerchantService {
             } else throw new CuisineNotFoundException("Cuisine not found!");
         } else throw new MerchantNotFoundException("Merchant does not exist!");
     }
+
+    @Override
+    public boolean deleteMerchant(String merchantId) throws MerchantNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantOptional.get();
+            merchantRepository.delete(merchant);
+            return true;
+        } else {
+            throw new MerchantNotFoundException("Merchant not found.");
+        }
+    }
+
 }

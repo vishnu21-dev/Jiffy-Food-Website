@@ -28,4 +28,6 @@ public interface MerchantService {
     boolean deleteDishFromCuisine(String cuisineName, String dishName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException;
 
     boolean deleteCuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
+
+    public boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
 }

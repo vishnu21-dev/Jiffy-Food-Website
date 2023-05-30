@@ -29,5 +29,7 @@ public interface MerchantService {
 
     boolean deleteCuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
 
-    public boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
+    boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
+
+    Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
 }

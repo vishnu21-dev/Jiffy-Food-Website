@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="properties are added">
-      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="EmailSenderService class is created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "0210c3c8937f114b72fa096e9ec55c24",
+    "spring.configuration.checksum": "26b26a72755500c720e05efaa39ea2f9",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -63,7 +66,7 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Spring Boot.SpringEmailApplication">
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.eurekaserver.EurekaServerApplication" />
       <module name="EurekaServer" />
@@ -192,7 +195,8 @@
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
-      <workItem from="1685334620028" duration="4527000" />
+      <workItem from="1685334620028" duration="9240000" />
+      <workItem from="1685419578254" duration="5275000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -481,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685339010664</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="EmailSenderService class is created">
+      <created>1685341355388</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1685341355388</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="domain class User is created" />
     <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
@@ -525,7 +535,8 @@
     <MESSAGE value="Changes made in the methods and properties" />
     <MESSAGE value="SpringEmailApplication is created" />
     <MESSAGE value="properties are added" />
-    <option name="LAST_COMMIT_MESSAGE" value="properties are added" />
+    <MESSAGE value="EmailSenderService class is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="EmailSenderService class is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

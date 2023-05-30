@@ -1,6 +1,6 @@
 package com.niit.bej.springemail;
 
-import com.niit.bej.springemail.configuration.EmailSenderService;
+import com.niit.bej.springemail.service.EmailSenderService;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

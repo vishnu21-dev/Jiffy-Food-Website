@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected the error">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="controller is done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/apiGateway/Config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/apiGateway/Config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/OrderServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,9 +59,6 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.niit.bej.orderservice.exception" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
@@ -65,7 +66,72 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MerchantServiceApplication">
+  <component name="RunManager" selected="Application.OrderServiceApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apiGateway.ApiGatewayApplication" />
+      <module name="Api-Gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apiGateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.eurekaserver.EurekaServerApplication" />
+      <module name="EurekaServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MerchantServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.merchantservice.MerchantServiceApplication" />
+      <module name="MerchantService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.bej.merchantservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.orderservice.OrderServiceApplication" />
+      <module name="OrderService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.bej.orderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.UserAuthenticationServiceApplication" />
+      <module name="UserAuthenticationService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Api-Gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="apiGateway.ApiGatewayApplication" />
@@ -76,19 +142,6 @@
     <configuration name="AuthentificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AuthentificationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.authentificationservice.AuthentificationServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="EurekaServer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaserver.EurekaServerApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.eurekaserver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,7 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaServerApplication" />
+        <item itemvalue="Application.OrderServiceApplication" />
+        <item itemvalue="Application.UserAuthenticationServiceApplication" />
+        <item itemvalue="Application.MerchantServiceApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -384,35 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684916414846</updated>
     </task>
-    <task id="LOCAL-00037" summary="corrected the repositary and implemented the methods of getalloreders and registar methods">
-      <created>1684997718736</created>
+    <task id="LOCAL-00037" summary="add order method is done">
+      <created>1685012690031</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1684997718736</updated>
+      <updated>1685012690031</updated>
     </task>
-    <task id="LOCAL-00038" summary="called the method of user proxy in registaruser method">
-      <created>1684997930187</created>
+    <task id="LOCAL-00038" summary="controller is done">
+      <created>1685019080631</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1684997930187</updated>
+      <updated>1685019080631</updated>
     </task>
-    <task id="LOCAL-00039" summary="implemented delete order method">
-      <created>1684998574200</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1684998574200</updated>
-    </task>
-    <task id="LOCAL-00040" summary="corrected the error">
-      <created>1684998619717</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1684998619717</updated>
-    </task>
-    <option name="localTasksCounter" value="41" />
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +474,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Modules are added" />
+    <MESSAGE value="Methods are modified" />
     <MESSAGE value="OrderServiceApplication is created" />
     <MESSAGE value="domain class User is created" />
     <MESSAGE value="Attributes are added to User" />
@@ -452,13 +497,21 @@
     <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
-    <MESSAGE value="corrected the repositary and implemented the methods of getalloreders and registar methods" />
-    <MESSAGE value="called the method of user proxy in registaruser method" />
-    <MESSAGE value="implemented delete order method" />
-    <MESSAGE value="corrected the error" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected the error" />
+    <MESSAGE value="add order method is done" />
+    <MESSAGE value="controller is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="controller is done" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanCreationException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="BeanConfig class is created">
-      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/filter/JWTFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/config/BeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/config/BeanConfig.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="JWTFilter is created">
+      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/controller/EmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailSenderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -194,7 +197,7 @@
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1685334620028" duration="9240000" />
-      <workItem from="1685419578254" duration="5732000" />
+      <workItem from="1685419578254" duration="8551000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -497,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685431841845</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="jwtFilterBean method is added">
+      <created>1685432230368</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1685432230368</updated>
+    </task>
+    <task id="LOCAL-00045" summary="JWTFilter is created">
+      <created>1685432272305</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685432272305</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,8 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Address class is created and attributes are added" />
-    <MESSAGE value="Order class is created" />
     <MESSAGE value="Attributes are modified" />
     <MESSAGE value="Restaurant.java is created" />
     <MESSAGE value="Cuisine is created" />
@@ -541,7 +556,9 @@
     <MESSAGE value="properties are added" />
     <MESSAGE value="EmailSenderService class is created" />
     <MESSAGE value="BeanConfig class is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="BeanConfig class is created" />
+    <MESSAGE value="jwtFilterBean method is added" />
+    <MESSAGE value="JWTFilter is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="JWTFilter is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

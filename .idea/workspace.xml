@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="EmailSenderService class is created">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="BeanConfig class is created">
+      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/filter/JWTFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringEmail/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/config/BeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/config/BeanConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp",
+    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp/SpringEmail/src/main/java/com/niit/bej/springemail",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +57,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Final Project NIIT\FoodieApp\SpringEmail\src\main\java\com\niit\bej\springemail" />
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
       <recent name="D:\Final Project NIIT\FoodieApp\UserAuthenticationService" />
@@ -196,7 +194,7 @@
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1685334620028" duration="9240000" />
-      <workItem from="1685419578254" duration="5275000" />
+      <workItem from="1685419578254" duration="5732000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -492,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685341355388</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="BeanConfig class is created">
+      <created>1685431841845</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1685431841845</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +516,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
     <MESSAGE value="Attributes are modified" />
@@ -536,7 +540,8 @@
     <MESSAGE value="SpringEmailApplication is created" />
     <MESSAGE value="properties are added" />
     <MESSAGE value="EmailSenderService class is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="EmailSenderService class is created" />
+    <MESSAGE value="BeanConfig class is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="BeanConfig class is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

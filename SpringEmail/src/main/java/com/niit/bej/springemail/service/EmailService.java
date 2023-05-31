@@ -5,5 +5,5 @@ import jakarta.mail.MessagingException;
 
 public interface EmailService {
 
-    String sendEmailWithAttachment(Email email, String emailDetails) throws MessagingException;
+    String sendSimpleEmail(Email email, String emailDetails) throws MessagingException;
 }

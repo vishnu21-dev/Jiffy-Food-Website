@@ -1,8 +1,9 @@
 package com.niit.bej.springemail.service;
 
+import com.niit.bej.springemail.domain.Email;
 import jakarta.mail.MessagingException;
 
 public interface EmailService {
 
-    String sendEmailWithAttachment(String toEmail, String body, String subject, String attachment) throws MessagingException;
+    String sendEmailWithAttachment(Email email, String emailDetails) throws MessagingException;
 }

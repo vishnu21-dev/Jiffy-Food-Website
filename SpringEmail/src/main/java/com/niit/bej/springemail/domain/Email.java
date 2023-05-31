@@ -63,4 +63,14 @@ public class Email {
     public int hashCode() {
         return Objects.hash(toEmail, body, subject, attachment);
     }
+
+    @Override
+    public String toString() {
+        return "Email{" +
+                "toEmail='" + toEmail + '\'' +
+                ", body='" + body + '\'' +
+                ", subject='" + subject + '\'' +
+                ", attachment='" + attachment + '\'' +
+                '}';
+    }
 }

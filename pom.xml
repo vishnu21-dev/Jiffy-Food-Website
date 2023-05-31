@@ -23,7 +23,7 @@
     <module>EurekaServer</module>
     <module>OrderService</module>
     <module>SpringEmail</module>
-    <module>Api-Gateway</module>
+    <module>ApiGateWay</module>
   </modules>
 
   <properties>

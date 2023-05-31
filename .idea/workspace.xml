@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="JWTFilter is created">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="EmailSenderService class is modified">
       <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/configuration/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailSenderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +194,7 @@
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1685334620028" duration="9240000" />
-      <workItem from="1685419578254" duration="8551000" />
+      <workItem from="1685419578254" duration="9159000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -514,7 +511,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685432272305</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="EmailService interface is created">
+      <created>1685449353929</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1685449353929</updated>
+    </task>
+    <task id="LOCAL-00047" summary="EmailSenderService class is modified">
+      <created>1685449391155</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1685449391155</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,8 +544,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Attributes are modified" />
-    <MESSAGE value="Restaurant.java is created" />
     <MESSAGE value="Cuisine is created" />
     <MESSAGE value="Dish is created" />
     <MESSAGE value="Attributes are added" />
@@ -558,7 +567,9 @@
     <MESSAGE value="BeanConfig class is created" />
     <MESSAGE value="jwtFilterBean method is added" />
     <MESSAGE value="JWTFilter is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="JWTFilter is created" />
+    <MESSAGE value="EmailService interface is created" />
+    <MESSAGE value="EmailSenderService class is modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="EmailSenderService class is modified" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

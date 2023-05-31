@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="toString method is added">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Changes are made">
       <change afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/controller/EmailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailSenderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailService.java" afterDir="false" />
     </list>
@@ -67,7 +66,7 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringEmailApplication">
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.eurekaserver.EurekaServerApplication" />
       <module name="EurekaServer" />
@@ -198,14 +197,7 @@
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1685334620028" duration="9240000" />
       <workItem from="1685419578254" duration="9159000" />
-      <workItem from="1685506562643" duration="1255000" />
-    </task>
-    <task id="LOCAL-00004" summary="UserAuthenticationServiceApplication is created">
-      <created>1684827139977</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684827139977</updated>
+      <workItem from="1685506562643" duration="1943000" />
     </task>
     <task id="LOCAL-00005" summary="Dependencies are added">
       <created>1684827351585</created>
@@ -543,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685507146979</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Changes are made">
+      <created>1685507967815</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1685507967816</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Attributes are added" />
     <MESSAGE value="Constructors are added" />
     <MESSAGE value="equals &amp; hashCode are added" />
     <MESSAGE value="User class is modified" />
@@ -587,7 +585,8 @@
     <MESSAGE value="Getters &amp; Setters are added" />
     <MESSAGE value="equals &amp; hashCode method is added" />
     <MESSAGE value="toString method is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="toString method is added" />
+    <MESSAGE value="Changes are made" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes are made" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

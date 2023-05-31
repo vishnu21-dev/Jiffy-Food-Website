@@ -1,8 +1,10 @@
 package com.niit.bej.springemail.service;
 
+import com.niit.bej.springemail.domain.Email;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -17,7 +19,10 @@ public class EmailSenderService implements EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    public String sendEmailWithAttachment(String toEmail, String body, String subject, String attachment) {
+    @Value("${spring.mail.username}")
+    private String sender;
+
+    public String sendEmailWithAttachment(Email email, String emailDetails) {
 
         MimeMessage mimeMessage = mailSender.createMimeMessage();
 
@@ -25,20 +30,19 @@ public class EmailSenderService implements EmailService {
         try {
             mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
             mimeMessageHelper.setFrom("jiffyfoodApp@gmail.com");
-            mimeMessageHelper.setTo(toEmail);
-            mimeMessageHelper.setText(body);
-            mimeMessageHelper.setSubject(subject);
+            mimeMessageHelper.setTo(email.getToEmail());
+            mimeMessageHelper.setText(email.getBody());
+            mimeMessageHelper.setSubject(email.getSubject());
 
-            FileSystemResource fileSystemResource = new FileSystemResource(new File(attachment));
+            FileSystemResource fileSystemResource = new FileSystemResource(new File(email.getAttachment()));
 
             mimeMessageHelper.addAttachment(fileSystemResource.getFilename(), fileSystemResource);
 
             mailSender.send(mimeMessage);
             System.out.println("Mail sent...");
-            return toEmail;
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-
+        return emailDetails;
     }
 }

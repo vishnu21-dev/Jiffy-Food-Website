@@ -22,7 +22,8 @@ public class EmailSenderService implements EmailService {
     @Value("${spring.mail.username}")
     private String sender;
 
-    public String sendEmailWithAttachment(Email email, String emailDetails) {
+    public String sendSimpleEmail(Email email, String emailDetails) {
+
 
         MimeMessage mimeMessage = mailSender.createMimeMessage();
 
@@ -40,9 +41,19 @@ public class EmailSenderService implements EmailService {
 
             mailSender.send(mimeMessage);
             System.out.println("Mail sent...");
+
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-        return emailDetails;
+
+//        SimpleMailMessage mailMessage = new SimpleMailMessage();
+//        mailMessage.setFrom(sender);
+//        mailMessage.setTo(emailDetails);
+//        mailMessage.setText(email.getBody());
+//        mailMessage.setSubject(email.getSubject());
+//
+//        mailSender.send(mailMessage);
+//        return "Mail sent successfully...";
+        return "Error";
     }
 }

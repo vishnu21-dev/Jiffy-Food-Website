@@ -24,14 +24,14 @@ public class EmailController {
     @PostMapping("/sendMail")
     public ResponseEntity<?> sendMail(@RequestBody Email email, HttpServletRequest request) {
 
-        System.out.println("header" + request.getHeader("Authorization"));
-        Claims claims = (Claims) request.getAttribute("claims");
-        System.out.println("email from claims :: " + claims.getSubject());
-        String emailDetails = claims.getSubject();
-        System.out.println("email :: " + email);
-
         try {
-            return new ResponseEntity<>(emailService.sendEmailWithAttachment(email, emailDetails), HttpStatus.OK);
+            System.out.println("header" + request.getHeader("Authorization"));
+            Claims claims = (Claims) request.getAttribute("claims");
+            System.out.println("email from claims :: " + claims.getSubject());
+            String emailDetails = claims.getSubject();
+            System.out.println("email :: " + email);
+            System.out.println("This is it");
+            return new ResponseEntity<>(emailService.sendSimpleEmail(email, emailDetails), HttpStatus.OK);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }

@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="errors are modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/SpringEmailApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/controller/EmailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailSenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmail/src/main/java/com/niit/bej/springemail/service/EmailService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringEmailApplication">
+  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.eurekaserver.EurekaServerApplication" />
       <module name="EurekaServer" />
@@ -198,21 +197,7 @@
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1685334620028" duration="9240000" />
       <workItem from="1685419578254" duration="9159000" />
-      <workItem from="1685506562643" duration="4927000" />
-    </task>
-    <task id="LOCAL-00008" summary="Files are added">
-      <created>1684827981757</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684827981757</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Modules are added">
-      <created>1684828028395</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1684828028395</updated>
+      <workItem from="1685506562643" duration="8375000" />
     </task>
     <task id="LOCAL-00010" summary="Modules are added">
       <created>1684828138692</created>
@@ -543,7 +528,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685511050462</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="errors are modified">
+      <created>1685512937261</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1685512937261</updated>
+    </task>
+    <task id="LOCAL-00058" summary="errors are modified">
+      <created>1685512945740</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1685512945740</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

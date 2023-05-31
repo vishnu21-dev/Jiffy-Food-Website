@@ -10,7 +10,8 @@
         <option value="$PROJECT_DIR$/MerchantService/pom.xml" />
         <option value="$PROJECT_DIR$/EurekaServer/pom.xml" />
         <option value="$PROJECT_DIR$/OrderService/pom.xml" />
-        <option value="$PROJECT_DIR$/Api-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringEmail/pom.xml" />
+        <option value="$PROJECT_DIR$/ApiGateWay/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

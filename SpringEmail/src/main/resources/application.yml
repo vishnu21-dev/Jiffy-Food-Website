@@ -1,11 +1,11 @@
-server:
-  port: 8083
 spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/OrderDb
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jiffyfoodApp@gmail.com
+    password: jiffyfood123
   application:
-    name: orderService
+    name: emailService
 eureka:
   client:
     service-url:

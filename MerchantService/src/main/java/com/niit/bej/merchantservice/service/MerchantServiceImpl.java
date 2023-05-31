@@ -221,4 +221,63 @@ public class MerchantServiceImpl implements MerchantService {
             } else throw new CuisineNotFoundException("Cuisine not found!");
         } else throw new MerchantNotFoundException("Merchant does not exist!");
     }
+
+    @Override
+    public boolean deleteMerchant(String merchantId) throws MerchantNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantOptional.get();
+            merchantRepository.delete(merchant);
+            return true;
+        } else {
+            throw new MerchantNotFoundException("Merchant not found.");
+        }
+    }
+
+    @Override
+    public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantOptional.get();
+            merchant.setEmailId(updatedMerchant.getEmailId());
+            merchant.setPassword(updatedMerchant.getPassword());
+            merchant.setLocation(updatedMerchant.getLocation());
+            merchant.setRestaurantName(updatedMerchant.getRestaurantName());
+
+            List<Cuisine> updatedCuisines = updatedMerchant.getCuisines();
+            if (updatedCuisines != null) {
+                merchant.getCuisines().clear(); // Clear existing cuisines
+
+                for (Cuisine updatedCuisine : updatedCuisines) {
+                    Cuisine existingCuisine = new Cuisine();
+                    existingCuisine.setName(updatedCuisine.getName());
+
+
+                    List<Dish> updatedDishes = updatedCuisine.getDishes();
+                    if (updatedDishes != null) {
+                        existingCuisine.getDishes().clear(); // Clear existing dishes
+
+                        for (Dish updatedDish : updatedDishes) {
+                            Dish existingDish = new Dish();
+                            existingDish.setName(updatedDish.getName());
+                            existingDish.setCategory(updatedDish.getCategory());
+                            existingDish.setPrice(updatedDish.getPrice());
+                            existingDish.setImageUrl(updatedDish.getImageUrl());
+                            existingDish.setDescription(updatedDish.getDescription());
+
+                            existingCuisine.getDishes().add(existingDish);
+                        }
+                    }
+
+                    merchant.getCuisines().add(existingCuisine);
+                }
+            }
+
+            return merchantRepository.save(merchant);
+        } else {
+            throw new MerchantNotFoundException("Merchant not found.");
+        }
+    }
+
+
 }

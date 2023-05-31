@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Errors are rectified" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added method for delelte merchant in MerchantServiceImpl">
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +16,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -43,25 +45,37 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Final Project NIIT/FoodieApp/SpringEmail/src/main/java/com/niit/bej/springemail&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Final Project NIIT/FoodieApp/EurekaServer&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;26b26a72755500c720e05efaa39ea2f9&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;bbb68e9216adcefa161ce209122062ae&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Final Project NIIT\FoodieApp\SpringEmail\src\main\java\com\niit\bej\springemail" />
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
       <recent name="D:\Final Project NIIT\FoodieApp\UserAuthenticationService" />
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Application.OrderServiceApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apiGateway.ApiGatewayApplication" />
+      <module name="Api-Gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apiGateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.eurekaserver.EurekaServerApplication" />
       <module name="EurekaServer" />
@@ -128,19 +142,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="EurekaServer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaserver.EurekaServerApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.eurekaserver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MerchantServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="MerchantService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.merchantservice.MerchantServiceApplication" />
@@ -155,13 +156,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringEmailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="SpringEmail" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.springemail.SpringEmailApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserAuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="UserAuthenticationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.userauthenticationservice.UserAuthenticationServiceApplication" />
@@ -171,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaServerApplication" />
         <item itemvalue="Application.OrderServiceApplication" />
         <item itemvalue="Application.UserAuthenticationServiceApplication" />
         <item itemvalue="Application.MerchantServiceApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -190,9 +184,76 @@
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
-      <workItem from="1685334620028" duration="9240000" />
-      <workItem from="1685419578254" duration="9159000" />
-      <workItem from="1685506562643" duration="8928000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1684825967283</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684825967283</updated>
+    </task>
+    <task id="LOCAL-00002" summary="AuthentificationService module is created">
+      <created>1684826314848</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684826314848</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dependencies are added">
+      <created>1684826689881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684826689881</updated>
+    </task>
+    <task id="LOCAL-00004" summary="UserAuthenticationServiceApplication is created">
+      <created>1684827139977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827139977</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Dependencies are added">
+      <created>1684827351585</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827351585</updated>
+    </task>
+    <task id="LOCAL-00006" summary="MerchantServiceApplication is created">
+      <created>1684827615386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827615386</updated>
+    </task>
+    <task id="LOCAL-00007" summary="EurekaServerApplication is created">
+      <created>1684827930702</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827930702</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Files are added">
+      <created>1684827981757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827981757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Modules are added">
+      <created>1684828028395</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684828028395</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Modules are added">
+      <created>1684828138692</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684828138692</updated>
     </task>
     <task id="LOCAL-00011" summary="Methods are modified">
       <created>1684867112054</created>
@@ -390,154 +451,35 @@
       <option name="project" value="LOCAL" />
       <updated>1685019080631</updated>
     </task>
-    <task id="LOCAL-00039" summary="Changes made in the methods and properties">
-      <created>1685335395835</created>
+    <task id="LOCAL-00039" summary="controller is done">
+      <created>1685419885469</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1685335395835</updated>
+      <updated>1685419885469</updated>
     </task>
-    <task id="LOCAL-00040" summary="SpringEmailApplication is created">
-      <created>1685335419135</created>
+    <task id="LOCAL-00040" summary="corrected updatedish method in controller class">
+      <created>1685421202396</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1685335419135</updated>
+      <updated>1685421202396</updated>
     </task>
-    <task id="LOCAL-00041" summary="properties are added">
-      <created>1685339010664</created>
+    <task id="LOCAL-00041" summary="corrected updatedish method in controller class">
+      <created>1685421214368</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1685339010664</updated>
+      <updated>1685421214368</updated>
     </task>
-    <task id="LOCAL-00042" summary="EmailSenderService class is created">
-      <created>1685341355388</created>
+    <task id="LOCAL-00042" summary="added method for delelte merchant in MerchantServiceImpl">
+      <created>1685431378628</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1685341355388</updated>
+      <updated>1685431378628</updated>
     </task>
-    <task id="LOCAL-00043" summary="BeanConfig class is created">
-      <created>1685431841845</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1685431841845</updated>
-    </task>
-    <task id="LOCAL-00044" summary="jwtFilterBean method is added">
-      <created>1685432230368</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1685432230368</updated>
-    </task>
-    <task id="LOCAL-00045" summary="JWTFilter is created">
-      <created>1685432272305</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1685432272305</updated>
-    </task>
-    <task id="LOCAL-00046" summary="EmailService interface is created">
-      <created>1685449353929</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685449353929</updated>
-    </task>
-    <task id="LOCAL-00047" summary="EmailSenderService class is modified">
-      <created>1685449391155</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1685449391155</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Email class is created">
-      <created>1685506805660</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1685506805660</updated>
-    </task>
-    <task id="LOCAL-00049" summary="constructors are added">
-      <created>1685506941841</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1685506941841</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Getters &amp; Setters are added">
-      <created>1685507028254</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1685507028254</updated>
-    </task>
-    <task id="LOCAL-00051" summary="equals &amp; hashCode method is added">
-      <created>1685507091296</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1685507091296</updated>
-    </task>
-    <task id="LOCAL-00052" summary="toString method is added">
-      <created>1685507146979</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1685507146979</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Changes are made">
-      <created>1685507967815</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1685507967816</updated>
-    </task>
-    <task id="LOCAL-00054" summary="EmailSenderService is created">
-      <created>1685508673308</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1685508673308</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Methods are added">
-      <created>1685508688619</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1685508688619</updated>
-    </task>
-    <task id="LOCAL-00056" summary="errors are modified">
-      <created>1685511050462</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1685511050462</updated>
-    </task>
-    <task id="LOCAL-00057" summary="errors are modified">
-      <created>1685512937261</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1685512937261</updated>
-    </task>
-    <task id="LOCAL-00058" summary="errors are modified">
-      <created>1685512945740</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1685512945740</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Errors are rectified">
-      <created>1685532001661</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1685532001661</updated>
-    </task>
-    <option name="localTasksCounter" value="60" />
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,32 +498,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="OrderServiceApplication is created" />
+    <MESSAGE value="domain class User is created" />
+    <MESSAGE value="Attributes are added to User" />
+    <MESSAGE value="Address class is created and attributes are added" />
+    <MESSAGE value="Order class is created" />
+    <MESSAGE value="Attributes are modified" />
+    <MESSAGE value="Restaurant.java is created" />
+    <MESSAGE value="Cuisine is created" />
+    <MESSAGE value="Dish is created" />
+    <MESSAGE value="Attributes are added" />
+    <MESSAGE value="Constructors are added" />
+    <MESSAGE value="Getters &amp; Setters are added" />
+    <MESSAGE value="equals &amp; hashCode are added" />
+    <MESSAGE value="toString method is added" />
+    <MESSAGE value="User class is modified" />
+    <MESSAGE value="Attributes are added to Dish class" />
     <MESSAGE value="constructors, Getters &amp; Setters are added" />
     <MESSAGE value="equals &amp; hashCode &amp; toString methods are added" />
+    <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
     <MESSAGE value="add order method is done" />
     <MESSAGE value="controller is done" />
-    <MESSAGE value="Changes made in the methods and properties" />
-    <MESSAGE value="SpringEmailApplication is created" />
-    <MESSAGE value="properties are added" />
-    <MESSAGE value="EmailSenderService class is created" />
-    <MESSAGE value="BeanConfig class is created" />
-    <MESSAGE value="jwtFilterBean method is added" />
-    <MESSAGE value="JWTFilter is created" />
-    <MESSAGE value="EmailService interface is created" />
-    <MESSAGE value="EmailSenderService class is modified" />
-    <MESSAGE value="Email class is created" />
-    <MESSAGE value="constructors are added" />
-    <MESSAGE value="Getters &amp; Setters are added" />
-    <MESSAGE value="equals &amp; hashCode method is added" />
-    <MESSAGE value="toString method is added" />
-    <MESSAGE value="Changes are made" />
-    <MESSAGE value="EmailSenderService is created" />
-    <MESSAGE value="Methods are added" />
-    <MESSAGE value="errors are modified" />
-    <MESSAGE value="Errors are rectified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Errors are rectified" />
+    <MESSAGE value="corrected updatedish method in controller class" />
+    <MESSAGE value="added method for delelte merchant in MerchantServiceImpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method for delelte merchant in MerchantServiceImpl" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

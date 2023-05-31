@@ -103,8 +103,8 @@ public class MerchantController {
         }
     }
 
-    @PutMapping("/merchant/updateDish/{cuisineName}/{updatedDish}")
-    public ResponseEntity<?> updateDish(@PathVariable String cuisineName, @PathVariable Dish updatedDish, HttpServletRequest httpServletRequest) {
+    @PutMapping("/merchant/updateDish/{cuisineName}")
+    public ResponseEntity<?> updateDish(@PathVariable String cuisineName, @RequestBody Dish updatedDish, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
             Dish dishToBeUpdated = merchantService.updateDish(cuisineName, updatedDish, emailId);

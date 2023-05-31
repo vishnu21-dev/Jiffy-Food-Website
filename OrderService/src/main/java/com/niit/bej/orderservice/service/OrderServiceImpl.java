@@ -39,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
-        if (orderRepository.findById(userId).isEmpty()) {
+        if (orderRepository.findById(userId).isPresent()) {
             throw new UserNotFoundException("User not found");
         }
         User user = orderRepository.findByEmailId(userId);
@@ -49,9 +49,11 @@ public class OrderServiceImpl implements OrderService {
             List<Order> addToOrderList = user.getOrders();
             addToOrderList.add(order);
             user.setOrders(addToOrderList);
+            orderRepository.save(user);
         }
-        return orderRepository.save(user);
+        return user;
     }
+
 
     @Override
     public List<Order> getAllOrders(String userId) throws UserNotFoundException, OrderNotFoundException {

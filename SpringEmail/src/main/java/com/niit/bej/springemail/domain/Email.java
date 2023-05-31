@@ -1,5 +1,7 @@
 package com.niit.bej.springemail.domain;
 
+import java.util.Objects;
+
 public class Email {
 
     private String toEmail;
@@ -47,5 +49,18 @@ public class Email {
 
     public void setAttachment(String attachment) {
         this.attachment = attachment;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Email email = (Email) o;
+        return Objects.equals(toEmail, email.toEmail) && Objects.equals(body, email.body) && Objects.equals(subject, email.subject) && Objects.equals(attachment, email.attachment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(toEmail, body, subject, attachment);
     }
 }

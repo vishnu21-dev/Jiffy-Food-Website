@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfig {
 
     @Bean
-    public FilterRegistrationBean jwtFilterBean() {
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
-        filterRegistrationBean.setFilter(new JWTFilter());
-        filterRegistrationBean.addUrlPatterns("/api/*");
-        return filterRegistrationBean;
+    public FilterRegistrationBean<JWTFilter> registerFilterBean() {
+        FilterRegistrationBean<JWTFilter> jwtFilterBean = new FilterRegistrationBean<>();
+        jwtFilterBean.setFilter(new JWTFilter());
+        jwtFilterBean.addUrlPatterns("/api/*");
+        return jwtFilterBean;
     }
 }

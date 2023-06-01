@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Restaurant class is created">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Attributes are modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +204,7 @@
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
-      <workItem from="1685605347117" duration="2745000" />
+      <workItem from="1685605347117" duration="4369000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -485,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685607061899</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Attributes are modified">
+      <created>1685608649080</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685608649080</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +517,6 @@
     <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
-    <MESSAGE value="Attributes are modified" />
     <MESSAGE value="Restaurant.java is created" />
     <MESSAGE value="Cuisine is created" />
     <MESSAGE value="Dish is created" />
@@ -529,7 +536,8 @@
     <MESSAGE value="controller is done" />
     <MESSAGE value="authentication service test is done" />
     <MESSAGE value="Restaurant class is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restaurant class is created" />
+    <MESSAGE value="Attributes are modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attributes are modified" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

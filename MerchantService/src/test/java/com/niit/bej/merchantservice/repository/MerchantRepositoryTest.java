@@ -4,6 +4,7 @@ package com.niit.bej.merchantservice.repository;
 import com.niit.bej.merchantservice.domain.Cuisine;
 import com.niit.bej.merchantservice.domain.Dish;
 import com.niit.bej.merchantservice.domain.Merchant;
+import com.niit.bej.merchantservice.domain.Restaurant;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -15,8 +16,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Collections;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 @ExtendWith(SpringExtension.class)
 @DataMongoTest
 public class MerchantRepositoryTest {
@@ -26,13 +25,15 @@ public class MerchantRepositoryTest {
 
     private Dish dish;
     private Cuisine cuisine;
+    private Restaurant restaurant;
     private Merchant merchant;
 
     @BeforeEach
     public void setUp() {
         dish = new Dish("pizza", 200, "main course", "jsfhdskfdsf", "dsafadf");
         cuisine = new Cuisine("Italian", Collections.singletonList(dish));
-        merchant = new Merchant("saichary@gmail.com", "sai123", "hyderabad", "Bawarchi", Collections.singletonList(cuisine));
+        restaurant = new Restaurant("Piccola", "ikdnkkd", Collections.singletonList(cuisine));
+        merchant = new Merchant();
 
     }
 

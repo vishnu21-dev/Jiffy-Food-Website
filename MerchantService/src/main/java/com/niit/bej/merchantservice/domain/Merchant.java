@@ -18,4 +18,5 @@ public class Merchant {
         this.location = location;
         this.restaurantName = restaurantName;
     }
+
 }

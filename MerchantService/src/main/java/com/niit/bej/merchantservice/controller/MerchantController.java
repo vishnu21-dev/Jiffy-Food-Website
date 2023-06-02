@@ -1,9 +1,11 @@
 package com.niit.bej.merchantservice.controller;
 
 import com.niit.bej.merchantservice.domain.Cuisine;
-import com.niit.bej.merchantservice.domain.Dish;
 import com.niit.bej.merchantservice.domain.Merchant;
-import com.niit.bej.merchantservice.exception.*;
+import com.niit.bej.merchantservice.domain.Restaurant;
+import com.niit.bej.merchantservice.exception.CuisineAlreadyExistsException;
+import com.niit.bej.merchantservice.exception.MerchantAlreadyExistsException;
+import com.niit.bej.merchantservice.exception.MerchantNotFoundException;
 import com.niit.bej.merchantservice.service.MerchantService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +36,11 @@ public class MerchantController {
         }
     }
 
-    @PostMapping("/merchant/addCuisines")
-    public ResponseEntity<?> addCuisines(@RequestBody Cuisine cuisine, HttpServletRequest httpServletRequest) {
+    @PostMapping("/merchant/addCuisines/{restaurantName}")
+    public ResponseEntity<?> addCuisines(@RequestBody List<Cuisine> cuisines, @PathVariable Restaurant restaurantName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            Merchant updatedMerchant = merchantService.addCuisines(cuisine, emailId);
+            Restaurant updatedMerchant = merchantService.addCuisines(cuisines, restaurantName, emailId);
             return new ResponseEntity<>(updatedMerchant, HttpStatus.OK);
         } catch (MerchantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -47,92 +49,92 @@ public class MerchantController {
         }
     }
 
-    @GetMapping("/merchant/getAllCuisines")
-    public ResponseEntity<?> getAllCuisines(HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            List<Cuisine> cuisineList = merchantService.getAllCuisines(emailId);
-            return new ResponseEntity<>(cuisineList, HttpStatus.OK);
-        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PutMapping("/merchant/updateCuisine")
-    public ResponseEntity<?> updateCuisine(@RequestBody Cuisine cuisine, HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            Cuisine updatedCuisine = merchantService.updateCuisine(cuisine, emailId);
-            return new ResponseEntity<>(updatedCuisine, HttpStatus.OK);
-        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PostMapping("/merchant/addDishesToCuisine/{cuisineName}")
-    public ResponseEntity<?> addDishesToCuisine(@RequestBody Dish dish, @PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            Cuisine addDishes = merchantService.addDishesToCuisine(dish, emailId, cuisineName);
-            return new ResponseEntity<>(addDishes, HttpStatus.OK);
-        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        } catch (DishAlreadyExistsException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
-        }
-    }
-
-    @GetMapping("/getAllDishes")
-    public ResponseEntity<?> getAllDishes() {
-        try {
-            List<Dish> dishList = merchantService.getAllDishes();
-            return new ResponseEntity<>(dishList, HttpStatus.OK);
-        } catch (DishNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @GetMapping("/merchant/getAllDishesFromCuisine/{cuisineName}")
-    public ResponseEntity<?> getAllDishesFromCuisine(@PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            List<Dish> dishList = merchantService.getAllDishesFromACuisine(cuisineName, emailId);
-            return ResponseEntity.ok(dishList);
-        } catch (MerchantNotFoundException | CuisineNotFoundException | DishNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PutMapping("/merchant/updateDish/{cuisineName}")
-    public ResponseEntity<?> updateDish(@PathVariable String cuisineName, @RequestBody Dish updatedDish, HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            Dish dishToBeUpdated = merchantService.updateDish(cuisineName, updatedDish, emailId);
-            return new ResponseEntity<>(dishToBeUpdated, HttpStatus.OK);
-        } catch (CuisineNotFoundException | DishNotFoundException | MerchantNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/merchant/deleteDishFromCuisine/{cuisineName}/{dishName}")
-    public ResponseEntity<?> deleteDishFromCuisine(@PathVariable String cuisineName, @PathVariable String dishName, HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            boolean deleteDish = merchantService.deleteDishFromCuisine(cuisineName, dishName, emailId);
-            return new ResponseEntity<>(deleteDish, HttpStatus.ACCEPTED);
-        } catch (MerchantNotFoundException | CuisineNotFoundException | DishNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/merchant/deleteCuisine/{cuisineName}")
-    public ResponseEntity<?> deleteCuisine(@PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
-        String emailId = httpServletRequest.getAttribute("emailId").toString();
-        try {
-            boolean deleteOneCuisine = merchantService.deleteCuisine(cuisineName, emailId);
-            return new ResponseEntity<>(deleteOneCuisine, HttpStatus.ACCEPTED);
-        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping("/merchant/getAllCuisines")
+//    public ResponseEntity<?> getAllCuisines(HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            List<Cuisine> cuisineList = merchantService.getAllCuisines(emailId);
+//            return new ResponseEntity<>(cuisineList, HttpStatus.OK);
+//        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @PutMapping("/merchant/updateCuisine")
+//    public ResponseEntity<?> updateCuisine(@RequestBody Cuisine cuisine, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            Cuisine updatedCuisine = merchantService.updateCuisine(cuisine, emailId);
+//            return new ResponseEntity<>(updatedCuisine, HttpStatus.OK);
+//        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @PostMapping("/merchant/addDishesToCuisine/{cuisineName}")
+//    public ResponseEntity<?> addDishesToCuisine(@RequestBody Dish dish, @PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            Cuisine addDishes = merchantService.addDishesToCuisine(dish, emailId, cuisineName);
+//            return new ResponseEntity<>(addDishes, HttpStatus.OK);
+//        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        } catch (DishAlreadyExistsException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
+//        }
+//    }
+//
+//    @GetMapping("/getAllDishes")
+//    public ResponseEntity<?> getAllDishes() {
+//        try {
+//            List<Dish> dishList = merchantService.getAllDishes();
+//            return new ResponseEntity<>(dishList, HttpStatus.OK);
+//        } catch (DishNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @GetMapping("/merchant/getAllDishesFromCuisine/{cuisineName}")
+//    public ResponseEntity<?> getAllDishesFromCuisine(@PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            List<Dish> dishList = merchantService.getAllDishesFromACuisine(cuisineName, emailId);
+//            return ResponseEntity.ok(dishList);
+//        } catch (MerchantNotFoundException | CuisineNotFoundException | DishNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @PutMapping("/merchant/updateDish/{cuisineName}")
+//    public ResponseEntity<?> updateDish(@PathVariable String cuisineName, @RequestBody Dish updatedDish, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            Dish dishToBeUpdated = merchantService.updateDish(cuisineName, updatedDish, emailId);
+//            return new ResponseEntity<>(dishToBeUpdated, HttpStatus.OK);
+//        } catch (CuisineNotFoundException | DishNotFoundException | MerchantNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @DeleteMapping("/merchant/deleteDishFromCuisine/{cuisineName}/{dishName}")
+//    public ResponseEntity<?> deleteDishFromCuisine(@PathVariable String cuisineName, @PathVariable String dishName, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            boolean deleteDish = merchantService.deleteDishFromCuisine(cuisineName, dishName, emailId);
+//            return new ResponseEntity<>(deleteDish, HttpStatus.ACCEPTED);
+//        } catch (MerchantNotFoundException | CuisineNotFoundException | DishNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @DeleteMapping("/merchant/deleteCuisine/{cuisineName}")
+//    public ResponseEntity<?> deleteCuisine(@PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            boolean deleteOneCuisine = merchantService.deleteCuisine(cuisineName, emailId);
+//            return new ResponseEntity<>(deleteOneCuisine, HttpStatus.ACCEPTED);
+//        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
 }

@@ -48,7 +48,28 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public Restaurant addCuisines(Cuisine cuisine, String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineAlreadyExistsException {
+        // Check if the merchant exists
+        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
+        if (merchant == null) {
+            throw new MerchantNotFoundException("Merchant not found with ID: " + merchantId);
+        }
 
+        // Check if the restaurant exists
+        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantName);
+        if (restaurant == null) {
+            throw new RestaurantNotFoundException("Restaurant not found with name: " + restaurantName);
+        }
+
+        // Check if the cuisine already exists in the restaurant
+        if (restaurant.get().getCuisines().contains(cuisine)) {
+            throw new CuisineAlreadyExistsException("Cuisine already exists in the restaurant.");
+        }
+
+        // Add the cuisine to the restaurant
+        Restaurant restaurant1 = restaurantRepository.findById(merchantId).get();
+        restaurant1.getCuisines().add(cuisine);
+
+        return restaurant1;
     }
 //    // Helper method to find a merchant by ID
 //    private Merchant findMerchantById(String merchantId) {

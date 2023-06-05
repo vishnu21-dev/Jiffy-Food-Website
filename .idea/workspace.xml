@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="implemented method update cuisine">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Modifications made in the service layer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
     </list>
@@ -64,23 +63,7 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthenticationServiceTest.testloginfailed">
-    <configuration name="AuthenticationRepositoryTest.saveUserOrMerchant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UserAuthenticationService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niit.bej.userauthenticationservice.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.repository.AuthenticationRepositoryTest" />
-      <option name="METHOD_NAME" value="saveUserOrMerchant" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.MerchantServiceApplication">
     <configuration name="AuthenticationServiceTest.testForSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UserAuthenticationService" />
       <extension name="coverage">
@@ -159,6 +142,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="EurekaServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaserver.EurekaServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MerchantServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="MerchantService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.merchantservice.MerchantServiceApplication" />
@@ -182,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.EurekaServerApplication" />
         <item itemvalue="JUnit.AuthenticationServiceTest.testloginfailed" />
         <item itemvalue="JUnit.AuthenticationServiceTest.testForSaveUserFailure" />
         <item itemvalue="JUnit.AuthenticationServiceTest.testloginSuccess" />
         <item itemvalue="JUnit.AuthenticationServiceTest.testForSaveUser" />
-        <item itemvalue="JUnit.AuthenticationRepositoryTest.saveUserOrMerchant" />
       </list>
     </recent_temporary>
   </component>
@@ -489,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685939955030</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Modifications made in the service layer">
+      <created>1685946176324</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1685946176324</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="domain class User is created" />
     <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
@@ -533,7 +535,8 @@
     <MESSAGE value="authentication service test is done" />
     <MESSAGE value="implemented add cuisine method in service implementation class of merchant service" />
     <MESSAGE value="implemented method update cuisine" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented method update cuisine" />
+    <MESSAGE value="Modifications made in the service layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifications made in the service layer" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

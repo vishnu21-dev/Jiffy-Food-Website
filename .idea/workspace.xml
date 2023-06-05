@@ -7,6 +7,8 @@
     <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="changes made in MerchantServiceImpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Cuisine.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Cuisine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -506,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685948592091</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="changes made in MerchantServiceImpl">
+      <created>1685950917227</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685950917227</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

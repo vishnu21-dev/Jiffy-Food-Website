@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 import java.util.List;
 import java.util.Objects;
 
+
 public class Cuisine {
     @MongoId
     private String name;

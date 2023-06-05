@@ -16,19 +16,19 @@ public interface MerchantService {
 
     Cuisine addDishesToCuisine(Dish dish, String merchantId, String cuisineName) throws MerchantNotFoundException, CuisineNotFoundException, DishAlreadyExistsException;
 
-    List<Cuisine> getAllCuisines(String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
+    List<Cuisine> getAllCuisines(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineNotFoundException;
 
     List<Dish> getAllDishes() throws DishNotFoundException;
 
     List<Dish> getAllDishesFromACuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException;
-//
-//    Dish updateDish(String cuisineName, Dish updatedDish, String merchantId) throws CuisineNotFoundException, DishNotFoundException, MerchantNotFoundException;
-//
-//    boolean deleteDishFromCuisine(String cuisineName, String dishName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException;
-//
-//    boolean deleteCuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
-//
-//    boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
+
+    Dish updateDish(String cuisineName, Dish updatedDish, String merchantId) throws CuisineNotFoundException, DishNotFoundException, MerchantNotFoundException;
+
+    boolean deleteDishFromCuisine(String cuisineName, String dishName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException;
+
+//    boolean deleteCuisine(String restaurantName, String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
+
+    boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
 //
 //Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
 

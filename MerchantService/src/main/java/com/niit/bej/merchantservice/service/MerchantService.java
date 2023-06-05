@@ -1,6 +1,7 @@
 package com.niit.bej.merchantservice.service;
 
 import com.niit.bej.merchantservice.domain.Cuisine;
+import com.niit.bej.merchantservice.domain.Dish;
 import com.niit.bej.merchantservice.domain.Merchant;
 import com.niit.bej.merchantservice.domain.Restaurant;
 import com.niit.bej.merchantservice.exception.*;
@@ -12,13 +13,14 @@ public interface MerchantService {
     Restaurant addCuisines(Cuisine cuisine, String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineAlreadyExistsException;
 
     Cuisine updateCuisine(String restaurantName, String cuisineName, String updatedCuisineName) throws RestaurantNotFoundException, CuisineNotFoundException;
-    // Check if the restaurant exists
+
+    Cuisine addDishesToCuisine(Dish dish, String merchantId, String cuisineName) throws MerchantNotFoundException, CuisineNotFoundException, DishAlreadyExistsException;
+
 
 //    List<Cuisine> getAllCuisines(String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
 //
 //    Cuisine updateCuisine(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
 //
-//    Cuisine addDishesToCuisine(Dish dish, String merchantId, String cuisineName) throws MerchantNotFoundException, CuisineNotFoundException, DishAlreadyExistsException;
 //
 //    List<Dish> getAllDishes() throws DishNotFoundException;
 //

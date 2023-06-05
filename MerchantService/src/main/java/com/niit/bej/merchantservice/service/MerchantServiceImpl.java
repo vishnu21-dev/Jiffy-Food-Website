@@ -284,13 +284,7 @@ public class MerchantServiceImpl implements MerchantService {
 //            merchant.setLocation(updatedMerchant.getLocation());
 //            merchant.setRestaurantName(updatedMerchant.getRestaurantName());
 //
-//            List<Cuisine> updatedCuisines = updatedMerchant.getCuisines();
-//            if (updatedCuisines != null) {
-//                merchant.getCuisines().clear(); // Clear existing cuisines
 //
-//                for (Cuisine updatedCuisine : updatedCuisines) {
-//                    Cuisine existingCuisine = new Cuisine();
-//                    existingCuisine.setName(updatedCuisine.getName());
 //
 //
 //                    List<Dish> updatedDishes = updatedCuisine.getDishes();

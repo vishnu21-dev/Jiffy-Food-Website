@@ -8,11 +8,13 @@ public class Restaurant {
     private String name;
     private String imageUrl;
     private List<Cuisine> cuisines;
+    private String location;
 
-    public Restaurant(String name, String imageUrl, List<Cuisine> cuisines) {
+    public Restaurant(String name, String imageUrl, List<Cuisine> cuisines, String location) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.cuisines = cuisines;
+        this.location = location;
     }
 
     public Restaurant() {
@@ -42,17 +44,25 @@ public class Restaurant {
         this.cuisines = cuisines;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Restaurant that = (Restaurant) o;
-        return Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(cuisines, that.cuisines);
+        return Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(cuisines, that.cuisines) && Objects.equals(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, imageUrl, cuisines);
+        return Objects.hash(name, imageUrl, cuisines, location);
     }
 
     @Override
@@ -61,6 +71,7 @@ public class Restaurant {
                 "name='" + name + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", cuisines=" + cuisines +
+                ", location='" + location + '\'' +
                 '}';
     }
 }

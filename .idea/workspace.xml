@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Merchant class is modified">
-      <change afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/repository/RestaurantRepository.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="RestaurantRepository is created">
+      <change afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/exception/RestaurantNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.niit.bej.merchantservice.exception" />
       <recent name="com.niit.bej.merchantservice.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -204,7 +205,7 @@
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1685605347117" duration="10031000" />
-      <workItem from="1685679949597" duration="6380000" />
+      <workItem from="1685679949597" duration="12475000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -514,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685616671036</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="RestaurantRepository is created">
+      <created>1685690407629</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685690407629</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Attributes are added to User" />
     <MESSAGE value="Address class is created and attributes are added" />
     <MESSAGE value="Order class is created" />
     <MESSAGE value="Restaurant.java is created" />
@@ -558,7 +565,8 @@
     <MESSAGE value="Attributes are modified" />
     <MESSAGE value="Methods are created" />
     <MESSAGE value="Merchant class is modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merchant class is modified" />
+    <MESSAGE value="RestaurantRepository is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="RestaurantRepository is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

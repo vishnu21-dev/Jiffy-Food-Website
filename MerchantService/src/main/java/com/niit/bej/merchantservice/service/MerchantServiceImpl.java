@@ -6,26 +6,29 @@ import com.niit.bej.merchantservice.domain.Restaurant;
 import com.niit.bej.merchantservice.exception.CuisineAlreadyExistsException;
 import com.niit.bej.merchantservice.exception.MerchantAlreadyExistsException;
 import com.niit.bej.merchantservice.exception.MerchantNotFoundException;
+import com.niit.bej.merchantservice.exception.RestaurantNotFoundException;
 import com.niit.bej.merchantservice.proxy.MerchantProxy;
 import com.niit.bej.merchantservice.repository.DishRepository;
 import com.niit.bej.merchantservice.repository.MerchantRepository;
+import com.niit.bej.merchantservice.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 public class MerchantServiceImpl implements MerchantService {
 
     private final MerchantRepository merchantRepository;
+    private final RestaurantRepository restaurantRepository;
     private final DishRepository dishRepository;
     private final MerchantProxy merchantProxy;
 
 
     @Autowired
-    public MerchantServiceImpl(MerchantRepository merchantRepository, DishRepository dishRepository, MerchantProxy merchantProxy) {
+    public MerchantServiceImpl(MerchantRepository merchantRepository, RestaurantRepository restaurantRepository, DishRepository dishRepository, MerchantProxy merchantProxy) {
         this.merchantRepository = merchantRepository;
+        this.restaurantRepository = restaurantRepository;
         this.dishRepository = dishRepository;
 
         this.merchantProxy = merchantProxy;
@@ -44,24 +47,9 @@ public class MerchantServiceImpl implements MerchantService {
 
 
     @Override
-    public Restaurant addCuisines(List<Cuisine> cuisines, Restaurant restaurantName, String merchantId) throws MerchantNotFoundException, CuisineAlreadyExistsException {
-        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-        if (merchant.isEmpty()) {
-            throw new MerchantNotFoundException("Merchant not found with ID: " + merchantId);
-        }
-//        if (restaurantName.getCuisines().contains(cuisines)) {
-//            throw new CuisineAlreadyExistsException("Cuisine already exists for the restaurant");
-//        }
-        for (Cuisine cuisine : cuisines) {
-            // Check if the cuisine already exists in the restaurant
-            if (restaurantName.getCuisines().isEmpty()) {
-                throw new CuisineAlreadyExistsException("Cuisine '" + cuisine.getName() + "' already exists for the restaurant.");
-            }
-            restaurantName.setCuisines(cuisines);
-        }
-        return restaurantName;
-    }
+    public Restaurant addCuisines(Cuisine cuisine, String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineAlreadyExistsException {
 
+    }
 //    // Helper method to find a merchant by ID
 //    private Merchant findMerchantById(String merchantId) {
 //        // Implementation to find and return the merchant object based on the merchantId

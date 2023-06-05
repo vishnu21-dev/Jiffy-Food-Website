@@ -13,8 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/merchantZomato")
 public class MerchantController {
@@ -37,10 +35,10 @@ public class MerchantController {
     }
 
     @PostMapping("/merchant/addCuisines/{restaurantName}")
-    public ResponseEntity<?> addCuisines(@RequestBody List<Cuisine> cuisines, @PathVariable Restaurant restaurantName, HttpServletRequest httpServletRequest) {
+    public ResponseEntity<?> addCuisines(@RequestBody Cuisine cuisine, @PathVariable String restaurantName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            Restaurant updatedMerchant = merchantService.addCuisines(cuisines, restaurantName, emailId);
+            Restaurant updatedMerchant = merchantService.addCuisines(cuisine, restaurantName, emailId);
             return new ResponseEntity<>(updatedMerchant, HttpStatus.OK);
         } catch (MerchantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);

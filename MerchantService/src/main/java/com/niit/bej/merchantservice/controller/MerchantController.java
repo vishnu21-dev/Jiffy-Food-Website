@@ -38,8 +38,8 @@ public class MerchantController {
     public ResponseEntity<?> addCuisines(@RequestBody Cuisine cuisine, @PathVariable String restaurantName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            Restaurant updatedMerchant = merchantService.addCuisines(cuisine, restaurantName, emailId);
-            return new ResponseEntity<>(updatedMerchant, HttpStatus.OK);
+            Restaurant cuisineAddedToRestaurant = merchantService.addCuisines(cuisine, restaurantName, emailId);
+            return new ResponseEntity<>(cuisineAddedToRestaurant, HttpStatus.OK);
         } catch (MerchantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (CuisineAlreadyExistsException e) {

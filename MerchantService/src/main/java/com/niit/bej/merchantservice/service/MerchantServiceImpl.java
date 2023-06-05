@@ -3,10 +3,7 @@ package com.niit.bej.merchantservice.service;
 import com.niit.bej.merchantservice.domain.Cuisine;
 import com.niit.bej.merchantservice.domain.Merchant;
 import com.niit.bej.merchantservice.domain.Restaurant;
-import com.niit.bej.merchantservice.exception.CuisineAlreadyExistsException;
-import com.niit.bej.merchantservice.exception.MerchantAlreadyExistsException;
-import com.niit.bej.merchantservice.exception.MerchantNotFoundException;
-import com.niit.bej.merchantservice.exception.RestaurantNotFoundException;
+import com.niit.bej.merchantservice.exception.*;
 import com.niit.bej.merchantservice.proxy.MerchantProxy;
 import com.niit.bej.merchantservice.repository.DishRepository;
 import com.niit.bej.merchantservice.repository.MerchantRepository;
@@ -71,6 +68,35 @@ public class MerchantServiceImpl implements MerchantService {
 
         return restaurant1;
     }
+
+    @Override
+    public Cuisine updateCuisine(String restaurantName, String cuisineName, String updatedCuisineName) throws RestaurantNotFoundException, CuisineNotFoundException {
+        // Check if the restaurant exists
+        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantName);
+        if (restaurant == null) {
+            throw new RestaurantNotFoundException("Restaurant not found with name: " + restaurantName);
+        }
+
+        // Find the cuisine to update
+        Restaurant restaurant1 = restaurantRepository.findById(restaurantName).get();
+        Cuisine cuisineToUpdate = null;
+        for (Cuisine cuisine : restaurant1.getCuisines()) {
+            if (cuisine.getName().equals(cuisineName)) {
+                cuisineToUpdate = cuisine;
+                break;
+            }
+        }
+
+        // Check if the cuisine exists in the restaurant
+        if (cuisineToUpdate == null) {
+            throw new CuisineNotFoundException("Cuisine not found in the restaurant.");
+        }
+
+        // Update the cuisine name
+        cuisineToUpdate.setName(updatedCuisineName);
+        return cuisineToUpdate;
+    }
+
 //    // Helper method to find a merchant by ID
 //    private Merchant findMerchantById(String merchantId) {
 //        // Implementation to find and return the merchant object based on the merchantId

@@ -3,15 +3,15 @@ package com.niit.bej.merchantservice.controller;
 import com.niit.bej.merchantservice.domain.Cuisine;
 import com.niit.bej.merchantservice.domain.Merchant;
 import com.niit.bej.merchantservice.domain.Restaurant;
-import com.niit.bej.merchantservice.exception.CuisineAlreadyExistsException;
-import com.niit.bej.merchantservice.exception.MerchantAlreadyExistsException;
-import com.niit.bej.merchantservice.exception.MerchantNotFoundException;
+import com.niit.bej.merchantservice.exception.*;
 import com.niit.bej.merchantservice.service.MerchantService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/merchantZomato")
@@ -44,19 +44,21 @@ public class MerchantController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (CuisineAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
+        } catch (RestaurantNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
-//    @GetMapping("/merchant/getAllCuisines")
-//    public ResponseEntity<?> getAllCuisines(HttpServletRequest httpServletRequest) {
-//        String emailId = httpServletRequest.getAttribute("emailId").toString();
-//        try {
-//            List<Cuisine> cuisineList = merchantService.getAllCuisines(emailId);
-//            return new ResponseEntity<>(cuisineList, HttpStatus.OK);
-//        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
-//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-//        }
-//    }
+    @GetMapping("/merchant/getAllCuisines")
+    public ResponseEntity<?> getAllCuisines(HttpServletRequest httpServletRequest) {
+        String emailId = httpServletRequest.getAttribute("emailId").toString();
+        try {
+            List<Cuisine> cuisineList = merchantService.getAllCuisines(emailId);
+            return new ResponseEntity<>(cuisineList, HttpStatus.OK);
+        } catch (MerchantNotFoundException | CuisineNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
 //
 //    @PutMapping("/merchant/updateCuisine")
 //    public ResponseEntity<?> updateCuisine(@RequestBody Cuisine cuisine, HttpServletRequest httpServletRequest) {
@@ -135,4 +137,15 @@ public class MerchantController {
 //            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 //        }
 //    }
+
+    @GetMapping("/getAllRestaurants")
+    public ResponseEntity<?> getAllRestaurants() {
+        try {
+            List<Restaurant> allRestaurants = merchantService.getAllRestaurants();
+            return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
+        } catch (RestaurantNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+
+    }
 }

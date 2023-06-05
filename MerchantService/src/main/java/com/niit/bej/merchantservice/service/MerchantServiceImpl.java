@@ -47,79 +47,66 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public Restaurant addCuisines(Cuisine cuisine, String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineAlreadyExistsException {
-        // Check if the merchant exists
         Optional<Merchant> merchant = merchantRepository.findById(merchantId);
         if (merchant == null) {
             throw new MerchantNotFoundException("Merchant not found with ID: " + merchantId);
         }
 
-        // Check if the restaurant exists
         Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantName);
         if (restaurant == null) {
             throw new RestaurantNotFoundException("Restaurant not found with name: " + restaurantName);
         }
 
-        // Check if the cuisine already exists in the restaurant
         if (restaurant.get().getCuisines().contains(cuisine)) {
             throw new CuisineAlreadyExistsException("Cuisine already exists in the restaurant.");
         }
 
-        // Add the cuisine to the restaurant
         Restaurant restaurant1 = restaurantRepository.findById(merchantId).get();
         restaurant1.getCuisines().add(cuisine);
-
         return restaurant1;
     }
 
-    @Override
-    public Cuisine updateCuisine(String restaurantName, String cuisineName, String updatedCuisineName) throws RestaurantNotFoundException, CuisineNotFoundException {
-        // Check if the restaurant exists
-        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantName);
-        if (restaurant == null) {
-            throw new RestaurantNotFoundException("Restaurant not found with name");
-        }
-
-        // Find the cuisine to update
-        Restaurant restaurant1 = restaurantRepository.findById(restaurantName).get();
-        Cuisine cuisineToUpdate = null;
-        for (Cuisine cuisine : restaurant1.getCuisines()) {
-            if (cuisine.getName().equals(cuisineName)) {
-                cuisineToUpdate = cuisine;
-                break;
-            }
-        }
-
-        // Check if the cuisine exists in the restaurant
-        if (cuisineToUpdate == null) {
-            throw new CuisineNotFoundException("Cuisine not found in the restaurant.");
-        }
-
-        // Update the cuisine name
-        cuisineToUpdate.setName(updatedCuisineName);
-        return cuisineToUpdate;
-    }
-
-//    // Helper method to find a merchant by ID
-//    private Merchant findMerchantById(String merchantId) {
-//        // Implementation to find and return the merchant object based on the merchantId
-//        // You can replace this with your own logic or call a service/repository
-//        // Example:
-//        // return merchantService.findMerchantById(merchantId);
+//    @Override
+//    public Cuisine updateCuisine(String restaurantName, String cuisineName, String updatedCuisineName) throws RestaurantNotFoundException, CuisineNotFoundException {
 //        return null;
 //    }
-//
-//
+
 //    @Override
-//    public List<Cuisine> getAllCuisines(String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
-//        Optional<Merchant> existingMerchant = merchantRepository.findById(merchantId);
-//        List<Cuisine> existingMerchantCuisineList = existingMerchant.get().getCuisines();
-//        if (existingMerchantCuisineList == null) {
-//            throw new CuisineNotFoundException("Cuisine does not exists!");
-//        } else {
-//            return existingMerchantCuisineList;
-//        }
-//    }
+//    public Cuisine updateCuisine(String restaurantName, String cuisineName, String updatedCuisineName) throws RestaurantNotFoundException, CuisineNotFoundException {
 //
+//        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantName);
+//        if (restaurant == null) {
+//            throw new RestaurantNotFoundException("Restaurant not found with name");
+//        }
+//
+//        Restaurant restaurant1 = restaurantRepository.findById(restaurantName).get();
+//        Cuisine cuisineToUpdate = null;
+//        for (Cuisine cuisine : restaurant1.getCuisines()) {
+//            if (cuisine.getName().equals(cuisineName)) {
+//                cuisineToUpdate = cuisine;
+//                break;
+//            }
+//        }
+//        if (cuisineToUpdate == null) {
+//            throw new CuisineNotFoundException("Cuisine not found in the restaurant.");
+//        }
+//        cuisineToUpdate.setName(updatedCuisineName);
+//        return cuisineToUpdate;
+//    }
+
+
+    @Override
+    public List<Cuisine> getAllCuisines(String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
+        Optional<Merchant> existingMerchant = merchantRepository.findById(merchantId);
+        List<Cuisine> existingMerchantCuisineList = existingMerchant.get().getRestaurantName().getCuisines();
+        if (existingMerchantCuisineList == null) {
+            throw new CuisineNotFoundException("Cuisine does not exists!");
+        } else {
+            return existingMerchantCuisineList;
+        }
+    }
+
+    //
 //    @Override
 //    public Cuisine updateCuisine(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
 //        if (merchantRepository.findById(merchantId).isPresent()) {
@@ -161,14 +148,22 @@ public Cuisine addDishesToCuisine(Dish dish, String merchantId, String cuisineNa
         throw new MerchantNotFoundException("Merchant not found!");
     }
 }
-//
-//    @Override
-//    public List<Dish> getAllDishes() throws DishNotFoundException {
-//        List<Dish> listOfDishes = dishRepository.findAll();
-//        if (listOfDishes.isEmpty()) {
-//            throw new DishNotFoundException("There is not dish present");
-//        } else return listOfDishes;
-//    }
+
+    @Override
+    public List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException {
+        List<Restaurant> listOfRestaurants = restaurantRepository.findAll();
+        if (listOfRestaurants.isEmpty()) {
+            throw new RestaurantNotFoundException("Restaurant does not exists!");
+        } else return listOfRestaurants;
+    }
+
+    @Override
+    public List<Dish> getAllDishes() throws DishNotFoundException {
+        List<Dish> listOfDishes = dishRepository.findAll();
+        if (listOfDishes.isEmpty()) {
+            throw new DishNotFoundException("There is not dish present");
+        } else return listOfDishes;
+    }
 //
 //    @Override
 //    public List<Dish> getAllDishesFromACuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException {

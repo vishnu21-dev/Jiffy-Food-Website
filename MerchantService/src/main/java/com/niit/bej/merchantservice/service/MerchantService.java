@@ -18,7 +18,7 @@ public interface MerchantService {
 
     List<Cuisine> getAllCuisines(String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
 
-//    Cuisine updateCuisine(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
+   Cuisine updateCuisine(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
 
     List<Dish> getAllDishes() throws DishNotFoundException;
 //

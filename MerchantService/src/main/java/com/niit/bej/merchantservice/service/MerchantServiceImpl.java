@@ -70,6 +70,7 @@ public class MerchantServiceImpl implements MerchantService {
         return merchantRepository.save(merchant1).getRestaurantName();
     }
 
+
     @Override
     public List<Cuisine> getAllCuisines(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineNotFoundException {
         Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
@@ -79,6 +80,24 @@ public class MerchantServiceImpl implements MerchantService {
         } else {
             return existingCuisineList;
         }
+    }
+
+
+    @Override
+    public Cuisine updateCuisine(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
+        if (merchantRepository.findById(merchantId).isPresent()) {
+            Merchant merchant = merchantRepository.findById(merchantId).get();
+            List<Cuisine> cuisineList = merchant.getRestaurantName().getCuisines();
+            Optional<Cuisine> existingCuisine = cuisineList.stream().filter(c -> c.getName().equals(cuisine.getName())).findFirst();
+            if (existingCuisine.isPresent()) {
+                Cuisine updatedCuisine = existingCuisine.get();
+                updatedCuisine.setName(cuisine.getName());
+                merchantRepository.save(merchant);
+                return updatedCuisine;
+            } else {
+                throw new CuisineNotFoundException("Cuisine not found.");
+            }
+        } else throw new MerchantNotFoundException("Merchant Not found ");
     }
 
     @Override
@@ -93,15 +112,15 @@ public class MerchantServiceImpl implements MerchantService {
             if (requestedCuisine.isPresent()) {
                 Cuisine cuisine = requestedCuisine.get();
                 List<Dish> existingDishes = cuisine.getDishes();
-            existingDishes.add(dish);
-            cuisine.setDishes(existingDishes);
-            merchantRepository.save(merchant.get());
+                existingDishes.add(dish);
+                cuisine.setDishes(existingDishes);
+                merchantRepository.save(merchant.get());
 
-            return cuisine;
+                return cuisine;
+            } else {
+                throw new CuisineNotFoundException("Cuisine not found!");
+            }
         } else {
-            throw new CuisineNotFoundException("Cuisine not found!");
-        }
-    } else {
         throw new MerchantNotFoundException("Merchant not found!");
     }
     }
@@ -231,49 +250,44 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
-// @Override
-//  public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
-//    Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
-//    if (merchantOptional.isPresent()) {
-//        Merchant merchant = merchantOptional.get();
-//        merchant.setEmailId(updatedMerchant.getEmailId());
-//        merchant.setPassword(updatedMerchant.getPassword());
-//        merchant.setLocation(updatedMerchant.getLocation());
-//        merchant.setRestaurantName(updatedMerchant.getRestaurantName());
-//
-//        List<Cuisine> updatedCuisines = updatedMerchant.getCuisines();
-//        if (updatedCuisines != null) {
-//            merchant.getCuisines().clear(); // Clear existing cuisines
-//
-//            for (Cuisine updatedCuisine : updatedCuisines) {
-//                Cuisine existingCuisine = new Cuisine();
-//                existingCuisine.setName(updatedCuisine.getName());
+//    @Override
+//    public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
+//        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+//        if (merchantOptional.isPresent()) {
+//            Merchant merchant = merchantOptional.get();
+//            merchant.setEmailId(updatedMerchant.getEmailId());
+//            merchant.setPassword(updatedMerchant.getPassword());
+//            merchant.setLocation(updatedMerchant.getLocation());
+//            merchant.setRestaurantName(updatedMerchant.getRestaurantName());
 //
 //
-//                List<Dish> updatedDishes = updatedCuisine.getDishes();
-//                if (updatedDishes != null) {
-//                    existingCuisine.getDishes().clear(); // Clear existing dishes
 //
-//                    for (Dish updatedDish : updatedDishes) {
-//                        Dish existingDish = new Dish();
-//                        existingDish.setName(updatedDish.getName());
-//                        existingDish.setCategory(updatedDish.getCategory());
-//                        existingDish.setPrice(updatedDish.getPrice());
-//                        existingDish.setImageUrl(updatedDish.getImageUrl());
-//                        existingDish.setDescription(updatedDish.getDescription());
 //
-//                        existingCuisine.getDishes().add(existingDish);
+//                    List<Dish> updatedDishes = updatedCuisine.getDishes();
+//                    if (updatedDishes != null) {
+//                        existingCuisine.getDishes().clear(); // Clear existing dishes
+//
+//                        for (Dish updatedDish : updatedDishes) {
+//                            Dish existingDish = new Dish();
+//                            existingDish.setName(updatedDish.getName());
+//                            existingDish.setCategory(updatedDish.getCategory());
+//                            existingDish.setPrice(updatedDish.getPrice());
+//                            existingDish.setImageUrl(updatedDish.getImageUrl());
+//                            existingDish.setDescription(updatedDish.getDescription());
+//
+//                            existingCuisine.getDishes().add(existingDish);
+//                        }
 //                    }
+//
+//                    merchant.getCuisines().add(existingCuisine);
 //                }
-//
-//                merchant.getCuisines().add(existingCuisine);
 //            }
-//        }
 //
-//        return merchantRepository.save(merchant);
-//    } else {
-//        throw new MerchantNotFoundException("Merchant not found.");
+//            return merchantRepository.save(merchant);
+//        } else {
+//            throw new MerchantNotFoundException("Merchant not found.");
+//        }
 //    }
-//}
+
 
 }

@@ -18,8 +18,11 @@ public interface MerchantService {
 
     List<Cuisine> getAllCuisines(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineNotFoundException;
 
+    Cuisine updateCuisine(Cuisine cuisine, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException;
+
     List<Dish> getAllDishes() throws DishNotFoundException;
 
+    //
     List<Dish> getAllDishesFromACuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException;
 
     Dish updateDish(String cuisineName, Dish updatedDish, String merchantId) throws CuisineNotFoundException, DishNotFoundException, MerchantNotFoundException;
@@ -30,7 +33,7 @@ public interface MerchantService {
 
     boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
 //
-//Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
+//    Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
 
     List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
 }

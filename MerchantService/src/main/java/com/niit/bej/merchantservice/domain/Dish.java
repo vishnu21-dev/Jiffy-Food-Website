@@ -10,6 +10,7 @@ public class Dish {
     private String name;
     private String cuisine;
     private int price;
+
     private String category;
     private String imageUrl;
     private String description;

@@ -12,7 +12,6 @@ import com.niit.bej.merchantservice.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,78 +34,50 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
+    public Merchant getMerchant(String merchantId) throws MerchantNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantRepository.findById(merchantId).get();
+            return merchant;
+
+        } else throw new MerchantNotFoundException("Merchant not found");
+    }
+
+    @Override
     public Merchant register(Merchant merchant) throws MerchantAlreadyExistsException {
         Optional<Merchant> merchantOptional = merchantRepository.findById(merchant.getEmailId());
         if (merchantOptional.isEmpty()) {
             merchantProxy.registerProxy(merchant);
             return merchantRepository.save(merchant);
 
-        } else
-            throw new MerchantAlreadyExistsException(" Merchant already exists ");
+        } else throw new MerchantAlreadyExistsException(" Merchant already exists ");
     }
 
 
     @Override
-    public Restaurant addCuisines(Cuisine cuisine, String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineAlreadyExistsException {
-        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-        Merchant merchant1 = merchant.get();
-        if (merchant.isEmpty()) {
-            throw new MerchantNotFoundException("merchant not found");
-        }
-        List<Cuisine> list = new ArrayList<>();
-        List<Cuisine> existingCuisines = merchant1.getRestaurantName().getCuisines();
-        if (existingCuisines != null) {
-            for (Cuisine cl : existingCuisines) {
-                if (cl.getName().equals(cuisine.getName())) {
-                    throw new CuisineAlreadyExistsException("cuisine already exists ");
-                }
-            }
-            merchant1.getRestaurantName().getCuisines().add(cuisine);
-        } else {
-            list.add(cuisine);
-            merchant1.getRestaurantName().setCuisines(list);
-
-        }
-        return merchantRepository.save(merchant1).getRestaurantName();
-    }
-
-
-    @Override
-    public List<Cuisine> getAllCuisines(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, CuisineNotFoundException {
+    public Restaurant addDishes(Dish dish, String merchantId) throws MerchantNotFoundException, DishAlreadyExistsException {
         Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
         if (merchantOptional.isPresent()) {
             Merchant merchant = merchantRepository.findById(merchantId).get();
-            List<Cuisine> cuisineList = merchant.getRestaurantName().getCuisines();
-            return cuisineList;
-
-        } else throw new MerchantNotFoundException("Merchant not found.");
-    }
-
-    @Override
-    public Cuisine addDishesToCuisine(Dish dish, String merchantId, String cuisineName) throws MerchantNotFoundException, CuisineNotFoundException, DishAlreadyExistsException {
-        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
-        if (merchantOptional.isPresent()) {
-            Merchant merchant = merchantRepository.findById(merchantId).get();
-            List<Cuisine> merchantCuisines = merchant.getRestaurantName().getCuisines();
-            Optional<Cuisine> requestedCuisine = merchantCuisines.stream()
-                    .filter(cuisine -> cuisine.getName().equalsIgnoreCase(cuisineName))
-                    .findFirst();
-
-            if (requestedCuisine.isPresent()) {
-                Cuisine cuisine = requestedCuisine.get();
-                List<Dish> existingDishes = cuisine.getDishes();
-                existingDishes.add(dish);
-                cuisine.setDishes(existingDishes);
-                merchantRepository.save(merchant);
-
-                return cuisine;
+            Restaurant restaurant = merchant.getRestaurantName();
+            List<Dish> dishList = restaurant.getDishes();
+            Optional<Dish> dish1 = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(dish.getName())).findAny();
+            if (dish1.isPresent()) {
+                throw new DishAlreadyExistsException("Dish already present");
             } else {
-                throw new CuisineNotFoundException("Cuisine not found!");
+                dishList.add(dish);
+                restaurant.setDishes(dishList);
+                merchantRepository.save(merchant);
+                return restaurant;
+
             }
+
+
         } else {
             throw new MerchantNotFoundException("Merchant not found!");
         }
     }
+
 
     @Override
     public List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException {
@@ -125,18 +96,15 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public List<Dish> getAllDishesFromACuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException {
-        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-        if (merchant.isPresent()) {
-            List<Cuisine> merchantCuisine = merchant.get().getRestaurantName().getCuisines();
-            Optional<Cuisine> requestedCuisine = merchantCuisine.stream().filter(p -> p.getName().equalsIgnoreCase(cuisineName)).findFirst();
-            if (requestedCuisine.isPresent()) {
-                List<Dish> dishList = requestedCuisine.get().getDishes();
-                if (dishList.isEmpty()) {
-                    throw new DishNotFoundException("dish does not exist!");
-                } else return dishList;
-            } else throw new CuisineNotFoundException("Cuisine not found");
+    public List<Dish> getAllDishesFromRestaurant(String RestaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, DishNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantRepository.findById(merchantId).get();
+            List<Dish> merchantDish = merchant.getRestaurantName().getDishes();
 
+            if (merchantDish.isEmpty()) {
+                throw new DishNotFoundException("dish does not exist!");
+            } else return merchantDish;
         } else throw new MerchantNotFoundException("Merchant does not exist!");
     }
 
@@ -145,16 +113,12 @@ public class MerchantServiceImpl implements MerchantService {
         Optional<Merchant> merchant = merchantRepository.findById(merchantId);
         if (merchant.isPresent()) {
             List<Cuisine> merchantCuisines = merchant.get().getRestaurantName().getCuisines();
-            Optional<Cuisine> requestedCuisine = merchantCuisines.stream()
-                    .filter(cuisine -> cuisine.getName().equalsIgnoreCase(cuisineName))
-                    .findFirst();
+            Optional<Cuisine> requestedCuisine = merchantCuisines.stream().filter(cuisine -> cuisine.getName().equalsIgnoreCase(cuisineName)).findFirst();
 
             if (requestedCuisine.isPresent()) {
                 Cuisine cuisine = requestedCuisine.get();
                 List<Dish> dishes = cuisine.getDishes();
-                Optional<Dish> dishToUpdate = dishes.stream()
-                        .filter(dish -> dish.getName().equals(updatedDish.getName()))
-                        .findFirst();
+                Optional<Dish> dishToUpdate = dishes.stream().filter(dish -> dish.getName().equals(updatedDish.getName())).findFirst();
 
                 if (dishToUpdate.isPresent()) {
                     Dish existingDish = dishToUpdate.get();
@@ -176,50 +140,8 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
-    @Override
-    public boolean deleteDishFromCuisine(String cuisineName, String dishName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException, DishNotFoundException {
-        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-        if (merchant.isPresent()) {
-            List<Cuisine> merchantCuisines = merchant.get().getRestaurantName().getCuisines();
-            Optional<Cuisine> requestedCuisine = merchantCuisines.stream()
-                    .filter(cuisine -> cuisine.getName().equalsIgnoreCase(cuisineName))
-                    .findFirst();
 
-            if (requestedCuisine.isPresent()) {
-                List<Dish> dishes = requestedCuisine.get().getDishes();
-                Optional<Dish> dishToDelete = dishes.stream()
-                        .filter(dish -> dish.getName().equalsIgnoreCase(dishName))
-                        .findFirst();
 
-                if (dishToDelete.isPresent()) {
-                    dishes.remove(dishToDelete.get());
-                    merchantRepository.save(merchant.get());
-                    return true;
-                } else {
-                    throw new DishNotFoundException("Dish not found in the given cuisine.");
-                }
-            } else {
-                throw new CuisineNotFoundException("Cuisine not found.");
-            }
-        } else {
-            throw new MerchantNotFoundException("Merchant not found.");
-        }
-    }
-
-    @Override
-    public boolean deleteCuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
-        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-        if (merchant.isPresent()) {
-            List<Cuisine> merchantCuisine = merchant.get().getRestaurantName().getCuisines();
-            Optional<Cuisine> requestedCuisine = merchantCuisine.stream().filter(p -> p.getName().equalsIgnoreCase(cuisineName)).findFirst();
-            if (requestedCuisine.isPresent()) {
-                Merchant merchant1 = merchantRepository.findById(merchantId).get();
-                merchantCuisine.remove(requestedCuisine);
-                merchant1.getRestaurantName().setCuisines(merchantCuisine);
-                return true;
-            } else throw new CuisineNotFoundException("Cuisine not found!");
-        } else throw new MerchantNotFoundException("Merchant does not exist!");
-    }
 
     @Override
     public boolean deleteMerchant(String merchantId) throws MerchantNotFoundException {

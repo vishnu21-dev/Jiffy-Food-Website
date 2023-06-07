@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected the methods in MerchantServiceImpl">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="All methods are modified in MerchantController">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
     </list>
@@ -35,27 +39,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Final Project NIIT/FoodieApp/EurekaServer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;8871943bbeb65f8801b101a96c88c988&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "D:/Pre-Project NIIT/SpotifyWebApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "187788028a20017392ce8510f8419602",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
@@ -198,13 +202,7 @@
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1686112481400" duration="3281000" />
-    </task>
-    <task id="LOCAL-00002" summary="AuthentificationService module is created">
-      <created>1684826314848</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684826314848</updated>
+      <workItem from="1686160613493" duration="5100000" />
     </task>
     <task id="LOCAL-00003" summary="Dependencies are added">
       <created>1684826689881</created>
@@ -542,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686136597347</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="All methods are modified in MerchantController">
+      <created>1686143504442</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1686143504443</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dish is created" />
     <MESSAGE value="Attributes are added" />
     <MESSAGE value="Constructors are added" />
     <MESSAGE value="Getters &amp; Setters are added" />
@@ -586,7 +590,8 @@
     <MESSAGE value="corrected updatemerchant method in serviceimpl" />
     <MESSAGE value="corrected getAllCsuine methods" />
     <MESSAGE value="corrected the methods in MerchantServiceImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected the methods in MerchantServiceImpl" />
+    <MESSAGE value="All methods are modified in MerchantController" />
+    <option name="LAST_COMMIT_MESSAGE" value="All methods are modified in MerchantController" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -34,6 +34,17 @@ public class MerchantController {
         }
     }
 
+    @GetMapping("/merchant/getMerchant")
+    public ResponseEntity<?> getMerchant(HttpServletRequest httpServletRequest) {
+        String emailId = httpServletRequest.getAttribute("emailId").toString();
+        try {
+            Merchant existingMerchant = merchantService.getMerchant(emailId);
+            return new ResponseEntity<>(existingMerchant, HttpStatus.OK);
+        } catch (MerchantNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @PostMapping("/merchant/addDishes/{restaurantName}")
     public ResponseEntity<?> addDishes(@RequestBody Dish dish, @PathVariable String restaurantName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
@@ -68,17 +79,27 @@ public class MerchantController {
         }
     }
 
-    @PutMapping("/merchant/updateDish/{restaurantName}")
-    public ResponseEntity<?> updateDish(@RequestBody Dish dish, @PathVariable String restaurantName, HttpServletRequest httpServletRequest) {
+//    @PutMapping("/merchant/updateDish/{restaurantName}")
+//    public ResponseEntity<?> updateDish(@RequestBody Dish dish, @PathVariable String restaurantName, HttpServletRequest httpServletRequest) {
+//        String emailId = httpServletRequest.getAttribute("emailId").toString();
+//        try {
+//            Dish dishToBeUpdated = merchantService.updateDish(dish, restaurantName, emailId);
+//            return new ResponseEntity<>(dishToBeUpdated, HttpStatus.OK);
+//        } catch (RestaurantNotFoundException | DishNotFoundException | MerchantNotFoundException e) {
+//            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+
+    @DeleteMapping("/merchant/deleteDish/{restaurantName}/{dishName}")
+    public ResponseEntity<?> deleteDishFromRestaurant(@PathVariable String restaurantName, @PathVariable String dishName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            Dish dishToBeUpdated = merchantService.updateDish(dish, restaurantName, emailId);
-            return new ResponseEntity<>(dishToBeUpdated, HttpStatus.OK);
-        } catch (RestaurantNotFoundException | DishNotFoundException | MerchantNotFoundException e) {
+            boolean dishFromRestaurant = merchantService.deleteDishFromRestaurant(restaurantName, dishName, emailId);
+            return new ResponseEntity<>(dishFromRestaurant, HttpStatus.ACCEPTED);
+        } catch (MerchantNotFoundException | DishNotFoundException | RestaurantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
-
 
     @GetMapping("/getAllRestaurants")
     public ResponseEntity<?> getAllRestaurants() {

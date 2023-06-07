@@ -3,6 +3,7 @@ package com.niit.bej.merchantservice.domain;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import java.util.List;
 import java.util.Objects;
 
 @Document
@@ -12,13 +13,13 @@ public class Merchant {
     private String emailId;
     private String password;
     private String location;
-    private Restaurant restaurantName;
+    private List<Restaurant> restaurants;
 
-    public Merchant(String emailId, String password, String location, Restaurant restaurantName) {
+    public Merchant(String emailId, String password, String location, List<Restaurant> restaurants) {
         this.emailId = emailId;
         this.password = password;
         this.location = location;
-        this.restaurantName = restaurantName;
+        this.restaurants = restaurants;
     }
 
     public Merchant() {
@@ -48,12 +49,12 @@ public class Merchant {
         this.location = location;
     }
 
-    public Restaurant getRestaurantName() {
-        return restaurantName;
+    public List<Restaurant> getRestaurants() {
+        return restaurants;
     }
 
-    public void setRestaurantName(Restaurant restaurantName) {
-        this.restaurantName = restaurantName;
+    public void setRestaurants(List<Restaurant> restaurants) {
+        this.restaurants = restaurants;
     }
 
     @Override
@@ -61,12 +62,12 @@ public class Merchant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Merchant merchant = (Merchant) o;
-        return Objects.equals(emailId, merchant.emailId) && Objects.equals(password, merchant.password) && Objects.equals(location, merchant.location) && Objects.equals(restaurantName, merchant.restaurantName);
+        return Objects.equals(emailId, merchant.emailId) && Objects.equals(password, merchant.password) && Objects.equals(location, merchant.location) && Objects.equals(restaurants, merchant.restaurants);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emailId, password, location, restaurantName);
+        return Objects.hash(emailId, password, location, restaurants);
     }
 
     @Override
@@ -75,7 +76,7 @@ public class Merchant {
                 "emailId='" + emailId + '\'' +
                 ", password='" + password + '\'' +
                 ", location='" + location + '\'' +
-                ", restaurantName=" + restaurantName +
+                ", restaurants=" + restaurants +
                 '}';
     }
 }

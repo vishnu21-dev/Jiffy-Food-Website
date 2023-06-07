@@ -8,18 +8,19 @@ import com.niit.bej.merchantservice.exception.*;
 import java.util.List;
 
 public interface MerchantService {
-    Merchant getMerchant(String merchantId) throws MerchantNotFoundException;
+
 
     Merchant register(Merchant merchant) throws MerchantAlreadyExistsException;
 
+    Merchant getMerchant(String merchantId) throws MerchantNotFoundException;
 
-    Restaurant addDishes(Dish dish, String merchantId) throws MerchantNotFoundException, DishAlreadyExistsException;
+    Restaurant addDishes(Dish dish, String restaurantName, String merchantId) throws MerchantNotFoundException, DishAlreadyExistsException, RestaurantNotFoundException;
 
     List<Dish> getAllDishes() throws DishNotFoundException;
 
     List<Dish> getAllDishesFromRestaurant(String restaurantName, String merchantId) throws MerchantNotFoundException, DishNotFoundException, RestaurantNotFoundException;
 
-    Dish updateDish(Dish updatedDish, String merchantId) throws CuisineNotFoundException, DishNotFoundException, MerchantNotFoundException;
+    Dish updateDish(Dish dish, String restaurantName, String merchantId) throws RestaurantNotFoundException, DishNotFoundException, MerchantNotFoundException;
 
 
     boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;

@@ -61,7 +61,6 @@ public class MerchantController {
         }
     }
 
-
     @PostMapping("/merchant/addDishesToCuisine/{cuisineName}")
     public ResponseEntity<?> addDishesToCuisine(@RequestBody Dish dish, @PathVariable String cuisineName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();

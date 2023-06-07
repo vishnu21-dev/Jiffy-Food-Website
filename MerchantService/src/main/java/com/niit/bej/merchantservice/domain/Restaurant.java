@@ -1,19 +1,24 @@
 package com.niit.bej.merchantservice.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
+
 import java.util.List;
 import java.util.Objects;
 
+@Document
 public class Restaurant {
 
+    @MongoId
     private String name;
     private String imageUrl;
-    private List<Cuisine> cuisines;
+    private List<Dish> dishes;
     private String location;
 
-    public Restaurant(String name, String imageUrl, List<Cuisine> cuisines, String location) {
+    public Restaurant(String name, String imageUrl, List<Dish> dishes, String location) {
         this.name = name;
         this.imageUrl = imageUrl;
-        this.cuisines = cuisines;
+        this.dishes = dishes;
         this.location = location;
     }
 
@@ -36,12 +41,12 @@ public class Restaurant {
         this.imageUrl = imageUrl;
     }
 
-    public List<Cuisine> getCuisines() {
-        return cuisines;
+    public List<Dish> getDishes() {
+        return dishes;
     }
 
-    public void setCuisines(List<Cuisine> cuisines) {
-        this.cuisines = cuisines;
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 
     public String getLocation() {
@@ -57,12 +62,12 @@ public class Restaurant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Restaurant that = (Restaurant) o;
-        return Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(cuisines, that.cuisines) && Objects.equals(location, that.location);
+        return Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, imageUrl, cuisines, location);
+        return Objects.hash(name, imageUrl, dishes, location);
     }
 
     @Override
@@ -70,7 +75,7 @@ public class Restaurant {
         return "Restaurant{" +
                 "name='" + name + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
-                ", cuisines=" + cuisines +
+                ", dishes=" + dishes +
                 ", location='" + location + '\'' +
                 '}';
     }

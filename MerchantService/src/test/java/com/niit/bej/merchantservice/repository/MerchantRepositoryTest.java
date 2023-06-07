@@ -32,9 +32,9 @@ public class MerchantRepositoryTest {
 
     @BeforeEach
     public void setUp() {
-        dish = new Dish("pizza", 200, "main course", "jsfhdskfdsf", "dsafadf");
+        dish = new Dish("pizza", "FastFood", 200, "main course", "jsfhdskfdsf", "dsafadf");
         cuisine = new Cuisine("Italian", Collections.singletonList(dish));
-        restaurant = new Restaurant("Piccola", "ikdnkkd", Collections.singletonList(cuisine), "Hyderabad");
+        restaurant = new Restaurant("Piccola", "ikdnkkd", Collections.singletonList(dish), "Hyderabad");
         merchant = new Merchant();
 
     }

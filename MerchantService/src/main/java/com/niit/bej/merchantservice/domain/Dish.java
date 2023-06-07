@@ -8,13 +8,15 @@ import java.util.Objects;
 public class Dish {
 
     private String name;
+    private String cuisine;
     private int price;
     private String category;
     private String imageUrl;
     private String description;
 
-    public Dish(String name, int price, String category, String imageUrl, String description) {
+    public Dish(String name, String cuisine, int price, String category, String imageUrl, String description) {
         this.name = name;
+        this.cuisine = cuisine;
         this.price = price;
         this.category = category;
         this.imageUrl = imageUrl;
@@ -30,6 +32,14 @@ public class Dish {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
     }
 
     public int getPrice() {
@@ -69,18 +79,19 @@ public class Dish {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dish dish = (Dish) o;
-        return price == dish.price && Objects.equals(name, dish.name) && Objects.equals(category, dish.category) && Objects.equals(imageUrl, dish.imageUrl) && Objects.equals(description, dish.description);
+        return price == dish.price && Objects.equals(name, dish.name) && Objects.equals(cuisine, dish.cuisine) && Objects.equals(category, dish.category) && Objects.equals(imageUrl, dish.imageUrl) && Objects.equals(description, dish.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price, category, imageUrl, description);
+        return Objects.hash(name, cuisine, price, category, imageUrl, description);
     }
 
     @Override
     public String toString() {
         return "Dish{" +
                 "name='" + name + '\'' +
+                ", cuisine='" + cuisine + '\'' +
                 ", price=" + price +
                 ", category='" + category + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +

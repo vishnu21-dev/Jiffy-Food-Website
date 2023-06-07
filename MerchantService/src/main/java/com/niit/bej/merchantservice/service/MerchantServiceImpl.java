@@ -250,44 +250,21 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
-//    @Override
-//    public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
-//        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
-//        if (merchantOptional.isPresent()) {
-//            Merchant merchant = merchantOptional.get();
-//            merchant.setEmailId(updatedMerchant.getEmailId());
-//            merchant.setPassword(updatedMerchant.getPassword());
-//            merchant.setLocation(updatedMerchant.getLocation());
-//            merchant.setRestaurantName(updatedMerchant.getRestaurantName());
-//
-//
-//
-//
-//                    List<Dish> updatedDishes = updatedCuisine.getDishes();
-//                    if (updatedDishes != null) {
-//                        existingCuisine.getDishes().clear(); // Clear existing dishes
-//
-//                        for (Dish updatedDish : updatedDishes) {
-//                            Dish existingDish = new Dish();
-//                            existingDish.setName(updatedDish.getName());
-//                            existingDish.setCategory(updatedDish.getCategory());
-//                            existingDish.setPrice(updatedDish.getPrice());
-//                            existingDish.setImageUrl(updatedDish.getImageUrl());
-//                            existingDish.setDescription(updatedDish.getDescription());
-//
-//                            existingCuisine.getDishes().add(existingDish);
-//                        }
-//                    }
-//
-//                    merchant.getCuisines().add(existingCuisine);
-//                }
-//            }
-//
-//            return merchantRepository.save(merchant);
-//        } else {
-//            throw new MerchantNotFoundException("Merchant not found.");
-//        }
-//    }
+    @Override
+    public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantOptional.get();
+            merchant.setEmailId(updatedMerchant.getEmailId());
+            merchant.setPassword(updatedMerchant.getPassword());
+            merchant.setLocation(updatedMerchant.getLocation());
+            merchant.setRestaurantName(updatedMerchant.getRestaurantName());
+
+
+            return merchantRepository.save(merchant);
+        } else throw new MerchantNotFoundException("Merchant not found.");
+
+    }
 
 
 }

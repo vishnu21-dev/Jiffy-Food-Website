@@ -223,20 +223,20 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
-//    @Override
-//    public boolean deleteCuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
-//        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-//        if (merchant.isPresent()) {
-//            List<Cuisine> merchantCuisine = merchant.get().getRestaurantName().getCuisines();
-//            Optional<Cuisine> requestedCuisine = merchantCuisine.stream().filter(p -> p.getName().equalsIgnoreCase(cuisineName)).findFirst();
-//            if (requestedCuisine.isPresent()) {
-//                Merchant merchant1 = merchantRepository.findById(merchantId).get();
-//                merchantCuisine.remove(requestedCuisine);
-//                merchant1.setCuisines(merchantCuisine);
-//                return true;
-//            } else throw new CuisineNotFoundException("Cuisine not found!");
-//        } else throw new MerchantNotFoundException("Merchant does not exist!");
-//    }
+    @Override
+    public boolean deleteCuisine(String cuisineName, String merchantId) throws MerchantNotFoundException, CuisineNotFoundException {
+        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
+        if (merchant.isPresent()) {
+            List<Cuisine> merchantCuisine = merchant.get().getRestaurantName().getCuisines();
+            Optional<Cuisine> requestedCuisine = merchantCuisine.stream().filter(p -> p.getName().equalsIgnoreCase(cuisineName)).findFirst();
+            if (requestedCuisine.isPresent()) {
+                Merchant merchant1 = merchantRepository.findById(merchantId).get();
+                merchantCuisine.remove(requestedCuisine);
+                merchant1.getRestaurantName().setCuisines(merchantCuisine);
+                return true;
+            } else throw new CuisineNotFoundException("Cuisine not found!");
+        } else throw new MerchantNotFoundException("Merchant does not exist!");
+    }
 
     @Override
     public boolean deleteMerchant(String merchantId) throws MerchantNotFoundException {

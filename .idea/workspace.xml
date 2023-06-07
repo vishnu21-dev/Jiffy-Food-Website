@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected updatemerchant method in serviceimpl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected getAllCsuine methods">
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +196,7 @@
       <workItem from="1684825683834" duration="13106000" />
       <workItem from="1684861750776" duration="4094000" />
       <workItem from="1684906025174" duration="8451000" />
-      <workItem from="1686112481400" duration="2247000" />
+      <workItem from="1686112481400" duration="3281000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1684825967283</created>
@@ -534,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686112104591</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="corrected getAllCsuine methods">
+      <created>1686119969842</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1686119969842</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Cuisine is created" />
     <MESSAGE value="Dish is created" />
     <MESSAGE value="Attributes are added" />
     <MESSAGE value="Constructors are added" />
@@ -578,7 +584,8 @@
     <MESSAGE value="added getalldishfromcusine" />
     <MESSAGE value="corrected the methods in MerchantServiceImpl" />
     <MESSAGE value="corrected updatemerchant method in serviceimpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected updatemerchant method in serviceimpl" />
+    <MESSAGE value="corrected getAllCsuine methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected getAllCsuine methods" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

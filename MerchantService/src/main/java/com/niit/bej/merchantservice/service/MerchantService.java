@@ -9,6 +9,7 @@ import com.niit.bej.merchantservice.exception.*;
 import java.util.List;
 
 public interface MerchantService {
+Merchant getMerchant(String merchantId) throws MerchantNotFoundException;
 
     Merchant register(Merchant merchant) throws MerchantAlreadyExistsException;
 

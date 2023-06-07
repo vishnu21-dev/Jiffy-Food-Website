@@ -1,6 +1,5 @@
 package com.niit.bej.merchantservice.service;
 
-import com.niit.bej.merchantservice.domain.Cuisine;
 import com.niit.bej.merchantservice.domain.Dish;
 import com.niit.bej.merchantservice.domain.Merchant;
 import com.niit.bej.merchantservice.domain.Restaurant;
@@ -109,38 +108,30 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public Dish updateDish(String cuisineName, Dish updatedDish, String merchantId) throws CuisineNotFoundException, DishNotFoundException, MerchantNotFoundException {
-        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
-        if (merchant.isPresent()) {
-            List<Cuisine> merchantCuisines = merchant.get().getRestaurantName().getCuisines();
-            Optional<Cuisine> requestedCuisine = merchantCuisines.stream().filter(cuisine -> cuisine.getName().equalsIgnoreCase(cuisineName)).findFirst();
+    public Dish updateDish(Dish updatedDish, String merchantId) throws CuisineNotFoundException, DishNotFoundException, MerchantNotFoundException {
+        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+        if (merchantOptional.isPresent()) {
+            Merchant merchant = merchantOptional.get();
+            Restaurant restaurant = merchant.getRestaurantName();
 
-            if (requestedCuisine.isPresent()) {
-                Cuisine cuisine = requestedCuisine.get();
-                List<Dish> dishes = cuisine.getDishes();
-                Optional<Dish> dishToUpdate = dishes.stream().filter(dish -> dish.getName().equals(updatedDish.getName())).findFirst();
-
-                if (dishToUpdate.isPresent()) {
-                    Dish existingDish = dishToUpdate.get();
-                    existingDish.setName(updatedDish.getName());
-                    existingDish.setCategory(updatedDish.getCategory());
-                    existingDish.setPrice(updatedDish.getPrice());
-                    existingDish.setImageUrl(updatedDish.getImageUrl());
-                    existingDish.setDescription(updatedDish.getDescription());
-                    merchantRepository.save(merchant.get());
-                    return existingDish;
-                } else {
-                    throw new DishNotFoundException("Dish not found in the given cuisine.");
-                }
+            Optional<Dish> dishToUpdate = restaurant.getDishes().stream().filter(f -> f.getName().equalsIgnoreCase(updatedDish.getName())).findAny();
+            if (dishToUpdate.isPresent()) {
+                Dish existingDish = dishToUpdate.get();
+                existingDish.setName(updatedDish.getName());
+                existingDish.setCuisine(updatedDish.getCuisine());
+                existingDish.setCategory(updatedDish.getCategory());
+                existingDish.setPrice(updatedDish.getPrice());
+                existingDish.setImageUrl(updatedDish.getImageUrl());
+                existingDish.setDescription(updatedDish.getDescription());
+                merchantRepository.save(merchant);
+                return existingDish;
             } else {
-                throw new CuisineNotFoundException("Cuisine not found.");
+                throw new DishNotFoundException("Dish not found in the given cuisine.");
             }
         } else {
             throw new MerchantNotFoundException("Merchant not found.");
         }
     }
-
-
 
 
     @Override

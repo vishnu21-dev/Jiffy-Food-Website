@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +30,6 @@ public class MerchantServiceImpl implements MerchantService {
         this.merchantRepository = merchantRepository;
         this.restaurantRepository = restaurantRepository;
         this.dishRepository = dishRepository;
-
         this.merchantProxy = merchantProxy;
     }
 
@@ -70,7 +69,7 @@ public class MerchantServiceImpl implements MerchantService {
                     oneRestaurant = restaurantList.stream().filter(item -> item.getName().equalsIgnoreCase(restaurantName)).findAny().get();
                     List<Dish> dishList = oneRestaurant.getDishes();
                     if (dishList == null) {
-                        oneRestaurant.setDishes(Arrays.asList(dish));
+                        oneRestaurant.setDishes(Collections.singletonList(dish));
                         merchantRepository.save(loggedInMerchant);
                         return oneRestaurant;
                     } else {
@@ -172,7 +171,6 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
-
     @Override
     public List<Dish> getAllDishes() throws DishNotFoundException {
         List<Dish> listOfDishes = dishRepository.findAll();
@@ -180,7 +178,6 @@ public class MerchantServiceImpl implements MerchantService {
             throw new DishNotFoundException("There is no dish present");
         } else return listOfDishes;
     }
-
 
     @Override
     public List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException {
@@ -238,7 +235,6 @@ public class MerchantServiceImpl implements MerchantService {
             list.add(restaurant);
             merchant1.setRestaurants(list);
         }
-
 
         return merchantRepository.save(merchant1);
     }

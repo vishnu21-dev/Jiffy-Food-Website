@@ -70,12 +70,12 @@ public class MerchantController {
         }
     }
 
-    @GetMapping("/merchant/getAllDishesFromCuisine/{restaurantName}")
+    @GetMapping("/merchant/getAllDishesFromRestaurant/{restaurantName}")
     public ResponseEntity<?> getAllDishesFromRestaurant(@PathVariable String restaurantName, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
             List<Dish> dishList = merchantService.getAllDishesFromRestaurant(restaurantName, emailId);
-            return ResponseEntity.ok(dishList);
+            return new ResponseEntity<>(dishList, HttpStatus.OK);
         } catch (MerchantNotFoundException | RestaurantNotFoundException | DishNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }

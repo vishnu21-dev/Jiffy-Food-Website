@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Methods added to MerchantServiceImpl &amp; MerchantController">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="add restaurant method done in controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/repository/MerchantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/repository/MerchantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserAuthenticationService/src/main/java/com/niit/bej/userauthenticationservice/controller/UserAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthenticationService/src/main/java/com/niit/bej/userauthenticationservice/controller/UserAuthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Pre-Project NIIT/SpotifyWebApp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Final Project NIIT/FoodieApp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,67 +67,79 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserAuthenticationServiceApplication">
-    <configuration name="AuthenticationServiceTest.testForSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UserAuthenticationService" />
+  <component name="RunManager" selected="Application.UserAuthenticationServiceApplication">
+    <configuration name="ApiGateWayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.ApiGateWay.ApiGateWayApplication" />
+      <module name="ApiGateWay" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.Service.*" />
+          <option name="PATTERN" value="com.niit.bej.ApiGateWay.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.niit.bej.userauthenticationservice.Service" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.Service.AuthenticationServiceTest" />
-      <option name="METHOD_NAME" value="testForSaveUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationServiceTest.testForSaveUserFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UserAuthenticationService" />
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.eurekaserver.EurekaServerApplication" />
+      <module name="EurekaServer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.Service.*" />
+          <option name="PATTERN" value="com.example.eurekaserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.niit.bej.userauthenticationservice.Service" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.Service.AuthenticationServiceTest" />
-      <option name="METHOD_NAME" value="testForSaveUserFailure" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationServiceTest.testloginSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UserAuthenticationService" />
+    <configuration name="MerchantServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.merchantservice.MerchantServiceApplication" />
+      <module name="MerchantService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.Service.*" />
+          <option name="PATTERN" value="com.niit.bej.merchantservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.niit.bej.userauthenticationservice.Service" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.Service.AuthenticationServiceTest" />
-      <option name="METHOD_NAME" value="testloginSuccess" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationServiceTest.testloginfailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UserAuthenticationService" />
+    <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.orderservice.OrderServiceApplication" />
+      <module name="OrderService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.Service.*" />
+          <option name="PATTERN" value="com.niit.bej.orderservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.niit.bej.userauthenticationservice.Service" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.Service.AuthenticationServiceTest" />
-      <option name="METHOD_NAME" value="testloginfailed" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.bej.userauthenticationservice.UserAuthenticationServiceApplication" />
+      <module name="UserAuthenticationService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.bej.userauthenticationservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,19 +153,6 @@
     <configuration name="AuthentificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AuthentificationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.authentificationservice.AuthentificationServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="EurekaServer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaserver.EurekaServerApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.eurekaserver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaServerApplication" />
-        <item itemvalue="JUnit.AuthenticationServiceTest.testloginfailed" />
-        <item itemvalue="JUnit.AuthenticationServiceTest.testForSaveUserFailure" />
-        <item itemvalue="JUnit.AuthenticationServiceTest.testloginSuccess" />
-        <item itemvalue="JUnit.AuthenticationServiceTest.testForSaveUser" />
+        <item itemvalue="Application.UserAuthenticationServiceApplication" />
+        <item itemvalue="Application.OrderServiceApplication" />
+        <item itemvalue="Application.MerchantServiceApplication" />
+        <item itemvalue="Application.ApiGateWayApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -200,27 +201,7 @@
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1686112481400" duration="3281000" />
       <workItem from="1686160613493" duration="5238000" />
-    </task>
-    <task id="LOCAL-00004" summary="UserAuthenticationServiceApplication is created">
-      <created>1684827139977</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684827139977</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Dependencies are added">
-      <created>1684827351585</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684827351585</updated>
-    </task>
-    <task id="LOCAL-00006" summary="MerchantServiceApplication is created">
-      <created>1684827615386</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684827615386</updated>
+      <workItem from="1686197618002" duration="567000" />
     </task>
     <task id="LOCAL-00007" summary="EurekaServerApplication is created">
       <created>1684827930702</created>
@@ -544,7 +525,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686165808713</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Methods are updated in MerchantServiceImpl">
+      <created>1686198004114</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1686198004115</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Methods are updated in MerchantServiceImpl">
+      <created>1686198144446</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1686198144446</updated>
+    </task>
+    <task id="LOCAL-00055" summary="add restaurant methood done in serviceimpl class">
+      <created>1686204822699</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1686204822699</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,8 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Constructors are added" />
-    <MESSAGE value="Getters &amp; Setters are added" />
     <MESSAGE value="equals &amp; hashCode are added" />
     <MESSAGE value="toString method is added" />
     <MESSAGE value="User class is modified" />
@@ -588,7 +588,9 @@
     <MESSAGE value="corrected the methods in MerchantServiceImpl" />
     <MESSAGE value="All methods are modified in MerchantController" />
     <MESSAGE value="Methods added to MerchantServiceImpl &amp; MerchantController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Methods added to MerchantServiceImpl &amp; MerchantController" />
+    <MESSAGE value="Methods are updated in MerchantServiceImpl" />
+    <MESSAGE value="add restaurant methood done in serviceimpl class" />
+    <option name="LAST_COMMIT_MESSAGE" value="add restaurant methood done in serviceimpl class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

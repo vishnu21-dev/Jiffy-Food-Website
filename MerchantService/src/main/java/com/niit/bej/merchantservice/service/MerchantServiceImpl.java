@@ -186,8 +186,6 @@ public class MerchantServiceImpl implements MerchantService {
             throw new RestaurantNotFoundException("Restaurant does not exists!");
         } else return listOfRestaurants;
     }
-
-
     @Override
     public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
         Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
@@ -216,7 +214,7 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException {
+    public Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException, RestaurantNotFoundException {
         Optional<Merchant> merchant = merchantRepository.findById(merchantId);
         Merchant merchant1 = merchant.get();
         if (merchant.isEmpty()) {
@@ -235,8 +233,14 @@ public class MerchantServiceImpl implements MerchantService {
             list.add(restaurant);
             merchant1.setRestaurants(list);
         }
-
+        Restaurant savedRestaurant = restaurantRepository.save(restaurant);
+        //if not saved throw ex
+        if (savedRestaurant == null) {
+            throw new RestaurantNotFoundException("restaurant not found");
+        }
         return merchantRepository.save(merchant1);
+
+
     }
 
     @Override

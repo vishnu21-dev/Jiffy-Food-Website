@@ -80,7 +80,6 @@ public class OrderServiceImpl implements OrderService {
                 List<Dish> dishList = order.getDishes();
                 if (dishList.isEmpty()) {
                     throw new DishNotFoundException("The Requested Dish is not present");
-
                 } else
                     requestedDish = dishList.stream().filter(f -> f.getName().equals(dishName)).findAny();
                 if (requestedDish.isPresent()) {
@@ -89,11 +88,8 @@ public class OrderServiceImpl implements OrderService {
                     orderRepository.save(user);
                     return true;
                 }
-
-
             } else throw new OrderNotFoundException("The Requested Order is not Present");
         }
-
         throw new UserNotFoundException("User Not Found");
     }
 
@@ -110,7 +106,6 @@ public class OrderServiceImpl implements OrderService {
                 return true;
             }
             throw new OrderNotFoundException("The requested order is not Found");
-
         }
         throw new UserNotFoundException("User Not found");
     }

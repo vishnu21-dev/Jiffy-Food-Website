@@ -200,7 +200,7 @@ public class MerchantServiceImpl implements MerchantService {
             merchant.setRestaurants(updatedMerchant.getRestaurants());
 
             return merchantRepository.save(merchant);
-        } else throw new MerchantNotFoundException("Merchant not found.");
+        } else throw new MerchantNotFoundException("Merchant not found!");
 
     }
 
@@ -212,7 +212,7 @@ public class MerchantServiceImpl implements MerchantService {
             merchantRepository.delete(merchant);
             return true;
         } else {
-            throw new MerchantNotFoundException("Merchant not found.");
+            throw new MerchantNotFoundException("Merchant not found!");
         }
     }
 

@@ -113,6 +113,32 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
+    //    @Override
+//    public Dish updateDish(Dish dish, String restaurantName, String merchantId) throws RestaurantNotFoundException, DishNotFoundException, MerchantNotFoundException {
+//        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
+//        if (merchantOptional.isPresent()) {
+//            Merchant merchant = merchantOptional.get();
+//         List<Restaurant> restaurant = merchant.getRestaurants();
+//
+//            Optional<Dish> dishToUpdate = restaurant.getDishes().stream().filter(f -> f.getName().equalsIgnoreCase(dish.getName())).findAny();
+//            if (dishToUpdate.isPresent()) {
+//                Dish existingDish = dishToUpdate.get();
+//                existingDish.setName(dish.getName());
+//                existingDish.setCuisine(dish.getCuisine());
+//                existingDish.setCategory(dish.getCategory());
+//                existingDish.setPrice(dish.getPrice());
+//                existingDish.setImageUrl(dish.getImageUrl());
+//                existingDish.setDescription(dish.getDescription());
+//                merchantRepository.save(merchant);
+//                return existingDish;
+//            } else {
+//                throw new DishNotFoundException("Dish not found in the given cuisine.");
+//            }
+//        } else {
+//            throw new MerchantNotFoundException("Merchant not found.");
+//        }
+//    }
+
     @Override
     public boolean deleteDishFromRestaurant(String restaurantName, String dishName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, DishNotFoundException {
         Merchant loggedInMerchant;
@@ -144,31 +170,13 @@ public class MerchantServiceImpl implements MerchantService {
         }
     }
 
+
     @Override
-    public Dish updateDish(Dish dish, String restaurantName, String merchantId) throws RestaurantNotFoundException, DishNotFoundException, MerchantNotFoundException {
-        Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
-        if (merchantOptional.isPresent()) {
-            Merchant merchant = merchantOptional.get();
-            List<Restaurant> restaurantList = merchant.getRestaurants();
-            Optional<Restaurant> restaurant = restaurantList.stream().filter(f -> f.getName().equalsIgnoreCase(restaurantName)).findAny();
-            List<Dish> dishes = restaurant.get().getDishes();
-            Optional<Dish> dishToUpdate = dishes.stream().filter(f -> f.getName().equalsIgnoreCase(dish.getName())).findAny();
-            if (dishToUpdate.isPresent()) {
-                Dish existingDish = dishToUpdate.get();
-                existingDish.setName(dish.getName());
-                existingDish.setCuisine(dish.getCuisine());
-                existingDish.setCategory(dish.getCategory());
-                existingDish.setPrice(dish.getPrice());
-                existingDish.setImageUrl(dish.getImageUrl());
-                existingDish.setDescription(dish.getDescription());
-                merchantRepository.save(merchant);
-                return existingDish;
-            } else {
-                throw new DishNotFoundException("Dish not found in the given cuisine.");
-            }
-        } else {
-            throw new MerchantNotFoundException("Merchant not found.");
-        }
+    public List<Dish> getAllDishes() throws DishNotFoundException {
+        List<Dish> listOfDishes = dishRepository.findAll();
+        if (listOfDishes.isEmpty()) {
+            throw new DishNotFoundException("There is no dish present");
+        } else return listOfDishes;
     }
 
 
@@ -178,14 +186,6 @@ public class MerchantServiceImpl implements MerchantService {
         if (listOfRestaurants.isEmpty()) {
             throw new RestaurantNotFoundException("Restaurant does not exists!");
         } else return listOfRestaurants;
-    }
-
-    @Override
-    public List<Dish> getAllDishes() throws DishNotFoundException {
-        List<Dish> listOfDishes = dishRepository.findAll();
-        if (listOfDishes.isEmpty()) {
-            throw new DishNotFoundException("There is no dish present");
-        } else return listOfDishes;
     }
 
 

@@ -19,6 +19,8 @@ public class MerchantController {
 
     private final MerchantService merchantService;
 
+    private ResponseEntity<?> responseEntity;
+
     @Autowired
     public MerchantController(MerchantService merchantService) {
         this.merchantService = merchantService;
@@ -111,4 +113,17 @@ public class MerchantController {
         }
 
     }
+
+    @PostMapping("/merchant/addRestaurant")
+    public ResponseEntity<?> addRestaurantToMerchant(@RequestBody Restaurant restaurant, HttpServletRequest request) throws MerchantNotFoundException, RestaurantAlreadyExistsException {
+        String emailId = request.getAttribute("emailId").toString();
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.addRestaurant(restaurant, emailId), HttpStatus.CREATED);
+
+        } catch (MerchantNotFoundException e) {
+            throw new MerchantNotFoundException("merchant not found");
+        }
+        return responseEntity;
+    }
+
 }

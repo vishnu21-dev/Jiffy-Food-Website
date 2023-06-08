@@ -32,4 +32,5 @@ public interface MerchantService {
 
     Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
 
+    List<Dish> getAllDishesBasedOnCuisine(String cuisineName, Restaurant restaurant) throws CuisineNotFoundException;
 }

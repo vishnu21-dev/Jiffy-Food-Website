@@ -239,5 +239,16 @@ public class MerchantServiceImpl implements MerchantService {
         return merchantRepository.save(merchant1);
     }
 
+    @Override
+    public List<Dish> getAllDishesBasedOnCuisine(String cuisineName, Restaurant restaurant) throws CuisineNotFoundException {
+        Restaurant restaurant1 = restaurantRepository.findById(restaurant.getName()).get();
+        List<Dish> dishList = restaurant1.getDishes();
+        List<Dish> cuisineList = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(cuisineName)).toList();
+        if (cuisineList.isEmpty()) {
+            throw new CuisineNotFoundException("The requested Cuisine not found");
+        }
+        return dishList;
+    }
+
 
 }

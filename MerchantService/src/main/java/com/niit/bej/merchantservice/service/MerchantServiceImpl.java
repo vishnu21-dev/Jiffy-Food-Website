@@ -11,6 +11,7 @@ import com.niit.bej.merchantservice.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -214,6 +215,31 @@ public class MerchantServiceImpl implements MerchantService {
         } else {
             throw new MerchantNotFoundException("Merchant not found!");
         }
+    }
+
+    @Override
+    public Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException {
+        Optional<Merchant> merchant = merchantRepository.findById(merchantId);
+        Merchant merchant1 = merchant.get();
+        if (merchant.isEmpty()) {
+            throw new MerchantNotFoundException("merchant not found");
+        }
+        List<Restaurant> list = new ArrayList<>();
+        List<Restaurant> existingRestaurants = merchant1.getRestaurants();
+        if (existingRestaurants != null) {
+            for (Restaurant rl : existingRestaurants) {
+                if (rl.getName().equalsIgnoreCase(restaurant.getName())) {
+                    throw new RestaurantAlreadyExistsException("restaurant already exists");
+                }
+            }
+            merchant1.getRestaurants().add(restaurant);
+        } else {
+            list.add(restaurant);
+            merchant1.setRestaurants(list);
+        }
+
+
+        return merchantRepository.save(merchant1);
     }
 
 

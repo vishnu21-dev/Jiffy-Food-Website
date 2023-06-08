@@ -29,4 +29,7 @@ public interface MerchantService {
     Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
 
     List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
+
+    Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
+
 }

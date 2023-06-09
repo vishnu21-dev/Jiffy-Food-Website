@@ -30,10 +30,9 @@ public interface MerchantService {
 
     List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
 
-    Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException, RestaurantNotFoundException;
+    Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
 
     List<Dish> getAllDishesBasedOnCuisine(String cuisineName, Restaurant restaurant) throws CuisineNotFoundException;
 
-    List<Restaurant> getMerchantRestaurant(String merchantId) throws MerchantNotFoundException;
-
+    List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException;
 }

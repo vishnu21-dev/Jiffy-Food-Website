@@ -186,6 +186,8 @@ public class MerchantServiceImpl implements MerchantService {
             throw new RestaurantNotFoundException("Restaurant does not exists!");
         } else return listOfRestaurants;
     }
+
+
     @Override
     public Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException {
         Optional<Merchant> merchantOptional = merchantRepository.findById(merchantId);
@@ -214,7 +216,7 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException, RestaurantNotFoundException {
+    public Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException {
         Optional<Merchant> merchant = merchantRepository.findById(merchantId);
         Merchant merchant1 = merchant.get();
         if (merchant.isEmpty()) {
@@ -233,14 +235,8 @@ public class MerchantServiceImpl implements MerchantService {
             list.add(restaurant);
             merchant1.setRestaurants(list);
         }
-        Restaurant savedRestaurant = restaurantRepository.save(restaurant);
-        //if not saved throw ex
-        if (savedRestaurant == null) {
-            throw new RestaurantNotFoundException("restaurant not found");
-        }
+
         return merchantRepository.save(merchant1);
-
-
     }
 
     @Override
@@ -255,11 +251,13 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public List<Restaurant> getMerchantRestaurant(String merchantId) throws MerchantNotFoundException {
-        if (merchantRepository.findById(merchantId).isEmpty()) {
-            throw new MerchantNotFoundException("merchant not found");
-        }
-        return merchantRepository.findById(merchantId).get().getRestaurants();
+    public List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException {
+        List<Restaurant> restaurantList = restaurantRepository.findAll();
+        List<Restaurant> restaurants = restaurantList.stream().filter(f -> f.getLocation().equalsIgnoreCase(restaurantLocation)).toList();
+        if (restaurants.isEmpty()) {
+            throw new RestaurantNotFoundException("No Restaurant found on this location");
+
+        } else return restaurants;
     }
 
 

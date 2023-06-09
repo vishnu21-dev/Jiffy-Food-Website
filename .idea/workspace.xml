@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="deleteDishFromOrder method from controller is updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="deleteOrder mrthod from controller layer is updated">
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +197,6 @@
       <workItem from="1686112481400" duration="3281000" />
       <workItem from="1686160613493" duration="5238000" />
       <workItem from="1686197618002" duration="567000" />
-    </task>
-    <task id="LOCAL-00010" summary="Modules are added">
-      <created>1684828138692</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1684828138692</updated>
     </task>
     <task id="LOCAL-00011" summary="Methods are modified">
       <created>1684867112054</created>
@@ -542,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686294272247</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="deleteOrder mrthod from controller layer is updated">
+      <created>1686294866978</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1686294866978</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="User class is modified" />
     <MESSAGE value="Attributes are added to Dish class" />
     <MESSAGE value="constructors, Getters &amp; Setters are added" />
     <MESSAGE value="equals &amp; hashCode &amp; toString methods are added" />
@@ -586,7 +584,8 @@
     <MESSAGE value="add restaurant methood done in serviceimpl class" />
     <MESSAGE value="add restaurant method updated" />
     <MESSAGE value="deleteDishFromOrder method from controller is updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleteDishFromOrder method from controller is updated" />
+    <MESSAGE value="deleteOrder mrthod from controller layer is updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleteOrder mrthod from controller layer is updated" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

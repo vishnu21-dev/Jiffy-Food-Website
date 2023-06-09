@@ -260,5 +260,13 @@ public class MerchantServiceImpl implements MerchantService {
         } else return restaurants;
     }
 
+    @Override
+    public List<Restaurant> getMerchantRestaurants(String merchantId) throws MerchantNotFoundException {
+        if (merchantRepository.findById(merchantId).isEmpty()) {
+            throw new MerchantNotFoundException("merchant not found");
+        }
+        return merchantRepository.findById(merchantId).get().getRestaurants();
+    }
+
 
 }

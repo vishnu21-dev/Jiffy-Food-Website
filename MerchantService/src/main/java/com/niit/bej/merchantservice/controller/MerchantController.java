@@ -147,4 +147,15 @@ public class MerchantController {
         }
     }
 
+    @GetMapping("")
+    public ResponseEntity<?> fetchMerchantRestaurants(HttpServletRequest request) throws MerchantNotFoundException {
+        String emailId = request.getAttribute("emailId").toString();
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.getMerchantRestaurants(emailId), HttpStatus.FOUND);
+        } catch (MerchantNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        return responseEntity;
+    }
+
 }

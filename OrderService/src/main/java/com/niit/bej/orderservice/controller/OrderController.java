@@ -17,6 +17,8 @@ import java.util.List;
 public class OrderController {
 
     private final OrderService orderService;
+    private ResponseEntity<?> responseEntity;
+
 
     @Autowired
     public OrderController(OrderService orderService) {
@@ -60,10 +62,11 @@ public class OrderController {
 
     }
 
-    @DeleteMapping("/{userId}/orders/{orderId}")
-    public ResponseEntity<?> deleteOrder(@PathVariable("userId") String userId, @PathVariable("orderId") int orderId) {
+    @DeleteMapping("/user/deleteOrder/{orderId}")
+    public ResponseEntity<?> deleteOrder(@PathVariable("orderId") int orderId, HttpServletRequest request) {
+        String emailId = request.getAttribute("emailId").toString();
         try {
-            boolean deleted = orderService.deleteOrder(orderId, userId);
+            boolean deleted = orderService.deleteOrder(orderId, emailId);
             return ResponseEntity.ok(deleted);
         } catch (UserNotFoundException | OrderNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -71,17 +74,16 @@ public class OrderController {
     }
 
 
-    @DeleteMapping("/{userId}/orders/{orderId}/dishes/{dishName}")
-    public ResponseEntity<?> deleteDishFromOrder(@PathVariable("userId") String userId,
-                                                 @PathVariable("dishName") String dishName,
-                                                 @PathVariable("orderId") int orderId) {
+    @DeleteMapping("/user/deleteDishFromOrder/{orderId}/{dishName}")
+    public ResponseEntity<?> deleteDishFromOrder(HttpServletRequest request, @PathVariable String dishName, @PathVariable int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException {
+        String emailId = request.getAttribute("emailId").toString();
         try {
-            boolean deleted = orderService.deleteDishFromOrder(userId, dishName, orderId);
-            return ResponseEntity.ok(deleted);
-        } catch (UserNotFoundException | OrderNotFoundException | DishNotFoundException e) {
+            boolean dishFromOrder = orderService.deleteDishFromOrder(emailId, dishName, orderId);
+            return new ResponseEntity<>(dishFromOrder, HttpStatus.ACCEPTED);
+
+        } catch (OrderNotFoundException | UserNotFoundException | DishNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-
-
         }
+
     }
 }

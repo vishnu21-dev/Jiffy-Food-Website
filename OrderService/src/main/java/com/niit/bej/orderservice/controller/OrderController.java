@@ -62,10 +62,11 @@ public class OrderController {
 
     }
 
-    @DeleteMapping("/{userId}/orders/{orderId}")
-    public ResponseEntity<?> deleteOrder(@PathVariable("userId") String userId, @PathVariable("orderId") int orderId) {
+    @DeleteMapping("/user/deleteOrder/{orderId}")
+    public ResponseEntity<?> deleteOrder(@PathVariable("orderId") int orderId, HttpServletRequest request) {
+        String emailId = request.getAttribute("emailId").toString();
         try {
-            boolean deleted = orderService.deleteOrder(orderId, userId);
+            boolean deleted = orderService.deleteOrder(orderId, emailId);
             return ResponseEntity.ok(deleted);
         } catch (UserNotFoundException | OrderNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);

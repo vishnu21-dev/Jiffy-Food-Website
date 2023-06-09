@@ -34,4 +34,6 @@ public interface MerchantService {
 
     List<Dish> getAllDishesBasedOnCuisine(String cuisineName, Restaurant restaurant) throws CuisineNotFoundException;
 
+    List<Restaurant> getMerchantRestaurant(String merchantId) throws MerchantNotFoundException;
+
 }

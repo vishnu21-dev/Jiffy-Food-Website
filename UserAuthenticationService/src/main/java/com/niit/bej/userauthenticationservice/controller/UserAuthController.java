@@ -23,6 +23,7 @@ public class UserAuthController {
 
     private final SecurityTokenGenerator securityTokenGenerator;
 
+
     @Autowired
     public UserAuthController(UserAuthService userAuthService, SecurityTokenGenerator securityTokenGenerator) {
         this.userAuthService = userAuthService;

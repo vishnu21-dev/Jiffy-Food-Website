@@ -111,11 +111,10 @@ public class MerchantController {
         } catch (RestaurantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
-
     }
 
     @PostMapping("/merchant/addRestaurant")
-    public ResponseEntity<?> addRestaurantToMerchant(@RequestBody Restaurant restaurant, HttpServletRequest request) throws MerchantNotFoundException, RestaurantAlreadyExistsException {
+    public ResponseEntity<?> addRestaurantToMerchant(@RequestBody Restaurant restaurant, HttpServletRequest request) throws MerchantNotFoundException, RestaurantAlreadyExistsException, RestaurantNotFoundException {
         String emailId = request.getAttribute("emailId").toString();
         try {
             responseEntity = new ResponseEntity<>(merchantService.addRestaurant(restaurant, emailId), HttpStatus.CREATED);

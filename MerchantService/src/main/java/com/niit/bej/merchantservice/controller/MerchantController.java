@@ -31,8 +31,8 @@ public class MerchantController {
         try {
             Merchant registerMerchant = merchantService.register(merchant);
             return new ResponseEntity<>(registerMerchant, HttpStatus.CREATED);
-        } catch (MerchantAlreadyExistsException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
+        } catch (MerchantAlreadyExistsException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
         }
     }
 
@@ -42,8 +42,8 @@ public class MerchantController {
         try {
             Merchant existingMerchant = merchantService.getMerchant(emailId);
             return new ResponseEntity<>(existingMerchant, HttpStatus.OK);
-        } catch (MerchantNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (MerchantNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 
@@ -119,11 +119,11 @@ public class MerchantController {
         String emailId = request.getAttribute("emailId").toString();
         try {
             responseEntity = new ResponseEntity<>(merchantService.addRestaurant(restaurant, emailId), HttpStatus.CREATED);
-
-        } catch (MerchantNotFoundException e) {
-            throw new MerchantNotFoundException("merchant not found");
+            return responseEntity;
+        } catch (MerchantNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
-        return responseEntity;
+
     }
 
     @GetMapping("/merchant/getDishesBasedOnCuisine/{cuisineName}")
@@ -132,10 +132,20 @@ public class MerchantController {
         try {
             responseEntity = new ResponseEntity<>(merchantService.getAllDishesBasedOnCuisine(cuisineName, restaurant), HttpStatus.FOUND);
 
-        } catch (CuisineNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (CuisineNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
         return responseEntity;
+    }
+
+    @GetMapping("/getRestaurantBasedOnLocation/{restaurantLocation}")
+    public ResponseEntity<?> getRestaurantOnLocation(@PathVariable String restaurantLocation) {
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.getRestaurantBasedOnLocation(restaurantLocation), HttpStatus.FOUND);
+            return responseEntity;
+        } catch (RestaurantNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 
 }

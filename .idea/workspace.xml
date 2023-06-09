@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Methods added to MerchantServiceImpl &amp; MerchantController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/repository/MerchantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/repository/MerchantRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/controller/MerchantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserAuthenticationService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthenticationService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;187788028a20017392ce8510f8419602&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8871943bbeb65f8801b101a96c88c988&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -65,7 +64,7 @@
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserAuthenticationServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGateWayApplication">
     <configuration name="AuthenticationServiceTest.testForSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UserAuthenticationService" />
       <extension name="coverage">
@@ -130,6 +129,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiGateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ApiGateWay" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.ApiGateWay.ApiGateWayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="SPRING_BOOT_MAIN_CLASS" value="apiGateway.ApiGatewayApplication" />
       <method v="2">
@@ -170,6 +176,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringEmailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="SpringEmail" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.springemail.SpringEmailApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserAuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="UserAuthenticationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.userauthenticationservice.UserAuthenticationServiceApplication" />
@@ -200,6 +213,8 @@
       <workItem from="1684906025174" duration="8451000" />
       <workItem from="1686112481400" duration="3281000" />
       <workItem from="1686160613493" duration="5238000" />
+      <workItem from="1686210846426" duration="142000" />
+      <workItem from="1686211581673" duration="6037000" />
     </task>
     <task id="LOCAL-00004" summary="UserAuthenticationServiceApplication is created">
       <created>1684827139977</created>

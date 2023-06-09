@@ -250,5 +250,15 @@ public class MerchantServiceImpl implements MerchantService {
         return dishList;
     }
 
+    @Override
+    public List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException {
+        List<Restaurant> restaurantList = restaurantRepository.findAll();
+        List<Restaurant> restaurants = restaurantList.stream().filter(f -> f.getLocation().equalsIgnoreCase(restaurantLocation)).toList();
+        if (restaurants.isEmpty()) {
+            throw new RestaurantNotFoundException("No Restaurant found on this location");
+
+        } else return restaurants;
+    }
+
 
 }

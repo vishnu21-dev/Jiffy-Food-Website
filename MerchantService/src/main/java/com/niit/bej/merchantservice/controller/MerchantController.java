@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/merchantZomato")
+@RequestMapping("/merchant")
 public class MerchantController {
 
     private final MerchantService merchantService;
@@ -122,6 +122,18 @@ public class MerchantController {
 
         } catch (MerchantNotFoundException e) {
             throw new MerchantNotFoundException("merchant not found");
+        }
+        return responseEntity;
+    }
+
+    @GetMapping("/merchant/getDishesBasedOnCuisine/{cuisineName}")
+    public ResponseEntity<?> getDishes(@RequestBody Restaurant restaurant, @PathVariable String cuisineName) throws CuisineNotFoundException {
+
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.getAllDishesBasedOnCuisine(cuisineName, restaurant), HttpStatus.FOUND);
+
+        } catch (CuisineNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return responseEntity;
     }

@@ -247,7 +247,7 @@ public class MerchantServiceImpl implements MerchantService {
         if (cuisineList.isEmpty()) {
             throw new CuisineNotFoundException("The requested Cuisine not found");
         }
-        return dishList;
+        return cuisineList;
     }
 
     @Override

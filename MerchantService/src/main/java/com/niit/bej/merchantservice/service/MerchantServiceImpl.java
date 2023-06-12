@@ -255,7 +255,7 @@ public class MerchantServiceImpl implements MerchantService {
         List<Restaurant> restaurantList = restaurantRepository.findAll();
         List<Restaurant> restaurants = restaurantList.stream().filter(f -> f.getLocation().equalsIgnoreCase(restaurantLocation)).toList();
         if (restaurants.isEmpty()) {
-            throw new RestaurantNotFoundException("No Restaurant found on this location");
+            throw new RestaurantNotFoundException("No Restaurant found in this location");
 
         } else return restaurants;
     }

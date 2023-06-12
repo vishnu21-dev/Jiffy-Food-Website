@@ -11,15 +11,17 @@ public class Merchant {
 
     @MongoId
     private String emailId;
+    private String merchantName;
     private String password;
     private String location;
     private List<Restaurant> restaurants;
 
-    public Merchant(String emailId, String password, String location, List<Restaurant> restaurants) {
+    public Merchant(String emailId, String merchantName, String password, String location, List<Restaurant> restaurants) {
         this.emailId = emailId;
         this.password = password;
         this.location = location;
         this.restaurants = restaurants;
+        this.merchantName = merchantName;
     }
 
     public Merchant() {
@@ -57,6 +59,14 @@ public class Merchant {
         this.restaurants = restaurants;
     }
 
+    public String getMerchantName() {
+        return merchantName;
+    }
+
+    public void setMerchantName(String merchantName) {
+        this.merchantName = merchantName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,6 +84,7 @@ public class Merchant {
     public String toString() {
         return "Merchant{" +
                 "emailId='" + emailId + '\'' +
+                ", merchantName='" + merchantName + '\'' +
                 ", password='" + password + '\'' +
                 ", location='" + location + '\'' +
                 ", restaurants=" + restaurants +

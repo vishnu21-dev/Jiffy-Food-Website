@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/merchant")
+@RequestMapping("/merchantZomato")
 public class MerchantController {
 
     private final MerchantService merchantService;
@@ -147,7 +147,7 @@ public class MerchantController {
         }
     }
 
-    @GetMapping("")
+    @GetMapping("/merchant/fetchMerchantRestaurants/{merchantId}")
     public ResponseEntity<?> fetchMerchantRestaurants(HttpServletRequest request) throws MerchantNotFoundException {
         String emailId = request.getAttribute("emailId").toString();
         try {

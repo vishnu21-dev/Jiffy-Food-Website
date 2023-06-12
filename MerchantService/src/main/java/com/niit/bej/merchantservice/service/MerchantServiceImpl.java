@@ -267,6 +267,4 @@ public class MerchantServiceImpl implements MerchantService {
         }
         return merchantRepository.findById(merchantId).get().getRestaurants();
     }
-
-
 }

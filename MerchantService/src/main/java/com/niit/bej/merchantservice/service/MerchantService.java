@@ -32,7 +32,7 @@ public interface MerchantService {
 
     Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
 
-    List<Dish> getAllDishesBasedOnCuisine(String cuisineName, Restaurant restaurant) throws CuisineNotFoundException;
+    List<Dish> getAllDishesBasedOnCuisine(String cuisineName, String restaurantName) throws CuisineNotFoundException;
 
     List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException;
 

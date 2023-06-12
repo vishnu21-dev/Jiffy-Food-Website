@@ -125,11 +125,11 @@ public class MerchantController {
 
     }
 
-    @GetMapping("/merchant/getDishesBasedOnCuisine/{cuisineName}")
-    public ResponseEntity<?> getDishes(@RequestBody Restaurant restaurant, @PathVariable String cuisineName) throws CuisineNotFoundException {
+    @GetMapping("/merchant/getDishesBasedOnCuisine/{restaurantName}/{cuisineName}")
+    public ResponseEntity<?> getDishes(@PathVariable String restaurantName, @PathVariable String cuisineName) throws CuisineNotFoundException {
 
         try {
-            responseEntity = new ResponseEntity<>(merchantService.getAllDishesBasedOnCuisine(cuisineName, restaurant), HttpStatus.FOUND);
+            responseEntity = new ResponseEntity<>(merchantService.getAllDishesBasedOnCuisine(cuisineName, restaurantName), HttpStatus.FOUND);
 
         } catch (CuisineNotFoundException exception) {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);

@@ -197,6 +197,38 @@ public class OrderServiceImpl implements OrderService {
         }
         throw new UserNotFoundException("User not found");
     }
+
+    @Override
+    public boolean deleteRestaurant(String userId, String restaurant) throws UserNotFoundException, RestaurantNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Restaurant> restaurantList = user.getRestaurantList();
+            Optional<Restaurant> restaurant1 = restaurantList.stream().filter(f -> f.getName().equalsIgnoreCase(restaurant)).findAny();
+            if (restaurant1.isPresent()) {
+                restaurantList.remove(restaurant);
+                user.setRestaurantList(restaurantList);
+                orderRepository.save(user);
+                return true;
+            } else
+                throw new RestaurantNotFoundException("Restaurant not found");
+        } else throw new UserNotFoundException("user not found");
+    }
+
+    @Override
+    public boolean deleteDish(String userId, String dishName) throws UserNotFoundException, DishNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Dish> dishList = user.getDishList();
+            Optional<Dish> dish1 = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(dishName)).findAny();
+            if (dish1.isPresent()) {
+                dishList.remove(dish1);
+                user.setDishList(dishList);
+                orderRepository.save(user);
+                return true;
+            } else
+                throw new DishNotFoundException("dish not found");
+        } else throw new UserNotFoundException("user not found");
+    }
 }
 
 

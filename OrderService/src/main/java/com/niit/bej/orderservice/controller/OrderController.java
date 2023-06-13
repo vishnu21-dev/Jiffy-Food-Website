@@ -1,6 +1,8 @@
 package com.niit.bej.orderservice.controller;
 
+import com.niit.bej.orderservice.domain.Dish;
 import com.niit.bej.orderservice.domain.Order;
+import com.niit.bej.orderservice.domain.Restaurant;
 import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.service.OrderService;
@@ -97,4 +99,102 @@ public class OrderController {
             throw new RuntimeException(e);
         }
     }
+
+
+    @PostMapping("user/addRestaurants/")
+    public ResponseEntity<?> addRestaurant(HttpServletRequest request, @RequestBody Restaurant restaurant) {
+        try {
+            String userId = request.getAttribute("emailId").toString();
+
+            Restaurant addedRestaurant = orderService.addRestaurant(userId, restaurant);
+            return new ResponseEntity<>(addedRestaurant, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (RestaurantAlreadyPresentException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("user/getRestaurants")
+    public ResponseEntity<?> getRestaurants(HttpServletRequest request) {
+        try {
+            String userId = request.getAttribute("emailId").toString();
+
+            List<Restaurant> restaurantList = orderService.getRestaurant(userId);
+            return new ResponseEntity<>(restaurantList, HttpStatus.OK);
+
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (RestaurantNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No restaurants found: " + e.getMessage());
+
+        }
+    }
+
+    @PostMapping("user/dishes")
+    public ResponseEntity<?> addDish(HttpServletRequest request, @RequestBody Dish dish) {
+        try {
+            String userId = request.getAttribute("emailId").toString();
+
+            Dish addedDish = orderService.addDish(userId, dish);
+            return new ResponseEntity<>(addedDish, HttpStatus.OK);
+
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+
+        } catch (DishAlreadyPresentException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+
+        }
+    }
+
+    @GetMapping("user/getDishes")
+    public ResponseEntity<?> getDishes(HttpServletRequest request) {
+        try {
+            String userId = request.getAttribute("emailId").toString();
+
+            List<Dish> dishList = orderService.getDish(userId);
+            return new ResponseEntity<>(dishList, HttpStatus.OK);
+
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (DishNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("user/restaurants/{restaurant}")
+    public ResponseEntity<?> deleteRestaurant(HttpServletRequest request, @PathVariable String restaurant) {
+        try {
+            String userId = request.getAttribute("emailId").toString();
+
+            boolean deleted = orderService.deleteRestaurant(userId, restaurant);
+            return new ResponseEntity<>(deleted, HttpStatus.OK);
+
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+
+        } catch (RestaurantNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+
+        }
+    }
+
+    @DeleteMapping("user/dishes/{dishName}")
+    public ResponseEntity<?> deleteDish(HttpServletRequest request, @PathVariable String dishName) {
+        try {
+            String userId = request.getAttribute("emailId").toString();
+
+            boolean deleted = orderService.deleteDish(userId, dishName);
+            return new ResponseEntity<>(deleted, HttpStatus.OK);
+
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+
+        } catch (DishNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 }

@@ -29,4 +29,8 @@ public interface OrderService {
     Dish addDish(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException;
 
     List<Dish> getDish(String userId) throws DishNotFoundException, UserNotFoundException;
+
+    boolean deleteRestaurant(String userId, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException;
+
+    boolean deleteDish(String userId, String dish) throws UserNotFoundException, DishNotFoundException;
 }

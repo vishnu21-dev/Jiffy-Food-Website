@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected errors">
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Restaurant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/exception/DishAlreadyPresentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/exception/RestaurantAlreadyPresentException.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added methods in OrderServiceImpl.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserAuthenticationService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthenticationService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,8 +197,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EurekaServerApplication" />
         <item itemvalue="Spring Boot.ApiGateWayApplication" />
+        <item itemvalue="Spring Boot.EurekaServerApplication" />
         <item itemvalue="Application.OrderServiceApplication" />
         <item itemvalue="Application.MerchantServiceApplication" />
         <item itemvalue="Application.UserAuthenticationServiceApplication" />
@@ -224,14 +219,7 @@
       <workItem from="1686112481400" duration="3281000" />
       <workItem from="1686160613493" duration="5238000" />
       <workItem from="1686197618002" duration="567000" />
-      <workItem from="1686583030422" duration="4383000" />
-    </task>
-    <task id="LOCAL-00013" summary="OrderServiceApplication is created">
-      <created>1684906094253</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1684906094253</updated>
+      <workItem from="1686583030422" duration="13843000" />
     </task>
     <task id="LOCAL-00014" summary="domain class User is created">
       <created>1684906626961</created>
@@ -569,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686296738607</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="added methods in OrderServiceImpl.java">
+      <created>1686625813840</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1686625813840</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="equals &amp; hashCode &amp; toString methods are added" />
     <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
@@ -613,7 +607,8 @@
     <MESSAGE value="deleteOrder mrthod from controller layer is updated" />
     <MESSAGE value="get all merchant Restaurants method is done in service" />
     <MESSAGE value="fetchMerchantRestaurants method in merchant controller is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="fetchMerchantRestaurants method in merchant controller is done" />
+    <MESSAGE value="added methods in OrderServiceImpl.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added methods in OrderServiceImpl.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -629,6 +624,11 @@
           <properties class="org.springframework.beans.factory.UnsatisfiedDependencyException" package="org.springframework.beans.factory" />
           <option name="timeStamp" value="8" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java</url>
+          <line>230</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

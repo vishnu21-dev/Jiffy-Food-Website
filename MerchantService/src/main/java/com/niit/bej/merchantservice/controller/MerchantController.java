@@ -127,7 +127,6 @@ public class MerchantController {
 
     @GetMapping("/merchant/getDishesBasedOnCuisine/{restaurantName}/{cuisineName}")
     public ResponseEntity<?> getDishes(@PathVariable String restaurantName, @PathVariable String cuisineName) throws CuisineNotFoundException {
-
         try {
             responseEntity = new ResponseEntity<>(merchantService.getAllDishesBasedOnCuisine(cuisineName, restaurantName), HttpStatus.FOUND);
 
@@ -152,6 +151,17 @@ public class MerchantController {
         String emailId = request.getAttribute("emailId").toString();
         try {
             responseEntity = new ResponseEntity<>(merchantService.getMerchantRestaurants(emailId), HttpStatus.FOUND);
+        } catch (MerchantNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        return responseEntity;
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<?> deleteRestaurantFromMerchant(@PathVariable String restaurantName, HttpServletRequest request) throws MerchantNotFoundException, RestaurantNotFoundException {
+        String emailId = request.getAttribute("emailId").toString();
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.deleteRestaurant(restaurantName, emailId), HttpStatus.OK);
         } catch (MerchantNotFoundException exception) {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
         }

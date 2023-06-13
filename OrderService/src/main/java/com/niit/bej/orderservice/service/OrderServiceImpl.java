@@ -2,6 +2,7 @@ package com.niit.bej.orderservice.service;
 
 import com.niit.bej.orderservice.domain.Dish;
 import com.niit.bej.orderservice.domain.Order;
+import com.niit.bej.orderservice.domain.Restaurant;
 import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.proxy.UserProxy;
@@ -36,6 +37,17 @@ public class OrderServiceImpl implements OrderService {
 
         throw new UserAlreadyExistsException(" User already exists ");
     }
+
+    @Override
+    public User getUser(String userId) throws UserNotFoundException {
+        Optional<User> userOptional = orderRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            return user;
+
+        } else throw new UserNotFoundException("User not found");
+    }
+
 
     @Override
     public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
@@ -108,6 +120,114 @@ public class OrderServiceImpl implements OrderService {
             throw new OrderNotFoundException("The requested order is not Found");
         }
         throw new UserNotFoundException("User Not found");
+    }
+
+    @Override
+    public Restaurant addRestaurant(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Restaurant> restaurantList = user.getRestaurantList();
+            if (restaurantList == null) {
+                user.setRestaurantList(Collections.singletonList(restaurant));
+                orderRepository.save(user);
+
+                return restaurant;
+            }
+            Optional<Restaurant> findRestaurant = restaurantList.stream().filter(f -> f.getName().equalsIgnoreCase(restaurant.getName())).findAny();
+            if (findRestaurant.isEmpty()) {
+                restaurantList.add(restaurant);
+                user.setRestaurantList(restaurantList);
+                orderRepository.save(user);
+                return restaurant;
+            } else
+                throw new RestaurantAlreadyPresentException("Restaurant Already Present");
+
+        }
+        throw new UserNotFoundException("User Not Found");
+    }
+
+    @Override
+    public List<Restaurant> getRestaurant(String userId) throws UserNotFoundException, RestaurantNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Restaurant> restaurantList = user.getRestaurantList();
+            if (restaurantList.isEmpty()) {
+                throw new RestaurantNotFoundException("No Restaurant Found");
+            }
+            return restaurantList;
+
+        }
+        throw new UserNotFoundException("User not found");
+    }
+
+    @Override
+    public Dish addDish(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Dish> dishList = user.getDishList();
+            if (dishList == null) {
+                user.setDishList(Collections.singletonList(dish));
+                orderRepository.save(user);
+
+                return dish;
+            }
+            Optional<Dish> findDish = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(dish.getName())).findAny();
+            if (findDish.isEmpty()) {
+                dishList.add(dish);
+                user.setDishList(dishList);
+                orderRepository.save(user);
+                return dish;
+            } else
+                throw new DishAlreadyPresentException("Dish Already Present");
+
+        }
+        throw new UserNotFoundException("User Not Found");
+    }
+
+    @Override
+    public List<Dish> getDish(String userId) throws DishNotFoundException, UserNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Dish> dishList = user.getDishList();
+            if (dishList.isEmpty()) {
+                throw new DishNotFoundException("No dish Found");
+            }
+            return dishList;
+
+        }
+        throw new UserNotFoundException("User not found");
+    }
+
+    @Override
+    public boolean deleteRestaurant(String userId, String restaurant) throws UserNotFoundException, RestaurantNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Restaurant> restaurantList = user.getRestaurantList();
+            Optional<Restaurant> restaurant1 = restaurantList.stream().filter(f -> f.getName().equalsIgnoreCase(restaurant)).findAny();
+            if (restaurant1.isPresent()) {
+                restaurantList.remove(restaurant);
+                user.setRestaurantList(restaurantList);
+                orderRepository.save(user);
+                return true;
+            } else
+                throw new RestaurantNotFoundException("Restaurant not found");
+        } else throw new UserNotFoundException("user not found");
+    }
+
+    @Override
+    public boolean deleteDish(String userId, String dishName) throws UserNotFoundException, DishNotFoundException {
+        if (orderRepository.findById(userId).isPresent()) {
+            User user = orderRepository.findById(userId).get();
+            List<Dish> dishList = user.getDishList();
+            Optional<Dish> dish1 = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(dishName)).findAny();
+            if (dish1.isPresent()) {
+                dishList.remove(dish1);
+                user.setDishList(dishList);
+                orderRepository.save(user);
+                return true;
+            } else
+                throw new DishNotFoundException("dish not found");
+        } else throw new UserNotFoundException("user not found");
     }
 }
 

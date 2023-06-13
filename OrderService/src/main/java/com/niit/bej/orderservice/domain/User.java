@@ -11,20 +11,46 @@ public class User {
 
     @MongoId
     private String emailId;
+    private String name;
     private String password;
     private String phoneNo;
+    private String city;
     private String address;
     private List<Order> orders;
-
-    public User(String emailId, String password, String phoneNo, String address, List<Order> orders) {
-        this.emailId = emailId;
-        this.password = password;
-        this.phoneNo = phoneNo;
-        this.address = address;
-        this.orders = orders;
-    }
+    private List<Restaurant> restaurantList;
+    private List<Dish> dishList;
 
     public User() {
+    }
+
+    public User(String emailId, String name, String password, String phoneNo, String city, String address, List<Order> orders, List<Restaurant> restaurantList, List<Dish> dishList) {
+        this.emailId = emailId;
+        this.name = name;
+        this.password = password;
+        this.phoneNo = phoneNo;
+        this.city = city;
+        this.address = address;
+        this.orders = orders;
+        this.restaurantList = restaurantList;
+        this.dishList = dishList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "emailId='" + emailId + '\'' + ", name='" + name + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", city='" + city + '\'' + ", address='" + address + '\'' + ", orders=" + orders + ", restaurantList=" + restaurantList + ", dishList=" + dishList + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(emailId, user.emailId) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(restaurantList, user.restaurantList) && Objects.equals(dishList, user.dishList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailId, name, password, phoneNo, city, address, orders, restaurantList, dishList);
     }
 
     public String getEmailId() {
@@ -33,6 +59,14 @@ public class User {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -51,6 +85,14 @@ public class User {
         this.phoneNo = phoneNo;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -67,27 +109,19 @@ public class User {
         this.orders = orders;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(emailId, user.emailId) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders);
+    public List<Restaurant> getRestaurantList() {
+        return restaurantList;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(emailId, password, phoneNo, address, orders);
+    public void setRestaurantList(List<Restaurant> restaurantList) {
+        this.restaurantList = restaurantList;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "emailId='" + emailId + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNo='" + phoneNo + '\'' +
-                ", address='" + address + '\'' +
-                ", orders=" + orders +
-                '}';
+    public List<Dish> getDishList() {
+        return dishList;
+    }
+
+    public void setDishList(List<Dish> dishList) {
+        this.dishList = dishList;
     }
 }

@@ -86,4 +86,15 @@ public class OrderController {
         }
 
     }
+
+    @GetMapping("/user/getUser")
+    public ResponseEntity<?> getExistingUser(HttpServletRequest request) {
+        String emailId = request.getAttribute("emailId").toString();
+        try {
+            User user = orderService.getUser(emailId);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -157,7 +157,7 @@ public class MerchantController {
         return responseEntity;
     }
 
-    @DeleteMapping("")
+    @DeleteMapping("/merchant/{restaurantName}")
     public ResponseEntity<?> deleteRestaurantFromMerchant(@PathVariable String restaurantName, HttpServletRequest request) throws MerchantNotFoundException, RestaurantNotFoundException {
         String emailId = request.getAttribute("emailId").toString();
         try {

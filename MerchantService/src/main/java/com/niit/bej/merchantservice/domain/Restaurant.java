@@ -1,7 +1,6 @@
 package com.niit.bej.merchantservice.domain;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,7 +8,6 @@ import java.util.Objects;
 @Document
 public class Restaurant {
 
-    @MongoId
     private String name;
     private double rating;
     private String imageUrl;

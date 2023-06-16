@@ -114,19 +114,19 @@ public class MerchantController {
     }
 
     @PostMapping("/merchant/addRestaurant")
-    public ResponseEntity<?> addRestaurantToMerchant(@RequestBody Restaurant restaurant, HttpServletRequest request) throws MerchantNotFoundException, RestaurantAlreadyExistsException, RestaurantNotFoundException {
+    public ResponseEntity<?> addRestaurantToMerchant(@RequestBody Restaurant restaurant, HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
         try {
             responseEntity = new ResponseEntity<>(merchantService.addRestaurant(restaurant, emailId), HttpStatus.CREATED);
             return responseEntity;
-        } catch (MerchantNotFoundException exception) {
-            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (MerchantNotFoundException | RestaurantAlreadyExistsException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
         }
 
     }
 
-    @GetMapping("/merchant/getDishesBasedOnCuisine/{restaurantName}/{cuisineName}")
-    public ResponseEntity<?> getDishes(@PathVariable String restaurantName, @PathVariable String cuisineName) throws CuisineNotFoundException {
+    @GetMapping("/getDishesBasedOnCuisine/{restaurantName}/{cuisineName}")
+    public ResponseEntity<?> getDishes(@PathVariable String restaurantName, @PathVariable String cuisineName) {
         try {
             responseEntity = new ResponseEntity<>(merchantService.getAllDishesBasedOnCuisine(cuisineName, restaurantName), HttpStatus.FOUND);
 

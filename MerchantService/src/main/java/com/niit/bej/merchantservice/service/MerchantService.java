@@ -16,6 +16,8 @@ public interface MerchantService {
 
     Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
 
+    List<Restaurant> getMerchantRestaurants(String merchantId) throws MerchantNotFoundException;
+
     Restaurant addDishes(Dish dish, String restaurantName, String merchantId) throws MerchantNotFoundException, DishAlreadyExistsException, RestaurantNotFoundException;
 
     List<Dish> getAllDishesFromRestaurant(String restaurantName, String merchantId) throws MerchantNotFoundException, DishNotFoundException, RestaurantNotFoundException;
@@ -25,8 +27,6 @@ public interface MerchantService {
     boolean deleteDishFromRestaurant(String restaurantName, String dishName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, DishNotFoundException;
 
     Merchant deleteRestaurant(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException;
-
-    List<Restaurant> getMerchantRestaurants(String merchantId) throws MerchantNotFoundException;
 
     Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
 

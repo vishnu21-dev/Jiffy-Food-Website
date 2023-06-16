@@ -14,6 +14,8 @@ public interface MerchantService {
 
     Merchant getMerchant(String merchantId) throws MerchantNotFoundException;
 
+    Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
+
     Restaurant addDishes(Dish dish, String restaurantName, String merchantId) throws MerchantNotFoundException, DishAlreadyExistsException, RestaurantNotFoundException;
 
     List<Dish> getAllDishesFromRestaurant(String restaurantName, String merchantId) throws MerchantNotFoundException, DishNotFoundException, RestaurantNotFoundException;
@@ -22,23 +24,21 @@ public interface MerchantService {
 
     boolean deleteDishFromRestaurant(String restaurantName, String dishName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException, DishNotFoundException;
 
-    List<Dish> getAllDishes() throws DishNotFoundException;
-
-    boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
-
     Merchant deleteRestaurant(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException;
+
+    List<Restaurant> getMerchantRestaurants(String merchantId) throws MerchantNotFoundException;
 
     Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
 
+    boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
+
+    List<Dish> getAllDishes() throws DishNotFoundException;
 
     List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
-
-    Merchant addRestaurant(Restaurant restaurant, String merchantId) throws MerchantNotFoundException, RestaurantAlreadyExistsException;
 
     List<Dish> getAllDishesBasedOnCuisine(String cuisineName, String restaurantName) throws CuisineNotFoundException;
 
     List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException;
 
-    List<Restaurant> getMerchantRestaurants(String merchantId) throws MerchantNotFoundException;
 
 }

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="method is added" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Method modified in Config">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateWay/src/main/java/com/niit/bej/ApiGateWay/Config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateWay/src/main/java/com/niit/bej/ApiGateWay/Config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +76,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserAuthenticationServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGateWayApplication">
     <configuration name="MerchantServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.bej.merchantservice.MerchantServiceApplication" />
       <module name="MerchantService" />
@@ -205,35 +209,7 @@
       <workItem from="1686197618002" duration="567000" />
       <workItem from="1686583030422" duration="15885000" />
       <workItem from="1686918905084" duration="335000" />
-      <workItem from="1686939031288" duration="3091000" />
-    </task>
-    <task id="LOCAL-00023" summary="Dish is created">
-      <created>1684911861842</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1684911861842</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Attributes are added">
-      <created>1684912076875</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1684912076875</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Constructors are added">
-      <created>1684912279211</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1684912279211</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Getters &amp; Setters are added">
-      <created>1684912348387</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1684912348387</updated>
+      <workItem from="1686939031288" duration="6158000" />
     </task>
     <task id="LOCAL-00027" summary="equals &amp; hashCode are added">
       <created>1684912734976</created>
@@ -550,7 +526,35 @@
       <option name="project" value="LOCAL" />
       <updated>1686942071032</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="getAllDishesBasedOnCuisine is updated">
+      <created>1686942221330</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1686942221330</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Methods are modified in controller class">
+      <created>1686942612208</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1686942612208</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Methods are modified in OrderService">
+      <created>1686943033013</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1686943033013</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Method modified in Config">
+      <created>1686943116112</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1686943116112</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,10 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="implemented add cuisine method in service implementation class of merchant service" />
-    <MESSAGE value="implemented method update cuisine" />
-    <MESSAGE value="Modifications made in the service layer" />
-    <MESSAGE value="changes made" />
     <MESSAGE value="changes made in MerchantServiceImpl" />
     <MESSAGE value="added getalldishfromcusine" />
     <MESSAGE value="corrected updatemerchant method in serviceimpl" />
@@ -594,7 +594,11 @@
     <MESSAGE value="MerchantService interface is updated" />
     <MESSAGE value="MerchantServiceImpl class is updated" />
     <MESSAGE value="method is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="method is added" />
+    <MESSAGE value="getAllDishesBasedOnCuisine is updated" />
+    <MESSAGE value="Methods are modified in controller class" />
+    <MESSAGE value="Methods are modified in OrderService" />
+    <MESSAGE value="Method modified in Config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Method modified in Config" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -610,11 +614,6 @@
           <properties class="org.springframework.beans.factory.UnsatisfiedDependencyException" package="org.springframework.beans.factory" />
           <option name="timeStamp" value="8" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java</url>
-          <line>227</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

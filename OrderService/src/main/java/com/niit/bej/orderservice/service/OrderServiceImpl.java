@@ -34,7 +34,6 @@ public class OrderServiceImpl implements OrderService {
             userProxy.registerUserProxy(user);
             return user;
         }
-
         throw new UserAlreadyExistsException(" User already exists ");
     }
 
@@ -51,19 +50,24 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
+        User loggedInUser;
         if (orderRepository.findById(userId).isPresent()) {
-            throw new UserNotFoundException("User not found");
-        }
-        User user = orderRepository.findByEmailId(userId);
-        if (user.getOrders() == null) {
-            user.setOrders(Collections.singletonList(order));
+            loggedInUser = orderRepository.findById(userId).get();
+            List<Order> orderList = loggedInUser.getOrders();
+            if (orderList == null) {
+                loggedInUser.setOrders(Collections.singletonList(order));
+            } else {
+                if (orderList.stream().anyMatch(item -> item.getOrderId() == order.getOrderId())) {
+                    throw new OrderAlreadyExistsException("Order already exists!");
+                } else {
+                    orderList.add(order);
+                    loggedInUser.setOrders(orderList);
+                }
+            }
         } else {
-            List<Order> addToOrderList = user.getOrders();
-            addToOrderList.add(order);
-            user.setOrders(addToOrderList);
-            orderRepository.save(user);
+            throw new UserNotFoundException("User does not exists!");
         }
-        return user;
+        return orderRepository.save(loggedInUser);
     }
 
 
@@ -123,7 +127,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Restaurant addRestaurant(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException {
+    public Restaurant addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> restaurantList = user.getRestaurantList();
@@ -161,7 +165,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Dish addDish(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException {
+    public Dish addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Dish> dishList = user.getDishList();

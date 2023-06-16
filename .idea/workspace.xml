@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added methods in OrderServiceImpl.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected errors">
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Dish.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +217,7 @@
       <workItem from="1686112481400" duration="3281000" />
       <workItem from="1686160613493" duration="5238000" />
       <workItem from="1686197618002" duration="567000" />
-      <workItem from="1686583030422" duration="13843000" />
-    </task>
-    <task id="LOCAL-00014" summary="domain class User is created">
-      <created>1684906626961</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1684906626961</updated>
+      <workItem from="1686583030422" duration="15885000" />
     </task>
     <task id="LOCAL-00015" summary="Attributes are added to User">
       <created>1684906875499</created>
@@ -564,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686625813840</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="corrected errors">
+      <created>1686649437509</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1686649437509</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="constructors are added" />
     <MESSAGE value="Getters &amp; Setters &amp; equals &amp; hashCode are added" />
     <MESSAGE value="toString method  added" />
     <MESSAGE value="add order method is done" />
@@ -608,7 +605,8 @@
     <MESSAGE value="get all merchant Restaurants method is done in service" />
     <MESSAGE value="fetchMerchantRestaurants method in merchant controller is done" />
     <MESSAGE value="added methods in OrderServiceImpl.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added methods in OrderServiceImpl.java" />
+    <MESSAGE value="corrected errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -626,7 +624,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java</url>
-          <line>230</line>
+          <line>227</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

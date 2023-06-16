@@ -164,7 +164,7 @@ public class OrderController {
     }
 
     @DeleteMapping("user/restaurants/{restaurant}")
-    public ResponseEntity<?> deleteRestaurant(HttpServletRequest request, @PathVariable String restaurant) {
+    public ResponseEntity<?> deleteRestaurant(@PathVariable String restaurant, HttpServletRequest request) {
         try {
             String userId = request.getAttribute("emailId").toString();
 
@@ -181,7 +181,7 @@ public class OrderController {
     }
 
     @DeleteMapping("user/dishes/{dishName}")
-    public ResponseEntity<?> deleteDish(HttpServletRequest request, @PathVariable String dishName) {
+    public ResponseEntity<?> deleteDish(@PathVariable String dishName, HttpServletRequest request) {
         try {
             String userId = request.getAttribute("emailId").toString();
 

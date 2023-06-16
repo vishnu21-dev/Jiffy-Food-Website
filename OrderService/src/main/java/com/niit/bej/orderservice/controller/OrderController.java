@@ -51,7 +51,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping("/user/orders")
+    @GetMapping("/user/getAllOrders")
     public ResponseEntity<?> getAllOrders(HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
@@ -65,7 +65,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/user/deleteOrder/{orderId}")
-    public ResponseEntity<?> deleteOrder(@PathVariable("orderId") int orderId, HttpServletRequest request) {
+    public ResponseEntity<?> deleteOrder(@PathVariable int orderId, HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
         try {
             boolean deleted = orderService.deleteOrder(orderId, emailId);
@@ -89,7 +89,7 @@ public class OrderController {
 
     }
 
-    @GetMapping("/user/getUser")
+    @GetMapping("/user/getExistingUser")
     public ResponseEntity<?> getExistingUser(HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
         try {
@@ -101,12 +101,12 @@ public class OrderController {
     }
 
 
-    @PostMapping("user/addRestaurants/")
-    public ResponseEntity<?> addRestaurant(HttpServletRequest request, @RequestBody Restaurant restaurant) {
+    @PostMapping("user/addRestaurants")
+    public ResponseEntity<?> addRestaurantToFavourites(HttpServletRequest request, @RequestBody Restaurant restaurant) {
         try {
             String userId = request.getAttribute("emailId").toString();
 
-            Restaurant addedRestaurant = orderService.addRestaurant(userId, restaurant);
+            Restaurant addedRestaurant = orderService.addRestaurantToFavorites(userId, restaurant);
             return new ResponseEntity<>(addedRestaurant, HttpStatus.OK);
         } catch (UserNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -132,11 +132,11 @@ public class OrderController {
     }
 
     @PostMapping("user/dishes")
-    public ResponseEntity<?> addDish(HttpServletRequest request, @RequestBody Dish dish) {
+    public ResponseEntity<?> addDishToFavorites(HttpServletRequest request, @RequestBody Dish dish) {
         try {
             String userId = request.getAttribute("emailId").toString();
 
-            Dish addedDish = orderService.addDish(userId, dish);
+            Dish addedDish = orderService.addDishToFavourites(userId, dish);
             return new ResponseEntity<>(addedDish, HttpStatus.OK);
 
         } catch (UserNotFoundException e) {

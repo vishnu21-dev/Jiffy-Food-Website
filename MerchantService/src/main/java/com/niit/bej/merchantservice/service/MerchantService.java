@@ -26,7 +26,10 @@ public interface MerchantService {
 
     boolean deleteMerchant(String merchantId) throws MerchantNotFoundException;
 
+    Merchant deleteRestaurant(String restaurantName, String merchantId) throws MerchantNotFoundException, RestaurantNotFoundException;
+
     Merchant updateMerchant(String merchantId, Merchant updatedMerchant) throws MerchantNotFoundException;
+
 
     List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
 
@@ -37,4 +40,5 @@ public interface MerchantService {
     List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException;
 
     List<Restaurant> getMerchantRestaurants(String merchantId) throws MerchantNotFoundException;
+
 }

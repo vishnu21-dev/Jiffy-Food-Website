@@ -5,12 +5,14 @@ import java.util.Objects;
 
 public class Restaurant {
     private String name;
+    private double rating;
     private String imageUrl;
     private List<Dish> dishes;
     private String location;
 
-    public Restaurant(String name, String imageUrl, List<Dish> dishes, String location) {
+    public Restaurant(String name, double rating, String imageUrl, List<Dish> dishes, String location) {
         this.name = name;
+        this.rating = rating;
         this.imageUrl = imageUrl;
         this.dishes = dishes;
         this.location = location;
@@ -25,6 +27,14 @@ public class Restaurant {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
     public String getImageUrl() {
@@ -56,18 +66,19 @@ public class Restaurant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Restaurant that = (Restaurant) o;
-        return Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location);
+        return Double.compare(that.rating, rating) == 0 && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, imageUrl, dishes, location);
+        return Objects.hash(name, rating, imageUrl, dishes, location);
     }
 
     @Override
     public String toString() {
         return "Restaurant{" +
                 "name='" + name + '\'' +
+                ", rating=" + rating +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", dishes=" + dishes +
                 ", location='" + location + '\'' +

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class Config {
 
     @Bean
-    public RouteLocator myroute(RouteLocatorBuilder builder) {
+    public RouteLocator myRoute(RouteLocatorBuilder builder) {
 
         return builder.routes()
                 .route(p -> p.path("/userAuth/**").uri("http://localhost:8084/"))//authentication

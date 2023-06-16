@@ -260,7 +260,7 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public List<Dish> getAllDishesBasedOnCuisine(String cuisineName, String restaurantName) throws CuisineNotFoundException {
-        Restaurant restaurant1 = restaurantRepository.findById(restaurantName).get();
+        Restaurant restaurant1 = restaurantRepository.findRestaurantByName(restaurantName);
         List<Dish> dishList = restaurant1.getDishes();
         List<Dish> cuisineList = dishList.stream().filter(f -> f.getCuisine().equalsIgnoreCase(cuisineName)).toList();
         if (cuisineList.isEmpty()) {

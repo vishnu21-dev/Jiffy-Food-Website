@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="MerchantServiceImpl class is updated" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="method is added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,14 +205,7 @@
       <workItem from="1686197618002" duration="567000" />
       <workItem from="1686583030422" duration="15885000" />
       <workItem from="1686918905084" duration="335000" />
-      <workItem from="1686939031288" duration="2559000" />
-    </task>
-    <task id="LOCAL-00022" summary="Dish is created">
-      <created>1684909784262</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1684909784262</updated>
+      <workItem from="1686939031288" duration="3091000" />
     </task>
     <task id="LOCAL-00023" summary="Dish is created">
       <created>1684911861842</created>
@@ -550,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686941580788</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="method is added">
+      <created>1686942071032</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1686942071032</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="authentication service test is done" />
     <MESSAGE value="implemented add cuisine method in service implementation class of merchant service" />
     <MESSAGE value="implemented method update cuisine" />
     <MESSAGE value="Modifications made in the service layer" />
@@ -594,7 +593,8 @@
     <MESSAGE value="Properties are modified" />
     <MESSAGE value="MerchantService interface is updated" />
     <MESSAGE value="MerchantServiceImpl class is updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="MerchantServiceImpl class is updated" />
+    <MESSAGE value="method is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="method is added" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

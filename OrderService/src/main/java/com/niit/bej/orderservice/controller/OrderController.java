@@ -19,7 +19,6 @@ import java.util.List;
 public class OrderController {
 
     private final OrderService orderService;
-    private ResponseEntity<?> responseEntity;
 
 
     @Autowired
@@ -139,10 +138,7 @@ public class OrderController {
             Dish addedDish = orderService.addDishToFavourites(userId, dish);
             return new ResponseEntity<>(addedDish, HttpStatus.OK);
 
-        } catch (UserNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-
-        } catch (DishAlreadyPresentException e) {
+        } catch (UserNotFoundException | DishAlreadyPresentException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 
         }
@@ -156,9 +152,7 @@ public class OrderController {
             List<Dish> dishList = orderService.getDish(userId);
             return new ResponseEntity<>(dishList, HttpStatus.OK);
 
-        } catch (UserNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        } catch (DishNotFoundException e) {
+        } catch (UserNotFoundException | DishNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
@@ -171,10 +165,7 @@ public class OrderController {
             boolean deleted = orderService.deleteRestaurant(userId, restaurant);
             return new ResponseEntity<>(deleted, HttpStatus.OK);
 
-        } catch (UserNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-
-        } catch (RestaurantNotFoundException e) {
+        } catch (UserNotFoundException | RestaurantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 
         }
@@ -188,11 +179,9 @@ public class OrderController {
             boolean deleted = orderService.deleteDish(userId, dishName);
             return new ResponseEntity<>(deleted, HttpStatus.OK);
 
-        } catch (UserNotFoundException e) {
+        } catch (UserNotFoundException | DishNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 
-        } catch (DishNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 

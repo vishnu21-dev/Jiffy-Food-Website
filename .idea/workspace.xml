@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="addOrder method is modified">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="OrderController methods are modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/Final Project NIIT/FoodieApp",
+    "last_opened_file_path": "F:/Final Capstone",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -208,20 +210,7 @@
       <workItem from="1686583030422" duration="15885000" />
       <workItem from="1686918905084" duration="335000" />
       <workItem from="1686939031288" duration="7821000" />
-    </task>
-    <task id="LOCAL-00028" summary="toString method is added">
-      <created>1684912852560</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1684912852560</updated>
-    </task>
-    <task id="LOCAL-00029" summary="toString method is added">
-      <created>1684912903267</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1684912903267</updated>
+      <workItem from="1686978440987" duration="1721000" />
     </task>
     <task id="LOCAL-00030" summary="User class is modified">
       <created>1684913545538</created>
@@ -552,7 +541,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686945283351</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="registerUser method rectified">
+      <created>1686979136098</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1686979136099</updated>
+    </task>
+    <task id="LOCAL-00078" summary="OrderController methods are modified">
+      <created>1686979172038</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1686979172038</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,8 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added getalldishfromcusine" />
-    <MESSAGE value="corrected updatemerchant method in serviceimpl" />
     <MESSAGE value="corrected getAllCsuine methods" />
     <MESSAGE value="corrected the methods in MerchantServiceImpl" />
     <MESSAGE value="All methods are modified in MerchantController" />
@@ -596,7 +597,9 @@
     <MESSAGE value="Methods are modified in OrderService" />
     <MESSAGE value="Method modified in Config" />
     <MESSAGE value="addOrder method is modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="addOrder method is modified" />
+    <MESSAGE value="registerUser method rectified" />
+    <MESSAGE value="OrderController methods are modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="OrderController methods are modified" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

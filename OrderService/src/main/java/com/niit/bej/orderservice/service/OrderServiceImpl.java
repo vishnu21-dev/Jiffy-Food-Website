@@ -45,7 +45,6 @@ public class OrderServiceImpl implements OrderService {
         } else throw new UserNotFoundException("User not found");
     }
 
-
     @Override
     public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
         User loggedInUser;

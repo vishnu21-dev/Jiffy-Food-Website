@@ -29,12 +29,10 @@ public class OrderServiceImpl implements OrderService {
     public User registerUser(User user) throws UserAlreadyExistsException {
         Optional<User> userOptional = orderRepository.findById(user.getEmailId());
         if (userOptional.isEmpty()) {
-
-            orderRepository.save(user);
             userProxy.registerUserProxy(user);
-            return user;
-        }
-        throw new UserAlreadyExistsException(" User already exists ");
+            return orderRepository.save(user);
+
+        } else throw new UserAlreadyExistsException("User already exists ");
     }
 
     @Override

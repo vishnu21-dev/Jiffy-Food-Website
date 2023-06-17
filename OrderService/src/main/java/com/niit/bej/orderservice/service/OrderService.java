@@ -16,6 +16,8 @@ public interface OrderService {
 
     User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException;
 
+    Order addDishesToOrder(Dish dish, int orderId, String userId) throws UserNotFoundException, DishAlreadyExistsException, RestaurantNotFoundException;
+
     List<Order> getAllOrders(String userId) throws UserNotFoundException, OrderNotFoundException;
 
     boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException;

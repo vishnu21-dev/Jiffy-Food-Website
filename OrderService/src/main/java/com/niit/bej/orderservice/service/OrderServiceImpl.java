@@ -67,11 +67,6 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.save(loggedInUser);
     }
 
-    @Override
-    public Order addDishesToOrder(Dish dish, int orderId, String userId) throws UserNotFoundException, DishAlreadyExistsException, RestaurantNotFoundException {
-        return null;
-    }
-
 
     @Override
     public List<Order> getAllOrders(String userId) throws UserNotFoundException, OrderNotFoundException {

@@ -39,6 +39,17 @@ public class OrderController {
 
     }
 
+    @GetMapping("/user/getExistingUser")
+    public ResponseEntity<?> getUser(HttpServletRequest request) {
+        String emailId = request.getAttribute("emailId").toString();
+        try {
+            User user = orderService.getUser(emailId);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @PostMapping("/user/addOrder")
     public ResponseEntity<?> addOrder(@RequestBody Order order, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
@@ -86,17 +97,6 @@ public class OrderController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
 
-    }
-
-    @GetMapping("/user/getExistingUser")
-    public ResponseEntity<?> getExistingUser(HttpServletRequest request) {
-        String emailId = request.getAttribute("emailId").toString();
-        try {
-            User user = orderService.getUser(emailId);
-            return new ResponseEntity<>(user, HttpStatus.OK);
-        } catch (UserNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 

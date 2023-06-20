@@ -72,6 +72,8 @@ public class MerchantServiceImpl implements MerchantService {
             list.add(restaurant);
             merchant1.setRestaurants(list);
         }
+        restaurantRepository.save(merchant1.getRestaurants().get(0));
+
         return merchantRepository.save(merchant1);
     }
 
@@ -113,6 +115,7 @@ public class MerchantServiceImpl implements MerchantService {
                     throw new RestaurantNotFoundException("Restaurant does not exists!");
                 }
             }
+            restaurantRepository.save(loggedInMerchant.getRestaurants().get(0));
             merchantRepository.save(loggedInMerchant);
             return oneRestaurant;
         } else {
@@ -278,5 +281,6 @@ public class MerchantServiceImpl implements MerchantService {
 
         } else return restaurants;
     }
+
 
 }

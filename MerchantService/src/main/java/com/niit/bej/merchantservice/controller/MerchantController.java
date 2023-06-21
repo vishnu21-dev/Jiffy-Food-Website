@@ -139,7 +139,7 @@ public class MerchantController {
     @GetMapping("/getRestaurantBasedOnLocation/{restaurantLocation}")
     public ResponseEntity<?> getRestaurantOnLocation(@PathVariable String restaurantLocation) {
         try {
-            responseEntity = new ResponseEntity<>(merchantService.getRestaurantBasedOnLocation(restaurantLocation), HttpStatus.FOUND);
+            responseEntity = new ResponseEntity<>(merchantService.getRestaurantBasedOnLocation(restaurantLocation), HttpStatus.OK);
             return responseEntity;
         } catch (RestaurantNotFoundException exception) {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
@@ -164,6 +164,16 @@ public class MerchantController {
             responseEntity = new ResponseEntity<>(merchantService.deleteRestaurant(restaurantName, emailId), HttpStatus.OK);
         } catch (MerchantNotFoundException exception) {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        return responseEntity;
+    }
+
+    @GetMapping("/getAllMerchants")
+    public ResponseEntity<?> getAllMerchants() throws MerchantNotFoundException {
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.getAllMerchants(), HttpStatus.OK);
+        } catch (MerchantNotFoundException exception) {
+            throw new MerchantNotFoundException("merchant NOt Found");
         }
         return responseEntity;
     }

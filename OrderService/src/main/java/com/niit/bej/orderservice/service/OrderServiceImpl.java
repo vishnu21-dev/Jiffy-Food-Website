@@ -17,6 +17,7 @@ import java.util.Optional;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+
     private final UserProxy userProxy;
 
     public OrderServiceImpl(OrderRepository orderRepository, UserProxy userProxy) {
@@ -230,6 +231,8 @@ public class OrderServiceImpl implements OrderService {
                 throw new DishNotFoundException("dish not found");
         } else throw new UserNotFoundException("user not found");
     }
+
+
 }
 
 

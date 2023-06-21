@@ -1,6 +1,5 @@
 package com.niit.bej.orderservice.repository;
 
-import com.niit.bej.orderservice.domain.Order;
 import com.niit.bej.orderservice.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
@@ -8,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderRepository extends MongoRepository<User, String> {
 
-    Order getOrderById(int orderId);
 
 }

@@ -35,4 +35,5 @@ public interface OrderService {
     boolean deleteRestaurant(String userId, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException;
 
     boolean deleteDish(String userId, String dish) throws UserNotFoundException, DishNotFoundException;
+
 }

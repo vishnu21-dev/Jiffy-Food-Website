@@ -103,16 +103,6 @@ public class MerchantController {
         }
     }
 
-    @GetMapping("/getAllRestaurants")
-    public ResponseEntity<?> getAllRestaurants() {
-        try {
-            List<Restaurant> allRestaurants = merchantService.getAllRestaurants();
-            return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
-        } catch (RestaurantNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
     @PostMapping("/merchant/addRestaurant")
     public ResponseEntity<?> addRestaurantToMerchant(@RequestBody Restaurant restaurant, HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
@@ -136,12 +126,22 @@ public class MerchantController {
         return responseEntity;
     }
 
-    @GetMapping("/getRestaurantBasedOnLocation/{restaurantLocation}")
+    @GetMapping("/getAllRestaurants")
+    public ResponseEntity<?> getAllRestaurants() {
+        try {
+            List<Restaurant> allRestaurants = merchantService.getAllRestaurants();
+            return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
+        } catch (RestaurantNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/merchant/getRestaurantBasedOnLocation/{restaurantLocation}")
     public ResponseEntity<?> getRestaurantOnLocation(@PathVariable String restaurantLocation) {
         try {
-            responseEntity = new ResponseEntity<>(merchantService.getRestaurantBasedOnLocation(restaurantLocation), HttpStatus.FOUND);
-            return responseEntity;
-        } catch (RestaurantNotFoundException exception) {
+            List<Restaurant> restaurantBasedOnLocation = merchantService.getRestaurantBasedOnLocation(restaurantLocation);
+            return new ResponseEntity<>(restaurantBasedOnLocation, HttpStatus.OK);
+        } catch (RestaurantNotFoundException | MerchantNotFoundException exception) {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
     }

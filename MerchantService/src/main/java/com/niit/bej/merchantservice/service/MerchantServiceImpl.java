@@ -72,6 +72,7 @@ public class MerchantServiceImpl implements MerchantService {
             list.add(restaurant);
             merchant1.setRestaurants(list);
         }
+        restaurantRepository.save(merchant1.getRestaurants().get(0));
         return merchantRepository.save(merchant1);
     }
 
@@ -250,13 +251,7 @@ public class MerchantServiceImpl implements MerchantService {
         } else return listOfDishes;
     }
 
-    @Override
-    public List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException {
-        List<Restaurant> listOfRestaurants = restaurantRepository.findAll();
-        if (listOfRestaurants.isEmpty()) {
-            throw new RestaurantNotFoundException("Restaurant does not exists!");
-        } else return listOfRestaurants;
-    }
+
 
     @Override
     public List<Dish> getAllDishesBasedOnCuisine(String cuisineName, String restaurantName) throws CuisineNotFoundException {
@@ -270,13 +265,37 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException {
-        List<Restaurant> restaurantList = restaurantRepository.findAll();
-        List<Restaurant> restaurants = restaurantList.stream().filter(f -> f.getLocation().equalsIgnoreCase(restaurantLocation)).toList();
-        if (restaurants.isEmpty()) {
-            throw new RestaurantNotFoundException("No Restaurant found in this location");
+    public List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException {
+        List<Restaurant> listOfRestaurants = restaurantRepository.findAll();
+        if (listOfRestaurants.isEmpty()) {
+            throw new RestaurantNotFoundException("Restaurant does not exists!");
+        } else return listOfRestaurants;
 
-        } else return restaurants;
+    }
+
+    @Override
+    public List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException, MerchantNotFoundException {
+        List<Merchant> merchantList = merchantRepository.findAll();
+        List<Restaurant> restaurantList = new ArrayList<>();
+        if (merchantList.isEmpty()) {
+            throw new MerchantNotFoundException("No Merchant Found");
+        } else
+            for (Merchant merchant : merchantList) {
+                List<Restaurant> restaurants = merchant.getRestaurants();
+                for (Restaurant restaurant : restaurants) {
+                    if (restaurant.getLocation().equals(restaurantLocation)) {
+                        restaurantList.add(restaurant);
+                    }
+                }
+            }
+
+
+        if (restaurantList.isEmpty()) {
+            throw new RestaurantNotFoundException("No Restaurant Found in the given location");
+        }
+
+        return restaurantList;
+
     }
 
 }

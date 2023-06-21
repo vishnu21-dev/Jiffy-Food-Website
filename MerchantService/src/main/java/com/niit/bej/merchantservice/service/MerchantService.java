@@ -34,11 +34,11 @@ public interface MerchantService {
 
     List<Dish> getAllDishes() throws DishNotFoundException;
 
-    List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
-
     List<Dish> getAllDishesBasedOnCuisine(String cuisineName, String restaurantName) throws CuisineNotFoundException;
 
-    List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException;
+    List<Restaurant> getAllRestaurants() throws RestaurantNotFoundException;
+
+    List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException, MerchantNotFoundException;
 
 
 }

@@ -40,5 +40,7 @@ public interface MerchantService {
 
     List<Restaurant> getRestaurantBasedOnLocation(String restaurantLocation) throws RestaurantNotFoundException, MerchantNotFoundException;
 
+    List<Merchant> getAllMerchants() throws MerchantNotFoundException;
+
 
 }

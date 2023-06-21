@@ -1,7 +1,11 @@
 package com.niit.bej.springemail.filter;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import jakarta.servlet.*;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.filter.GenericFilterBean;
@@ -9,23 +13,27 @@ import org.springframework.web.filter.GenericFilterBean;
 import java.io.IOException;
 
 public class JWTFilter extends GenericFilterBean {
+
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-        ServletOutputStream outputStream = httpServletResponse.getOutputStream();
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        String authorizationHeader = httpServletRequest.getHeader("Authorization");
+        final String authHeader = request.getHeader("Authorization");
+        if (request.getMethod().equals("OPTIONS")) {
 
-        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-            httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            outputStream.println("Authorization Header is Missing!");
-            outputStream.close();
-        } else {
-            String jwtToken = authorizationHeader.substring("Bearer ".length());
-            String emailId = Jwts.parser().setSigningKey("secretKey").parseClaimsJws(jwtToken).getBody().getSubject();
-            httpServletRequest.setAttribute("emailId", emailId);
+            response.setStatus(HttpServletResponse.SC_OK);
+            filterChain.doFilter(request, response);
+        } else if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            throw new ServletException("Missing or Invalid Token");
         }
-        chain.doFilter(request, response);
+
+        String token = authHeader.substring(7);
+
+        Claims claims = Jwts.parser().setSigningKey("secretKey").parseClaimsJws(token).getBody();
+
+        request.setAttribute("claims", claims);
+
+        filterChain.doFilter(request, response);
     }
 }

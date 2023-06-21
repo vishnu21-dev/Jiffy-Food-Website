@@ -5,7 +5,6 @@ import com.niit.bej.springemail.service.EmailService;
 import io.jsonwebtoken.Claims;
 import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class EmailController {
 
-    @Autowired
+
     private EmailService emailService;
 
 
@@ -29,11 +28,12 @@ public class EmailController {
             Claims claims = (Claims) request.getAttribute("claims");
             System.out.println("email from claims :: " + claims.getSubject());
             String emailDetails = claims.getSubject();
-            System.out.println("email :: " + email);
-            System.out.println("This is it");
+            System.out.println("email :: " + emailDetails);
             return new ResponseEntity<>(emailService.sendSimpleEmail(email, emailDetails), HttpStatus.OK);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
     }
+
 }
+

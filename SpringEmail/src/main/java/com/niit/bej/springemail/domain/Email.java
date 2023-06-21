@@ -14,6 +14,6 @@ public class Email {
     private String toEmail;
     private String body;
     private String subject;
-    private String attachment;
+
 
 }

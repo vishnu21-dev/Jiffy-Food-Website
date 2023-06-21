@@ -11,6 +11,7 @@ public class User {
 
     @MongoId
     private String emailId;
+    private String imageUrl;
     private String name;
     private String password;
     private String phoneNo;
@@ -23,8 +24,9 @@ public class User {
     public User() {
     }
 
-    public User(String emailId, String name, String password, String phoneNo, String city, String address, List<Order> orders, List<Restaurant> restaurantList, List<Dish> dishList) {
+    public User(String emailId, String imageUrl, String name, String password, String phoneNo, String city, String address, List<Order> orders, List<Restaurant> restaurantList, List<Dish> dishList) {
         this.emailId = emailId;
+        this.imageUrl = imageUrl;
         this.name = name;
         this.password = password;
         this.phoneNo = phoneNo;
@@ -37,7 +39,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "emailId='" + emailId + '\'' + ", name='" + name + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", city='" + city + '\'' + ", address='" + address + '\'' + ", orders=" + orders + ", restaurantList=" + restaurantList + ", dishList=" + dishList + '}';
+        return "User{" + "emailId='" + emailId + '\'' + ", imageUrl='" + imageUrl + '\'' + ", name='" + name + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", city='" + city + '\'' + ", address='" + address + '\'' + ", orders=" + orders + ", restaurantList=" + restaurantList + ", dishList=" + dishList + '}';
     }
 
     @Override
@@ -45,12 +47,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(emailId, user.emailId) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(restaurantList, user.restaurantList) && Objects.equals(dishList, user.dishList);
+        return Objects.equals(emailId, user.emailId) && Objects.equals(imageUrl, user.imageUrl) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(restaurantList, user.restaurantList) && Objects.equals(dishList, user.dishList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emailId, name, password, phoneNo, city, address, orders, restaurantList, dishList);
+        return Objects.hash(emailId, imageUrl, name, password, phoneNo, city, address, orders, restaurantList, dishList);
     }
 
     public String getEmailId() {
@@ -59,6 +61,14 @@ public class User {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {

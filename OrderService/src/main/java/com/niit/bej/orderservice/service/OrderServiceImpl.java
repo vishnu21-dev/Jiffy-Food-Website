@@ -78,8 +78,7 @@ public class OrderServiceImpl implements OrderService {
                 throw new OrderNotFoundException("There is no order present");
             }
             return orders;
-        } else
-            throw new UserNotFoundException("User Not found");
+        } else throw new UserNotFoundException("User Not found");
     }
 
     @Override
@@ -94,8 +93,7 @@ public class OrderServiceImpl implements OrderService {
                 List<Dish> dishList = order.getDishes();
                 if (dishList.isEmpty()) {
                     throw new DishNotFoundException("The Requested Dish is not present");
-                } else
-                    requestedDish = dishList.stream().filter(f -> f.getName().equals(dishName)).findAny();
+                } else requestedDish = dishList.stream().filter(f -> f.getName().equals(dishName)).findAny();
                 if (requestedDish.isPresent()) {
                     dishList.remove(requestedDish);
                     order.setDishes(dishList);
@@ -141,8 +139,7 @@ public class OrderServiceImpl implements OrderService {
                 user.setRestaurantList(restaurantList);
                 orderRepository.save(user);
                 return restaurant;
-            } else
-                throw new RestaurantAlreadyPresentException("Restaurant Already Present");
+            } else throw new RestaurantAlreadyPresentException("Restaurant Already Present");
 
         }
         throw new UserNotFoundException("User Not Found");
@@ -179,8 +176,7 @@ public class OrderServiceImpl implements OrderService {
                 user.setDishList(dishList);
                 orderRepository.save(user);
                 return dish;
-            } else
-                throw new DishAlreadyPresentException("Dish Already Present");
+            } else throw new DishAlreadyPresentException("Dish Already Present");
 
         }
         throw new UserNotFoundException("User Not Found");
@@ -211,8 +207,7 @@ public class OrderServiceImpl implements OrderService {
                 user.setRestaurantList(restaurantList);
                 orderRepository.save(user);
                 return true;
-            } else
-                throw new RestaurantNotFoundException("Restaurant not found");
+            } else throw new RestaurantNotFoundException("Restaurant not found");
         } else throw new UserNotFoundException("user not found");
     }
 
@@ -227,9 +222,42 @@ public class OrderServiceImpl implements OrderService {
                 user.setDishList(dishList);
                 orderRepository.save(user);
                 return true;
-            } else
-                throw new DishNotFoundException("dish not found");
+            } else throw new DishNotFoundException("dish not found");
         } else throw new UserNotFoundException("user not found");
+    }
+
+    @Override
+    public User updateUser(User updatedUser) throws UserNotFoundException {
+
+
+        Optional<User> optionalUser = orderRepository.findById(updatedUser.getEmailId());
+
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+
+            if (updatedUser.getImageUrl() != null) {
+                user.setImageUrl(updatedUser.getImageUrl());
+            }
+            if (updatedUser.getName() != null) {
+                user.setName(updatedUser.getName());
+            }
+            if (updatedUser.getPassword() != null) {
+                user.setPassword(updatedUser.getPassword());
+            }
+            if (updatedUser.getPhoneNo() != null) {
+                user.setPhoneNo(updatedUser.getPhoneNo());
+            }
+            if (updatedUser.getCity() != null) {
+                user.setCity(updatedUser.getCity());
+            }
+            if (updatedUser.getAddress() != null) {
+                user.setAddress(updatedUser.getAddress());
+            }
+            orderRepository.save(user);
+            return user;
+        } else throw new UserNotFoundException("User not found ");
+
+
     }
 
 

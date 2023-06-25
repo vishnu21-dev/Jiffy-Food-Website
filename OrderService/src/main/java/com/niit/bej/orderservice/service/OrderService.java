@@ -36,4 +36,6 @@ public interface OrderService {
 
     boolean deleteDish(String userId, String dish) throws UserNotFoundException, DishNotFoundException;
 
+    User updateUser(User updatedUser) throws UserNotFoundException;
+
 }

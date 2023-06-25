@@ -114,7 +114,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping("user/getRestaurants")
+    @GetMapping("/user/getRestaurants")
     public ResponseEntity<?> getRestaurants(HttpServletRequest request) {
         try {
             String userId = request.getAttribute("emailId").toString();
@@ -130,7 +130,7 @@ public class OrderController {
         }
     }
 
-    @PostMapping("user/dishes")
+    @PostMapping("/user/dishes")
     public ResponseEntity<?> addDishToFavorites(HttpServletRequest request, @RequestBody Dish dish) {
         try {
             String userId = request.getAttribute("emailId").toString();
@@ -144,7 +144,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping("user/getDishes")
+    @GetMapping("/user/getDishes")
     public ResponseEntity<?> getDishes(HttpServletRequest request) {
         try {
             String userId = request.getAttribute("emailId").toString();
@@ -157,7 +157,7 @@ public class OrderController {
         }
     }
 
-    @DeleteMapping("user/restaurants/{restaurant}")
+    @DeleteMapping("/user/restaurants/{restaurant}")
     public ResponseEntity<?> deleteRestaurant(@PathVariable String restaurant, HttpServletRequest request) {
         try {
             String userId = request.getAttribute("emailId").toString();
@@ -171,7 +171,7 @@ public class OrderController {
         }
     }
 
-    @DeleteMapping("user/dishes/{dishName}")
+    @DeleteMapping("/user/dishes/{dishName}")
     public ResponseEntity<?> deleteDish(@PathVariable String dishName, HttpServletRequest request) {
         try {
             String userId = request.getAttribute("emailId").toString();
@@ -183,6 +183,17 @@ public class OrderController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 
         }
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<?> updateUser(@RequestBody User user) {
+        try {
+            User user1 = orderService.updateUser(user);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+
     }
 
 

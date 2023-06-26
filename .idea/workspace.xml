@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment=" SpringEmailApplication is deleted">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="SpringEmailServiceApplication is created">
+      <change afterPath="$PROJECT_DIR$/SpringEmailService/src/main/java/com/niit/bej/springemailservice/domain/EmailDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringEmailService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmailService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +199,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringEmailServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="SpringEmailService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.springemailservice.SpringEmailServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserAuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="UserAuthenticationService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.userauthenticationservice.UserAuthenticationServiceApplication" />
@@ -207,6 +217,7 @@
       <item itemvalue="Application.MerchantServiceApplication" />
       <item itemvalue="Application.OrderServiceApplication" />
       <item itemvalue="Application.UserAuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.SpringEmailServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AuthentificationServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
@@ -251,7 +262,7 @@
       <workItem from="1687364922858" duration="2879000" />
       <workItem from="1687796699625" duration="951000" />
       <workItem from="1687797927244" duration="1742000" />
-      <workItem from="1687799840959" duration="613000" />
+      <workItem from="1687799840959" duration="1200000" />
     </task>
     <task id="LOCAL-00035" summary="Getters &amp; Setters &amp; equals &amp; hashCode are added">
       <created>1684916326187</created>
@@ -596,7 +607,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687109964062</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +626,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="deleteDishFromOrder method from controller is updated" />
     <MESSAGE value="deleteOrder mrthod from controller layer is updated" />
     <MESSAGE value="get all merchant Restaurants method is done in service" />
     <MESSAGE value="fetchMerchantRestaurants method in merchant controller is done" />
@@ -640,7 +650,8 @@
     <MESSAGE value="Errors are rectified" />
     <MESSAGE value="Modified the SpringEmailApplication" />
     <MESSAGE value=" SpringEmailApplication is deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value=" SpringEmailApplication is deleted" />
+    <MESSAGE value="SpringEmailServiceApplication is created" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpringEmailServiceApplication is created" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

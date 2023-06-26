@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Errors are rectified">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added method in OrderServiceImpl.java">
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/main/java/com/niit/bej/SpringEmail2Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/main/java/com/niit/bej/controller/EmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/main/java/com/niit/bej/domain/EmailDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/main/java/com/niit/bej/service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/main/java/com/niit/bej/service/EmailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringEmail2/src/test/java/com/niit/bej/SpringEmail2ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateWay/src/main/java/com/niit/bej/ApiGateWay/Config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateWay/src/main/java/com/niit/bej/ApiGateWay/Config/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,29 +58,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Final Capstone Project/Final Capstone&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;01339a1403fa5f36bb628b1bae83482a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "F:/Final Capstone Project/Final Capstone",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "01339a1403fa5f36bb628b1bae83482a",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.niit.bej.service" />
       <recent name="com.niit.bej.orderservice.exception" />
       <recent name="com.niit.bej.orderservice.domain" />
     </key>
@@ -191,6 +206,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringEmail2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="SpringEmail2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.SpringEmail2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringEmailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="SpringEmail" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.springemail.SpringEmailApplication" />
@@ -209,6 +231,7 @@
       <item itemvalue="Application.MerchantServiceApplication" />
       <item itemvalue="Application.OrderServiceApplication" />
       <item itemvalue="Application.UserAuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.SpringEmail2Application" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AuthentificationServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
@@ -251,13 +274,6 @@
       <workItem from="1687233292495" duration="13867000" />
       <workItem from="1687312672186" duration="8058000" />
       <workItem from="1687364922858" duration="2879000" />
-    </task>
-    <task id="LOCAL-00035" summary="Getters &amp; Setters &amp; equals &amp; hashCode are added">
-      <created>1684916326187</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1684916326187</updated>
     </task>
     <task id="LOCAL-00036" summary="toString method  added">
       <created>1684916414846</created>
@@ -595,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687109964062</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="added method in OrderServiceImpl.java">
+      <created>1687714021992</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1687714021992</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add restaurant methood done in serviceimpl class" />
     <MESSAGE value="add restaurant method updated" />
     <MESSAGE value="deleteDishFromOrder method from controller is updated" />
     <MESSAGE value="deleteOrder mrthod from controller layer is updated" />
@@ -639,7 +661,8 @@
     <MESSAGE value="OrderService interface methods are modified" />
     <MESSAGE value="methods are modified" />
     <MESSAGE value="Errors are rectified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Errors are rectified" />
+    <MESSAGE value="added method in OrderServiceImpl.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method in OrderServiceImpl.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

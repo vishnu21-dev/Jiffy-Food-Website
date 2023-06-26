@@ -16,6 +16,7 @@ public class Config {
                 .route(p -> p.path("/merchantZomato/**").uri("http://localhost:8082/"))//merchantService
                 .route(p -> p.path("/userOrder/**").uri("http://localhost:8083/"))//Order Service
                 .route(p -> p.path("/api/**").uri("http://localhost:8080/"))
+                .route(p -> p.path("/mail/**").uri("http://localhost:8085/"))
                 .build();
     }
 }

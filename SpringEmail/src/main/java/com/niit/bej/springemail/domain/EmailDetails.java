@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Email {
+public class EmailDetails {
 
-    private String toEmail;
-    private String body;
+    private String recipient;
+    private String msgBody;
     private String subject;
 
 

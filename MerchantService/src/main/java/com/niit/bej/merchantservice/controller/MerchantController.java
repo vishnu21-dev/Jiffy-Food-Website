@@ -136,7 +136,7 @@ public class MerchantController {
         }
     }
 
-    @GetMapping("/merchant/getRestaurantBasedOnLocation/{restaurantLocation}")
+    @GetMapping("/getRestaurantBasedOnLocation/{restaurantLocation}")
     public ResponseEntity<?> getRestaurantOnLocation(@PathVariable String restaurantLocation) {
         try {
             List<Restaurant> restaurantBasedOnLocation = merchantService.getRestaurantBasedOnLocation(restaurantLocation);

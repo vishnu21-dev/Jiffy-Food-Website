@@ -1,9 +1,8 @@
 package com.niit.bej.springemail.service;
 
-import com.niit.bej.springemail.domain.Email;
-import jakarta.mail.MessagingException;
+import com.niit.bej.springemail.domain.EmailDetails;
 
 public interface EmailService {
 
-    String sendSimpleEmail(Email email, String emailDetails) throws MessagingException;
+    String sendSimpleMail(EmailDetails details);
 }

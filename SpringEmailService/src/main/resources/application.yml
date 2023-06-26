@@ -1,0 +1,22 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jiffyfoodApp@gmail.com
+    password: ecqqjlsroxwwjtac
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  application:
+    name: emailService
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+server:
+  port: 8085

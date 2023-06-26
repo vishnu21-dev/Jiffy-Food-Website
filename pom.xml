@@ -22,7 +22,6 @@
     <module>MerchantService</module>
     <module>EurekaServer</module>
     <module>OrderService</module>
-    <module>SpringEmail</module>
     <module>ApiGateWay</module>
   </modules>
 

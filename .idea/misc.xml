@@ -12,11 +12,13 @@
         <option value="$PROJECT_DIR$/OrderService/pom.xml" />
         <option value="$PROJECT_DIR$/SpringEmail/pom.xml" />
         <option value="$PROJECT_DIR$/ApiGateWay/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringEmail2/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/AuthentificationService/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringEmail/pom.xml" />
       </set>
     </option>
   </component>

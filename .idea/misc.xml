@@ -18,6 +18,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/AuthentificationService/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringEmail/pom.xml" />
       </set>
     </option>
   </component>

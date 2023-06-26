@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/SpringEmail/pom.xml" />
         <option value="$PROJECT_DIR$/ApiGateWay/pom.xml" />
         <option value="$PROJECT_DIR$/SpringEmail2/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringEmailService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

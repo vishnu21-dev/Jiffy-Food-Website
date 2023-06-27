@@ -170,10 +170,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Dish> getDish(String userId) throws DishNotFoundException, UserNotFoundException {
+    public List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Dish> dishList = user.getDishList();
+            List<Dish> dishList = user.getFavourites().getDishList();
             if (dishList.isEmpty()) {
                 throw new DishNotFoundException("No dish Found");
             }

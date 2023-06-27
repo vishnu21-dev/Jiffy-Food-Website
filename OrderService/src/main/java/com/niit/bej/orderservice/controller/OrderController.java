@@ -120,7 +120,7 @@ public class OrderController {
 
     }
 
-    @PostMapping("/user/dishes")
+    @PostMapping("/user/addDishToFavorites")
     public ResponseEntity<?> addDishToFavorites(HttpServletRequest request, @RequestBody Dish dish) {
         String emailId = request.getAttribute("emailId").toString();
         try {
@@ -132,16 +132,16 @@ public class OrderController {
     }
 
     @GetMapping("/user/getDishes")
-    public ResponseEntity<?> getDishes(HttpServletRequest request) {
+    public ResponseEntity<?> getDishFromFavourites(HttpServletRequest request) {
+
+        String emailId = request.getAttribute("emailId").toString();
         try {
-            String userId = request.getAttribute("emailId").toString();
-
-            List<Dish> dishList = orderService.getDish(userId);
-            return new ResponseEntity<>(dishList, HttpStatus.OK);
-
-        } catch (UserNotFoundException | DishNotFoundException e) {
+            List<Dish> dishFromFavourites = orderService.getDishFromFavourites(emailId);
+            return new ResponseEntity<>(dishFromFavourites, HttpStatus.OK);
+        } catch (DishNotFoundException | UserNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
+
     }
 
     @DeleteMapping("/user/restaurants/{restaurant}")

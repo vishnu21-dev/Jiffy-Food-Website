@@ -18,13 +18,9 @@ public class User {
     private String city;
     private String address;
     private List<Order> orders;
-    private List<Restaurant> restaurantList;
-    private List<Dish> dishList;
+    private Favourite favourites;
 
-    public User() {
-    }
-
-    public User(String emailId, String imageUrl, String name, String password, String phoneNo, String city, String address, List<Order> orders, List<Restaurant> restaurantList, List<Dish> dishList) {
+    public User(String emailId, String imageUrl, String name, String password, String phoneNo, String city, String address, List<Order> orders, Favourite favourites) {
         this.emailId = emailId;
         this.imageUrl = imageUrl;
         this.name = name;
@@ -33,26 +29,10 @@ public class User {
         this.city = city;
         this.address = address;
         this.orders = orders;
-        this.restaurantList = restaurantList;
-        this.dishList = dishList;
+        this.favourites = favourites;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "emailId='" + emailId + '\'' + ", imageUrl='" + imageUrl + '\'' + ", name='" + name + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", city='" + city + '\'' + ", address='" + address + '\'' + ", orders=" + orders + ", restaurantList=" + restaurantList + ", dishList=" + dishList + '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(emailId, user.emailId) && Objects.equals(imageUrl, user.imageUrl) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(restaurantList, user.restaurantList) && Objects.equals(dishList, user.dishList);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(emailId, imageUrl, name, password, phoneNo, city, address, orders, restaurantList, dishList);
+    public User() {
     }
 
     public String getEmailId() {
@@ -119,19 +99,39 @@ public class User {
         this.orders = orders;
     }
 
-    public List<Restaurant> getRestaurantList() {
-        return restaurantList;
+    public Favourite getFavourites() {
+        return favourites;
     }
 
-    public void setRestaurantList(List<Restaurant> restaurantList) {
-        this.restaurantList = restaurantList;
+    public void setFavourites(Favourite favourites) {
+        this.favourites = favourites;
     }
 
-    public List<Dish> getDishList() {
-        return dishList;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(emailId, user.emailId) && Objects.equals(imageUrl, user.imageUrl) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(favourites, user.favourites);
     }
 
-    public void setDishList(List<Dish> dishList) {
-        this.dishList = dishList;
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailId, imageUrl, name, password, phoneNo, city, address, orders, favourites);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "emailId='" + emailId + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", orders=" + orders +
+                ", favourites=" + favourites +
+                '}';
     }
 }

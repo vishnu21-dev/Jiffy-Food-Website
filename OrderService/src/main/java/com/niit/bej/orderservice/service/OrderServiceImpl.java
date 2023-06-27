@@ -1,9 +1,6 @@
 package com.niit.bej.orderservice.service;
 
-import com.niit.bej.orderservice.domain.Dish;
-import com.niit.bej.orderservice.domain.Order;
-import com.niit.bej.orderservice.domain.Restaurant;
-import com.niit.bej.orderservice.domain.User;
+import com.niit.bej.orderservice.domain.*;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.proxy.UserProxy;
 import com.niit.bej.orderservice.repository.OrderRepository;
@@ -123,33 +120,29 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Restaurant addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException {
+    public Favourite addRestaurantToFavorites(String userId, Restaurant restaurant)
+            throws UserNotFoundException, RestaurantAlreadyPresentException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Restaurant> restaurantList = user.getRestaurantList();
-            if (restaurantList == null) {
-                user.setRestaurantList(Collections.singletonList(restaurant));
-                orderRepository.save(user);
-
-                return restaurant;
-            }
-            Optional<Restaurant> findRestaurant = restaurantList.stream().filter(f -> f.getName().equalsIgnoreCase(restaurant.getName())).findAny();
-            if (findRestaurant.isEmpty()) {
+            List<Restaurant> restaurantList = user.getFavourites().getRestaurantList();
+            if (restaurantList.contains(restaurant)) {
+                throw new RestaurantAlreadyPresentException("Restaurant Already Exists!");
+            } else {
                 restaurantList.add(restaurant);
-                user.setRestaurantList(restaurantList);
                 orderRepository.save(user);
-                return restaurant;
-            } else throw new RestaurantAlreadyPresentException("Restaurant Already Present");
-
+                return user.getFavourites();
+            }
+        } else {
+            throw new UserNotFoundException("User does not exists!");
         }
-        throw new UserNotFoundException("User Not Found");
+
     }
 
     @Override
     public List<Restaurant> getRestaurant(String userId) throws UserNotFoundException, RestaurantNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Restaurant> restaurantList = user.getRestaurantList();
+            List<Restaurant> restaurantList = user.getFavourites().getRestaurantList();
             if (restaurantList.isEmpty()) {
                 throw new RestaurantNotFoundException("No Restaurant Found");
             }
@@ -160,26 +153,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Dish addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException {
+    public Favourite addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Dish> dishList = user.getDishList();
-            if (dishList == null) {
-                user.setDishList(Collections.singletonList(dish));
-                orderRepository.save(user);
-
-                return dish;
-            }
-            Optional<Dish> findDish = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(dish.getName())).findAny();
-            if (findDish.isEmpty()) {
+            List<Dish> dishList = user.getFavourites().getDishList();
+            if (dishList.contains(dish)) {
+                throw new DishAlreadyExistsException("Dish Already Exists!");
+            } else {
                 dishList.add(dish);
-                user.setDishList(dishList);
                 orderRepository.save(user);
-                return dish;
-            } else throw new DishAlreadyPresentException("Dish Already Present");
-
+                return user.getFavourites();
+            }
+        } else {
+            throw new UserNotFoundException("User does not exists!");
         }
-        throw new UserNotFoundException("User Not Found");
     }
 
     @Override

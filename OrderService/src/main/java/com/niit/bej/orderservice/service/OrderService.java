@@ -1,9 +1,6 @@
 package com.niit.bej.orderservice.service;
 
-import com.niit.bej.orderservice.domain.Dish;
-import com.niit.bej.orderservice.domain.Order;
-import com.niit.bej.orderservice.domain.Restaurant;
-import com.niit.bej.orderservice.domain.User;
+import com.niit.bej.orderservice.domain.*;
 import com.niit.bej.orderservice.exception.*;
 
 import java.util.List;
@@ -24,13 +21,13 @@ public interface OrderService {
 
     boolean deleteOrder(int orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
 
-    Restaurant addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException;
+    Favourite addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException;
 
     List<Restaurant> getRestaurant(String userId) throws UserNotFoundException, RestaurantNotFoundException;
 
-    Dish addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException;
+    Favourite addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException;
 
-    List<Dish> getDish(String userId) throws DishNotFoundException, UserNotFoundException;
+    List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException;
 
     boolean deleteRestaurant(String userId, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException;
 

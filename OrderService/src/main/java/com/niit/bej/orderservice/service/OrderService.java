@@ -29,9 +29,9 @@ public interface OrderService {
 
     List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException;
 
-    boolean deleteRestaurant(String userId, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException;
+    boolean deleteRestaurantFromFavourites(String userId, String restaurantName) throws UserNotFoundException, RestaurantNotFoundException;
 
-    boolean deleteDish(String userId, String dish) throws UserNotFoundException, DishNotFoundException;
+    boolean deleteDishFromFavourites(String userId, String dish) throws UserNotFoundException, DishNotFoundException;
 
     User updateUser(User updatedUser) throws UserNotFoundException;
 

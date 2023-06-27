@@ -120,8 +120,8 @@ public class OrderController {
 
     }
 
-    @PostMapping("/user/addDishToFavorites")
-    public ResponseEntity<?> addDishToFavorites(HttpServletRequest request, @RequestBody Dish dish) {
+    @PostMapping("/user/addDishToFavourites")
+    public ResponseEntity<?> addDishToFavourites(HttpServletRequest request, @RequestBody Dish dish) {
         String emailId = request.getAttribute("emailId").toString();
         try {
             Favourite dish1 = orderService.addDishToFavourites(emailId, dish);
@@ -144,31 +144,25 @@ public class OrderController {
 
     }
 
-    @DeleteMapping("/user/restaurants/{restaurant}")
-    public ResponseEntity<?> deleteRestaurant(@PathVariable String restaurant, HttpServletRequest request) {
+    @DeleteMapping("/user/deleteRestaurantFromFavourites/{restaurantName}")
+    public ResponseEntity<?> deleteRestaurantFromFavourites(@PathVariable String restaurantName, HttpServletRequest request) {
+        String emailId = request.getAttribute("emailId").toString();
         try {
-            String userId = request.getAttribute("emailId").toString();
-
-            boolean deleted = orderService.deleteRestaurant(userId, restaurant);
-            return new ResponseEntity<>(deleted, HttpStatus.OK);
-
+            boolean deleteRestaurant = orderService.deleteRestaurantFromFavourites(emailId, restaurantName);
+            return new ResponseEntity<>(deleteRestaurant, HttpStatus.OK);
         } catch (UserNotFoundException | RestaurantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-
         }
     }
 
-    @DeleteMapping("/user/dishes/{dishName}")
-    public ResponseEntity<?> deleteDish(@PathVariable String dishName, HttpServletRequest request) {
+    @DeleteMapping("/user/deleteDishFromFavourites/{dishName}")
+    public ResponseEntity<?> deleteDishFromFavourites(@PathVariable String dishName, HttpServletRequest request) {
+        String emailId = request.getAttribute("emailId").toString();
         try {
-            String userId = request.getAttribute("emailId").toString();
-
-            boolean deleted = orderService.deleteDish(userId, dishName);
-            return new ResponseEntity<>(deleted, HttpStatus.OK);
-
+            boolean deleteDish = orderService.deleteDishFromFavourites(emailId, dishName);
+            return new ResponseEntity<>(deleteDish, HttpStatus.OK);
         } catch (UserNotFoundException | DishNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-
         }
     }
 

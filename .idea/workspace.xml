@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Domain class EmailDetails is created-">
-      <change afterPath="$PROJECT_DIR$/SpringEmailService/src/main/java/com/niit/bej/springemailservice/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringEmailService/src/main/java/com/niit/bej/springemailservice/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpringEmailService/src/main/java/com/niit/bej/springemailservice/service/EmailServiceImpl.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Methods are added to EmailService &amp; EmailController">
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Favourite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "build.tools",
-    "spring.configuration.checksum": "0adb09ddba22ebb7d07ef4e759c44b2f",
+    "spring.configuration.checksum": "1bb5c3e4f8b8c6542a151501503ff8ff",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -263,6 +261,7 @@
       <workItem from="1687796699625" duration="951000" />
       <workItem from="1687797927244" duration="1742000" />
       <workItem from="1687799840959" duration="2798000" />
+      <workItem from="1687835382927" duration="1279000" />
     </task>
     <task id="LOCAL-00035" summary="Getters &amp; Setters &amp; equals &amp; hashCode are added">
       <created>1684916326187</created>
@@ -607,7 +606,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687109964062</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +625,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added methods in OrderServiceImpl.java" />
     <MESSAGE value="corrected errors" />
     <MESSAGE value="Restaurant class modified in MerchantService" />
     <MESSAGE value="Properties are modified" />
@@ -651,7 +649,8 @@
     <MESSAGE value="Dependencies are added" />
     <MESSAGE value="Properties are added to application.yml" />
     <MESSAGE value="Domain class EmailDetails is created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Domain class EmailDetails is created" />
+    <MESSAGE value="Methods are added to EmailService &amp; EmailController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Methods are added to EmailService &amp; EmailController" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

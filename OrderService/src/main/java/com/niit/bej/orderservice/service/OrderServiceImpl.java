@@ -139,7 +139,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Restaurant> getRestaurant(String userId) throws UserNotFoundException, RestaurantNotFoundException {
+    public List<Restaurant> getRestaurants(String userId) throws UserNotFoundException, RestaurantNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> restaurantList = user.getFavourites().getRestaurantList();

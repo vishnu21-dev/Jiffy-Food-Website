@@ -23,7 +23,7 @@ public interface OrderService {
 
     Favourite addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException;
 
-    List<Restaurant> getRestaurant(String userId) throws UserNotFoundException, RestaurantNotFoundException;
+    List<Restaurant> getRestaurants(String userId) throws UserNotFoundException, RestaurantNotFoundException;
 
     Favourite addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException;
 

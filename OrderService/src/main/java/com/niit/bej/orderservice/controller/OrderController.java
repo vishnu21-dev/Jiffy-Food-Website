@@ -112,7 +112,7 @@ public class OrderController {
     public ResponseEntity<?> getRestaurants(HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
         try {
-            List<Restaurant> restaurant = orderService.getRestaurant(emailId);
+            List<Restaurant> restaurant = orderService.getRestaurants(emailId);
             return new ResponseEntity<>(restaurant, HttpStatus.OK);
         } catch (UserNotFoundException | RestaurantNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);

@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added the parent tag">
-      <change afterPath="$PROJECT_DIR$/AdminService" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected the error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -289,21 +283,7 @@
       <workItem from="1687835382927" duration="17476000" />
       <workItem from="1687930520638" duration="2571000" />
       <workItem from="1687935186432" duration="199000" />
-      <workItem from="1687935394138" duration="4798000" />
-    </task>
-    <task id="LOCAL-00037" summary="add order method is done">
-      <created>1685012690031</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1685012690031</updated>
-    </task>
-    <task id="LOCAL-00038" summary="controller is done">
-      <created>1685019080631</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1685019080631</updated>
+      <workItem from="1687935394138" duration="5265000" />
     </task>
     <task id="LOCAL-00039" summary="authentication service test is done">
       <created>1685532502024</created>
@@ -634,7 +614,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687932879619</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="corrected the error">
+      <created>1687940229835</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1687940229835</updated>
+    </task>
+    <task id="LOCAL-00101" summary="corrected the error">
+      <created>1687940238787</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1687940238787</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +647,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Methods are modified in controller class" />
     <MESSAGE value="Methods are modified in OrderService" />
     <MESSAGE value="Method modified in Config" />
     <MESSAGE value="addOrder method is modified" />
@@ -678,7 +671,8 @@
     <MESSAGE value="Methods are modified in OrderServiceImpl &amp; OrderController" />
     <MESSAGE value="Added admin module" />
     <MESSAGE value="added the parent tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the parent tag" />
+    <MESSAGE value="corrected the error" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected the error" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Methods are modified in OrderServiceImpl &amp; OrderController" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Methods are modified in OrderServiceImpl &amp; OrderController">
+      <change afterPath="$PROJECT_DIR$/Admin_Module/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/AdminModuleApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/domain/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/domain/Merchant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/domain/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/exception/AdminDoesNotExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/exception/MerchantAlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/repositary/AdminRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/service/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin_Module/src/test/java/com/niit/bej/AdminModuleApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +41,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Admin_Module" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,7 +73,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "F:/Final Capstone Project/Final Capstone",
+    "last_opened_file_path": "/Users/vishnu/Downloads/final_capstone_backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,10 +86,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.niit.bej.exception" />
+      <recent name="com.niit.bej.service" />
       <recent name="com.niit.bej.orderservice.exception" />
       <recent name="com.niit.bej.orderservice.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="D:\Final Project NIIT\FoodieApp\EurekaServer" />
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
       <recent name="D:\Final Project NIIT\FoodieApp\UserAuthenticationService" />
@@ -131,6 +156,13 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Final Capstone" />
       <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Admin_Module" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.AdminModuleApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,6 +244,7 @@
       <item itemvalue="Application.MerchantServiceApplication" />
       <item itemvalue="Application.OrderServiceApplication" />
       <item itemvalue="Application.UserAuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.AdminModuleApplication" />
       <item itemvalue="Spring Boot.SpringEmailServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AuthentificationServiceApplication" />
@@ -259,6 +292,7 @@
       <workItem from="1687797927244" duration="1742000" />
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
+      <workItem from="1687930520638" duration="2183000" />
     </task>
     <task id="LOCAL-00035" summary="Getters &amp; Setters &amp; equals &amp; hashCode are added">
       <created>1684916326187</created>

@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="Methods are modified in OrderServiceImpl &amp; OrderController">
-      <change afterPath="$PROJECT_DIR$/Admin_Module/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/AdminModuleApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/domain/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/domain/Merchant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/domain/Restaurant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/exception/AdminDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/exception/MerchantAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/repositary/AdminRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/java/com/niit/bej/service/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin_Module/src/test/java/com/niit/bej/AdminModuleApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added the parent tag" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -292,21 +270,7 @@
       <workItem from="1687797927244" duration="1742000" />
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
-      <workItem from="1687930520638" duration="2183000" />
-    </task>
-    <task id="LOCAL-00035" summary="Getters &amp; Setters &amp; equals &amp; hashCode are added">
-      <created>1684916326187</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1684916326187</updated>
-    </task>
-    <task id="LOCAL-00036" summary="toString method  added">
-      <created>1684916414846</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1684916414846</updated>
+      <workItem from="1687930520638" duration="2571000" />
     </task>
     <task id="LOCAL-00037" summary="add order method is done">
       <created>1685012690031</created>
@@ -637,7 +601,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687109964062</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Added admin module">
+      <created>1687932727238</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1687932727238</updated>
+    </task>
+    <task id="LOCAL-00099" summary="added the parent tag">
+      <created>1687932879619</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1687932879619</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,8 +634,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="method is added" />
-    <MESSAGE value="getAllDishesBasedOnCuisine is updated" />
     <MESSAGE value="Methods are modified in controller class" />
     <MESSAGE value="Methods are modified in OrderService" />
     <MESSAGE value="Method modified in Config" />
@@ -681,7 +657,9 @@
     <MESSAGE value="Domain class Favourite is modified" />
     <MESSAGE value="FavouriteNotFoundException is created" />
     <MESSAGE value="Methods are modified in OrderServiceImpl &amp; OrderController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Methods are modified in OrderServiceImpl &amp; OrderController" />
+    <MESSAGE value="Added admin module" />
+    <MESSAGE value="added the parent tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the parent tag" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

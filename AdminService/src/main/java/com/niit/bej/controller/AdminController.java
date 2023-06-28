@@ -1,5 +1,6 @@
 package com.niit.bej.controller;
 
+import com.niit.bej.domain.Restaurant;
 import com.niit.bej.exception.AdminDoesNotExistException;
 import com.niit.bej.exception.MerchantAlreadyExistException;
 import com.niit.bej.service.AdminService;
@@ -20,22 +21,22 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @PostMapping("/registerMerchantInAdmin")
-    public ResponseEntity<?> register(@RequestBody Merchant merchant) {
+    @PostMapping("/registerRestaurantInAdmin")
+    public ResponseEntity<?> register(@RequestBody Restaurant restaurant) {
         try {
-            Merchant registerMerchant = adminService.addMerchant(merchant);
-            return new ResponseEntity<>(registerMerchant, HttpStatus.CREATED);
+            Restaurant registerRestaurant = adminService.addRestaurant(restaurant);
+            return new ResponseEntity<>(registerRestaurant, HttpStatus.CREATED);
         } catch (MerchantAlreadyExistException e) {
             throw new RuntimeException(e);
         }
     }
 
-    @GetMapping("/getMerchant/{userId}/{password}")
+    @GetMapping("/getRestaurant/{userId}/{password}")
     public ResponseEntity<?> getMerchant(@PathVariable String userId, @PathVariable String password) {
 
         try {
-            List<Merchant> merchantList = adminService.getMerchant(userId, password);
-            return new ResponseEntity<>(merchantList, HttpStatus.OK);
+            List<Restaurant> restaurantList = adminService.getRestaurant(userId, password);
+            return new ResponseEntity<>(restaurantList, HttpStatus.OK);
         } catch (AdminDoesNotExistException e) {
             throw new RuntimeException(e);
         }

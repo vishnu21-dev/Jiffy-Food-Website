@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected errors">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected methods">
       <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Merchant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/service/MerchantServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,14 +294,7 @@
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
       <workItem from="1687930520638" duration="2571000" />
-      <workItem from="1687942036464" duration="3625000" />
-    </task>
-    <task id="LOCAL-00039" summary="authentication service test is done">
-      <created>1685532502024</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1685532502024</updated>
+      <workItem from="1687942036464" duration="5590000" />
     </task>
     <task id="LOCAL-00040" summary="implemented add cuisine method in service implementation class of merchant service">
       <created>1685939392772</created>
@@ -643,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687946970671</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="corrected methods">
+      <created>1687952639634</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1687952639634</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +661,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AdminService" />
     </ignored-roots>
-    <MESSAGE value="Method modified in Config" />
     <MESSAGE value="addOrder method is modified" />
     <MESSAGE value="registerUser method rectified" />
     <MESSAGE value="OrderController methods are modified" />
@@ -690,7 +685,8 @@
     <MESSAGE value="added the parent tag" />
     <MESSAGE value="added admin module" />
     <MESSAGE value="corrected errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
+    <MESSAGE value="corrected methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected methods" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

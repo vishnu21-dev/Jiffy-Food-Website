@@ -4,24 +4,23 @@ import java.util.List;
 import java.util.Objects;
 
 public class Admin {
-    private String userId;
+    private String emailId;
 
     private String password;
-    private List<Merchant> merchantList;
+    private List<Restaurant> restaurantList;
 
-    public Admin(String userId, String password, List<Merchant> merchantList) {
-        this.userId = userId;
+    public Admin() {
+    }
+
+    public Admin(String emailId, String password, List<Restaurant> restaurantList) {
+        this.emailId = emailId;
         this.password = password;
-        this.merchantList = merchantList;
+        this.restaurantList = restaurantList;
     }
 
     @Override
     public String toString() {
-        return "Admin{" +
-                "userId='" + userId + '\'' +
-                ", password='" + password + '\'' +
-                ", merchantList=" + merchantList +
-                '}';
+        return "Admin{" + "userId='" + emailId + '\'' + ", password='" + password + '\'' + ", restaurantList=" + restaurantList + '}';
     }
 
     @Override
@@ -29,20 +28,20 @@ public class Admin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Admin admin = (Admin) o;
-        return Objects.equals(userId, admin.userId) && Objects.equals(password, admin.password) && Objects.equals(merchantList, admin.merchantList);
+        return Objects.equals(emailId, admin.emailId) && Objects.equals(password, admin.password) && Objects.equals(restaurantList, admin.restaurantList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, password, merchantList);
+        return Objects.hash(emailId, password, restaurantList);
     }
 
-    public String getUserId() {
-        return userId;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
     public String getPassword() {
@@ -53,11 +52,11 @@ public class Admin {
         this.password = password;
     }
 
-    public List<Merchant> getMerchantList() {
-        return merchantList;
+    public List<Restaurant> getRestaurantList() {
+        return restaurantList;
     }
 
-    public void setMerchantList(List<Merchant> merchantList) {
-        this.merchantList = merchantList;
+    public void setRestaurantList(List<Restaurant> restaurantList) {
+        this.restaurantList = restaurantList;
     }
 }

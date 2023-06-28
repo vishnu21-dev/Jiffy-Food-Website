@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added the parent tag">
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Merchant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/AdminDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/MerchantAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/adminservice/AdminServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/AdminServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/test/java/com/niit/bej/adminservice/AdminServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/test/java/com/niit/bej/AdminServiceApplicationTests.java" afterDir="false" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected errors">
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Merchant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,21 +298,7 @@
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
       <workItem from="1687930520638" duration="2571000" />
-      <workItem from="1687942036464" duration="1721000" />
-    </task>
-    <task id="LOCAL-00037" summary="add order method is done">
-      <created>1685012690031</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1685012690031</updated>
-    </task>
-    <task id="LOCAL-00038" summary="controller is done">
-      <created>1685019080631</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1685019080631</updated>
+      <workItem from="1687942036464" duration="3625000" />
     </task>
     <task id="LOCAL-00039" summary="authentication service test is done">
       <created>1685532502024</created>
@@ -647,7 +629,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687932879619</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="added admin module">
+      <created>1687946954332</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1687946954332</updated>
+    </task>
+    <task id="LOCAL-00101" summary="corrected errors">
+      <created>1687946970671</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1687946970671</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,8 +665,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AdminService" />
     </ignored-roots>
-    <MESSAGE value="Methods are modified in controller class" />
-    <MESSAGE value="Methods are modified in OrderService" />
     <MESSAGE value="Method modified in Config" />
     <MESSAGE value="addOrder method is modified" />
     <MESSAGE value="registerUser method rectified" />
@@ -694,7 +688,9 @@
     <MESSAGE value="Methods are modified in OrderServiceImpl &amp; OrderController" />
     <MESSAGE value="Added admin module" />
     <MESSAGE value="added the parent tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the parent tag" />
+    <MESSAGE value="added admin module" />
+    <MESSAGE value="corrected errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

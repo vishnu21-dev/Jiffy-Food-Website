@@ -1,6 +1,5 @@
 package com.niit.bej.controller;
 
-import com.niit.bej.domain.Merchant;
 import com.niit.bej.exception.AdminDoesNotExistException;
 import com.niit.bej.exception.MerchantAlreadyExistException;
 import com.niit.bej.service.AdminService;

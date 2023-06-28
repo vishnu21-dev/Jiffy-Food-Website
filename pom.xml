@@ -23,7 +23,9 @@
     <module>EurekaServer</module>
     <module>OrderService</module>
     <module>SpringEmailService</module>
+    <module>Admin_Module</module>
     <module>ApiGateWay</module>
+
   </modules>
 
   <properties>

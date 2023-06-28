@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added the parent tag" />
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added the parent tag">
+      <change afterPath="$PROJECT_DIR$/AdminService" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Admin_Module" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,8 +63,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "build.tools",
-    "spring.configuration.checksum": "1bb5c3e4f8b8c6542a151501503ff8ff",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "2bd9dc8f676f61990858c486b76b6d17",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -75,6 +81,9 @@
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
       <recent name="D:\Final Project NIIT\FoodieApp\UserAuthenticationService" />
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,6 +150,13 @@
     <configuration name="AdminModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Admin_Module" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.AdminModuleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AdminService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.AdminServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -222,6 +238,7 @@
       <item itemvalue="Application.MerchantServiceApplication" />
       <item itemvalue="Application.OrderServiceApplication" />
       <item itemvalue="Application.UserAuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.AdminServiceApplication" />
       <item itemvalue="Spring Boot.AdminModuleApplication" />
       <item itemvalue="Spring Boot.SpringEmailServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
@@ -271,6 +288,8 @@
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
       <workItem from="1687930520638" duration="2571000" />
+      <workItem from="1687935186432" duration="199000" />
+      <workItem from="1687935394138" duration="4798000" />
     </task>
     <task id="LOCAL-00037" summary="add order method is done">
       <created>1685012690031</created>

@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added the parent tag">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringEmailService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringEmailService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Merchant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/AdminDoesNotExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/MerchantAlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/adminservice/AdminServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/AdminServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/test/java/com/niit/bej/adminservice/AdminServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminService/src/test/java/com/niit/bej/AdminServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,33 +51,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/vishnu/Downloads/final_capstone_backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;1bb5c3e4f8b8c6542a151501503ff8ff&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "/Users/vishnu/Downloads/final_capstone_backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "2bd9dc8f676f61990858c486b76b6d17",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.niit.bej.exception" />
       <recent name="com.niit.bej.service" />
+      <recent name="com.niit.bej.exception" />
       <recent name="com.niit.bej.orderservice.exception" />
       <recent name="com.niit.bej.orderservice.domain" />
     </key>
@@ -81,6 +87,9 @@
       <recent name="D:\Final Project NIIT\FoodieApp\MerchantService" />
       <recent name="D:\Final Project NIIT\FoodieApp\UserAuthenticationService" />
       <recent name="D:\Final Project NIIT\FoodieApp\AuthentificationService" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/adminservice" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -147,6 +156,13 @@
     <configuration name="AdminModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Admin_Module" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.AdminModuleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AdminService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.niit.bej.AdminServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -235,6 +251,7 @@
       <item itemvalue="Application.MerchantServiceApplication" />
       <item itemvalue="Application.OrderServiceApplication" />
       <item itemvalue="Application.UserAuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.AdminServiceApplication (1)" />
       <item itemvalue="Spring Boot.AdminServiceApplication" />
       <item itemvalue="Spring Boot.AdminModuleApplication" />
       <item itemvalue="Spring Boot.SpringEmailServiceApplication" />
@@ -285,6 +302,7 @@
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
       <workItem from="1687930520638" duration="2571000" />
+      <workItem from="1687942036464" duration="1721000" />
     </task>
     <task id="LOCAL-00037" summary="add order method is done">
       <created>1685012690031</created>
@@ -648,6 +666,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/AdminService" />
+    </ignored-roots>
     <MESSAGE value="Methods are modified in controller class" />
     <MESSAGE value="Methods are modified in OrderService" />
     <MESSAGE value="Method modified in Config" />

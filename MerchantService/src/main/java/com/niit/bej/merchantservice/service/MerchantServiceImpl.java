@@ -224,6 +224,7 @@ public class MerchantServiceImpl implements MerchantService {
             merchant.setEmailId(updatedMerchant.getEmailId());
             merchant.setPassword(updatedMerchant.getPassword());
             merchant.setLocation(updatedMerchant.getLocation());
+
             merchant.setRestaurants(updatedMerchant.getRestaurants());
 
             return merchantRepository.save(merchant);
@@ -301,6 +302,24 @@ public class MerchantServiceImpl implements MerchantService {
 
         return restaurantList;
 
+    }
+
+    @Override
+    public Restaurant updateStatus(String merchantId, Restaurant restaurant) throws RestaurantNotFoundException, MerchantNotFoundException {
+        if (merchantRepository.findById(merchantId).isPresent()) {
+            Merchant merchant = merchantRepository.findById(merchantId).get();
+            List<Restaurant> restaurantList = merchant.getRestaurants();
+            Optional<Restaurant> restaurant1 = restaurantList.stream().filter(f -> f.getName().equals(restaurant.getName())).findAny();
+            if (restaurant1.isPresent()) {
+                restaurant1.get().setStatus(true);
+
+                merchant.setRestaurants(restaurantList);
+                merchantRepository.save(merchant);
+            }
+            throw new RestaurantNotFoundException("Restaurant not found ");
+
+        }
+        throw new MerchantNotFoundException("Merchant not found");
     }
 
 }

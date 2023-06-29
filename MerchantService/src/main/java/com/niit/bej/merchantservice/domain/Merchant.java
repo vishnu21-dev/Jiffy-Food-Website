@@ -13,22 +13,21 @@ public class Merchant {
     private String emailId;
     private String merchantName;
     private String password;
-    private String status;
+
     private String location;
     private List<Restaurant> restaurants;
 
-    public Merchant(String emailId, String merchantName, String password, String status, String location, List<Restaurant> restaurants) {
+    public Merchant(String emailId, String merchantName, String password, String location, List<Restaurant> restaurants) {
         this.emailId = emailId;
         this.merchantName = merchantName;
         this.password = password;
-        this.status = status;
         this.location = location;
         this.restaurants = restaurants;
     }
 
     @Override
     public String toString() {
-        return "Merchant{" + "emailId='" + emailId + '\'' + ", merchantName='" + merchantName + '\'' + ", password='" + password + '\'' + ", status='" + status + '\'' + ", location='" + location + '\'' + ", restaurants=" + restaurants + '}';
+        return "Merchant{" + "emailId='" + emailId + '\'' + ", merchantName='" + merchantName + '\'' + ", password='" + password + '\'' + ", location='" + location + '\'' + ", restaurants=" + restaurants + '}';
     }
 
     @Override
@@ -36,12 +35,12 @@ public class Merchant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Merchant merchant = (Merchant) o;
-        return Objects.equals(emailId, merchant.emailId) && Objects.equals(merchantName, merchant.merchantName) && Objects.equals(password, merchant.password) && Objects.equals(status, merchant.status) && Objects.equals(location, merchant.location) && Objects.equals(restaurants, merchant.restaurants);
+        return Objects.equals(emailId, merchant.emailId) && Objects.equals(merchantName, merchant.merchantName) && Objects.equals(password, merchant.password) && Objects.equals(location, merchant.location) && Objects.equals(restaurants, merchant.restaurants);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emailId, merchantName, password, status, location, restaurants);
+        return Objects.hash(emailId, merchantName, password, location, restaurants);
     }
 
     public String getEmailId() {
@@ -66,14 +65,6 @@ public class Merchant {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getLocation() {

@@ -14,16 +14,33 @@ public class Restaurant {
     private String imageUrl;
     private List<Dish> dishes;
     private String location;
+    private Boolean status;
 
-    public Restaurant(String name, double rating, String imageUrl, List<Dish> dishes, String location) {
+    public Restaurant(String name, double rating, String imageUrl, List<Dish> dishes, String location, Boolean status) {
         this.name = name;
         this.rating = rating;
         this.imageUrl = imageUrl;
         this.dishes = dishes;
         this.location = location;
+        this.status = status;
     }
 
-    public Restaurant() {
+    @Override
+    public String toString() {
+        return "Restaurant{" + "name='" + name + '\'' + ", rating=" + rating + ", imageUrl='" + imageUrl + '\'' + ", dishes=" + dishes + ", location='" + location + '\'' + ", status=" + status + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Restaurant that = (Restaurant) o;
+        return Double.compare(that.rating, rating) == 0 && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location) && Objects.equals(status, that.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, rating, imageUrl, dishes, location, status);
     }
 
     public String getName() {
@@ -66,27 +83,11 @@ public class Restaurant {
         this.location = location;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Restaurant that = (Restaurant) o;
-        return Double.compare(that.rating, rating) == 0 && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location);
+    public Boolean getStatus() {
+        return status;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, rating, imageUrl, dishes, location);
-    }
-
-    @Override
-    public String toString() {
-        return "Restaurant{" +
-                "name='" + name + '\'' +
-                ", rating=" + rating +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", dishes=" + dishes +
-                ", location='" + location + '\'' +
-                '}';
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

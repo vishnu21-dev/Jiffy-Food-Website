@@ -28,7 +28,7 @@ User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserN
 
     List<Restaurant> getRestaurants(String userId) throws UserNotFoundException, RestaurantNotFoundException;
 
-    User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException;
+    User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException, DishAlreadyPresentException;
 
     List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException;
 

@@ -135,6 +135,9 @@ public class OrderServiceImpl implements OrderService {
 
                 orderRepository.save(user);
                 return user;
+            }
+            if (userFav.contains(restaurant)) {
+                throw new RestaurantAlreadyPresentException("Already present ");
             } else {
                 userFav.add(restaurant);
                 user.setFavouriteRestaurant(userFav);
@@ -162,7 +165,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException {
+    public User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Dish> dishList = user.getFavouriteDish();
@@ -173,6 +176,9 @@ public class OrderServiceImpl implements OrderService {
 
                 orderRepository.save(user);
                 return user;
+            }
+            if (dishList.contains(dish)) {
+                throw new DishAlreadyPresentException(" Dish Already present");
             } else {
                 dishList.add(dish);
                 user.setFavouriteDish(dishList);

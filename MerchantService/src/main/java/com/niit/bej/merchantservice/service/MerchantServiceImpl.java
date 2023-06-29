@@ -322,4 +322,12 @@ public class MerchantServiceImpl implements MerchantService {
         throw new MerchantNotFoundException("Merchant not found");
     }
 
+    @Override
+    public List<Merchant> getAllMerchants() throws MerchantNotFoundException {
+        if (merchantRepository.findAll().isEmpty()) {
+            throw new MerchantNotFoundException("merchant not found");
+        }
+        return merchantRepository.findAll();
+    }
+
 }

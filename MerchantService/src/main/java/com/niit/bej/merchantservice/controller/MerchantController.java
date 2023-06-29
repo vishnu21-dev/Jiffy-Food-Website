@@ -168,4 +168,14 @@ public class MerchantController {
         return responseEntity;
     }
 
+    @GetMapping("/allMerchants")
+    public ResponseEntity<?> getAllMerchants() throws MerchantNotFoundException {
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.getAllMerchants(), HttpStatus.OK);
+        } catch (MerchantNotFoundException exception) {
+            throw new MerchantNotFoundException("merchant Not Found");
+        }
+        return responseEntity;
+    }
+
 }

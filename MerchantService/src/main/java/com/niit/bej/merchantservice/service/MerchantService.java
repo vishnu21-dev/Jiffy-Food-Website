@@ -42,4 +42,5 @@ public interface MerchantService {
 
     Restaurant updateStatus(String merchantId, Restaurant restaurant) throws RestaurantNotFoundException, MerchantNotFoundException;
 
+    List<Merchant> getAllMerchants() throws MerchantNotFoundException;
 }

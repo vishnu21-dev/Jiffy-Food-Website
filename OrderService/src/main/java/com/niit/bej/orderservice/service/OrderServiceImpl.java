@@ -1,6 +1,9 @@
 package com.niit.bej.orderservice.service;
 
-import com.niit.bej.orderservice.domain.*;
+import com.niit.bej.orderservice.domain.Dish;
+import com.niit.bej.orderservice.domain.Order;
+import com.niit.bej.orderservice.domain.Restaurant;
+import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.proxy.UserProxy;
 import com.niit.bej.orderservice.repository.OrderRepository;
@@ -120,17 +123,23 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Favourite addRestaurantToFavorites(String userId, Restaurant restaurant)
+    public User addRestaurantToFavorites(String userId, Restaurant restaurant)
             throws UserNotFoundException, RestaurantAlreadyPresentException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Restaurant> restaurantList = user.getFavourites().getRestaurantList();
-            if (restaurantList.contains(restaurant)) {
-                throw new RestaurantAlreadyPresentException("Restaurant Already Exists!");
-            } else {
-                restaurantList.add(restaurant);
+            List<Restaurant> userFav = user.getFavouriteRestaurant();
+
+            if (userFav == null) {
+
+                user.setFavouriteRestaurant(Collections.singletonList(restaurant));
+
                 orderRepository.save(user);
-                return user.getFavourites();
+                return user;
+            } else {
+                userFav.add(restaurant);
+                user.setFavouriteRestaurant(userFav);
+                orderRepository.save(user);
+                return user;
             }
         } else {
             throw new UserNotFoundException("User does not exists!");
@@ -142,7 +151,7 @@ public class OrderServiceImpl implements OrderService {
     public List<Restaurant> getRestaurants(String userId) throws UserNotFoundException, RestaurantNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Restaurant> restaurantList = user.getFavourites().getRestaurantList();
+            List<Restaurant> restaurantList = user.getFavouriteRestaurant();
             if (restaurantList.isEmpty()) {
                 throw new RestaurantNotFoundException("No Restaurant Found");
             }
@@ -153,16 +162,22 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Favourite addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException {
+    public User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Dish> dishList = user.getFavourites().getDishList();
-            if (dishList.contains(dish)) {
-                throw new DishAlreadyExistsException("Dish Already Exists!");
+            List<Dish> dishList = user.getFavouriteDish();
+
+            if (dishList == null) {
+
+                user.setFavouriteDish(Collections.singletonList(dish));
+
+                orderRepository.save(user);
+                return user;
             } else {
                 dishList.add(dish);
+                user.setFavouriteDish(dishList);
                 orderRepository.save(user);
-                return user.getFavourites();
+                return user;
             }
         } else {
             throw new UserNotFoundException("User does not exists!");
@@ -173,7 +188,7 @@ public class OrderServiceImpl implements OrderService {
     public List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
-            List<Dish> dishList = user.getFavourites().getDishList();
+            List<Dish> dishList = user.getFavouriteDish();
             if (dishList.isEmpty()) {
                 throw new DishNotFoundException("No dish Found");
             }
@@ -188,15 +203,15 @@ public class OrderServiceImpl implements OrderService {
         Optional<User> userOptional = orderRepository.findById(userId);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            Favourite favourite = user.getFavourites();
-            List<Restaurant> restaurantList = favourite.getRestaurantList();
+
+            List<Restaurant> restaurantList = user.getFavouriteRestaurant();
             Optional<Restaurant> restaurantOptional = restaurantList.stream()
                     .filter(f -> f.getName().equalsIgnoreCase(restaurantName))
                     .findAny();
             if (restaurantOptional.isPresent()) {
                 restaurantList.remove(restaurantOptional.get());
-                favourite.setRestaurantList(restaurantList);
-                user.setFavourites(favourite);
+                user.setFavouriteRestaurant(restaurantList);
+
                 orderRepository.save(user);
                 return true;
             } else {
@@ -212,15 +227,15 @@ public class OrderServiceImpl implements OrderService {
         Optional<User> userOptional = orderRepository.findById(userId);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            Favourite favourite = user.getFavourites();
-            List<Dish> dishList = favourite.getDishList();
+
+            List<Dish> dishList = user.getFavouriteDish();
             Optional<Dish> dishOptional = dishList.stream()
                     .filter(f -> f.getName().equalsIgnoreCase(dishName))
                     .findAny();
             if (dishOptional.isPresent()) {
                 dishList.remove(dishOptional.get());
-                favourite.setDishList(dishList);
-                user.setFavourites(favourite);
+
+                user.setFavouriteDish(dishList);
                 orderRepository.save(user);
                 return true;
             } else {

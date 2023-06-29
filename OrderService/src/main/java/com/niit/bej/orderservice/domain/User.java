@@ -18,9 +18,10 @@ public class User {
     private String city;
     private String address;
     private List<Order> orders;
-    private Favourite favourites;
+    private List<Dish> favouriteDish;
+    private List<Restaurant> favouriteRestaurant;
 
-    public User(String emailId, String imageUrl, String name, String password, String phoneNo, String city, String address, List<Order> orders, Favourite favourites) {
+    public User(String emailId, String imageUrl, String name, String password, String phoneNo, String city, String address, List<Order> orders, List<Dish> favouriteDish, List<Restaurant> favouriteRestaurant) {
         this.emailId = emailId;
         this.imageUrl = imageUrl;
         this.name = name;
@@ -29,10 +30,26 @@ public class User {
         this.city = city;
         this.address = address;
         this.orders = orders;
-        this.favourites = favourites;
+        this.favouriteDish = favouriteDish;
+        this.favouriteRestaurant = favouriteRestaurant;
     }
 
-    public User() {
+    @Override
+    public String toString() {
+        return "User{" + "emailId='" + emailId + '\'' + ", imageUrl='" + imageUrl + '\'' + ", name='" + name + '\'' + ", password='" + password + '\'' + ", phoneNo='" + phoneNo + '\'' + ", city='" + city + '\'' + ", address='" + address + '\'' + ", orders=" + orders + ", favouriteDish=" + favouriteDish + ", favouriteRestaurant=" + favouriteRestaurant + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(emailId, user.emailId) && Objects.equals(imageUrl, user.imageUrl) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(favouriteDish, user.favouriteDish) && Objects.equals(favouriteRestaurant, user.favouriteRestaurant);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailId, imageUrl, name, password, phoneNo, city, address, orders, favouriteDish, favouriteRestaurant);
     }
 
     public String getEmailId() {
@@ -99,39 +116,19 @@ public class User {
         this.orders = orders;
     }
 
-    public Favourite getFavourites() {
-        return favourites;
+    public List<Dish> getFavouriteDish() {
+        return favouriteDish;
     }
 
-    public void setFavourites(Favourite favourites) {
-        this.favourites = favourites;
+    public void setFavouriteDish(List<Dish> favouriteDish) {
+        this.favouriteDish = favouriteDish;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(emailId, user.emailId) && Objects.equals(imageUrl, user.imageUrl) && Objects.equals(name, user.name) && Objects.equals(password, user.password) && Objects.equals(phoneNo, user.phoneNo) && Objects.equals(city, user.city) && Objects.equals(address, user.address) && Objects.equals(orders, user.orders) && Objects.equals(favourites, user.favourites);
+    public List<Restaurant> getFavouriteRestaurant() {
+        return favouriteRestaurant;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(emailId, imageUrl, name, password, phoneNo, city, address, orders, favourites);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "emailId='" + emailId + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNo='" + phoneNo + '\'' +
-                ", city='" + city + '\'' +
-                ", address='" + address + '\'' +
-                ", orders=" + orders +
-                ", favourites=" + favourites +
-                '}';
+    public void setFavouriteRestaurant(List<Restaurant> favouriteRestaurant) {
+        this.favouriteRestaurant = favouriteRestaurant;
     }
 }

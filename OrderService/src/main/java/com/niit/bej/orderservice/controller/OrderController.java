@@ -1,6 +1,9 @@
 package com.niit.bej.orderservice.controller;
 
-import com.niit.bej.orderservice.domain.*;
+import com.niit.bej.orderservice.domain.Dish;
+import com.niit.bej.orderservice.domain.Order;
+import com.niit.bej.orderservice.domain.Restaurant;
+import com.niit.bej.orderservice.domain.User;
 import com.niit.bej.orderservice.exception.*;
 import com.niit.bej.orderservice.service.OrderService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -101,7 +104,7 @@ public class OrderController {
     public ResponseEntity<?> addRestaurantToFavourites(HttpServletRequest request, @RequestBody Restaurant restaurant) {
         String emailId = request.getAttribute("emailId").toString();
         try {
-            Favourite restaurant1 = orderService.addRestaurantToFavorites(emailId, restaurant);
+            User restaurant1 = orderService.addRestaurantToFavorites(emailId, restaurant);
             return new ResponseEntity<>(restaurant1, HttpStatus.OK);
         } catch (UserNotFoundException | RestaurantAlreadyPresentException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
@@ -124,7 +127,7 @@ public class OrderController {
     public ResponseEntity<?> addDishToFavourites(HttpServletRequest request, @RequestBody Dish dish) {
         String emailId = request.getAttribute("emailId").toString();
         try {
-            Favourite dish1 = orderService.addDishToFavourites(emailId, dish);
+            User dish1 = orderService.addDishToFavourites(emailId, dish);
             return new ResponseEntity<>(dish1, HttpStatus.OK);
         } catch (UserNotFoundException | DishAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);

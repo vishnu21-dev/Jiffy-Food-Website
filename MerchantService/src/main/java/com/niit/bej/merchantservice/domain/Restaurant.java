@@ -10,15 +10,14 @@ public class Restaurant {
 
     @MongoId
     private String name;
-    private double rating;
+
     private String imageUrl;
     private List<Dish> dishes;
     private String location;
     private Boolean status;
 
-    public Restaurant(String name, double rating, String imageUrl, List<Dish> dishes, String location, Boolean status) {
+    public Restaurant(String name, String imageUrl, List<Dish> dishes, String location, Boolean status) {
         this.name = name;
-        this.rating = rating;
         this.imageUrl = imageUrl;
         this.dishes = dishes;
         this.location = location;
@@ -27,7 +26,7 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return "Restaurant{" + "name='" + name + '\'' + ", rating=" + rating + ", imageUrl='" + imageUrl + '\'' + ", dishes=" + dishes + ", location='" + location + '\'' + ", status=" + status + '}';
+        return "Restaurant{" + "name='" + name + '\'' + ", imageUrl='" + imageUrl + '\'' + ", dishes=" + dishes + ", location='" + location + '\'' + ", status=" + status + '}';
     }
 
     @Override
@@ -35,12 +34,12 @@ public class Restaurant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Restaurant that = (Restaurant) o;
-        return Double.compare(that.rating, rating) == 0 && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location) && Objects.equals(status, that.status);
+        return Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(dishes, that.dishes) && Objects.equals(location, that.location) && Objects.equals(status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, rating, imageUrl, dishes, location, status);
+        return Objects.hash(name, imageUrl, dishes, location, status);
     }
 
     public String getName() {
@@ -49,14 +48,6 @@ public class Restaurant {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
     }
 
     public String getImageUrl() {

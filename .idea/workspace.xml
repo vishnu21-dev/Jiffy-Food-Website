@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added fav methods">
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="corrected the error">
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/domain/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
     </list>
@@ -296,14 +298,7 @@
       <workItem from="1687799840959" duration="2798000" />
       <workItem from="1687835382927" duration="17476000" />
       <workItem from="1687930520638" duration="2571000" />
-      <workItem from="1687942036464" duration="19301000" />
-    </task>
-    <task id="LOCAL-00045" summary="added getalldishfromcusine">
-      <created>1686046377787</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1686046377787</updated>
+      <workItem from="1687942036464" duration="22944000" />
     </task>
     <task id="LOCAL-00046" summary="corrected the methods in MerchantServiceImpl">
       <created>1686111537408</created>
@@ -641,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688053445035</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="corrected the error">
+      <created>1688057425945</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1688057425945</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +665,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AdminService" />
     </ignored-roots>
-    <MESSAGE value="DishAlreadyExistsException class is created" />
     <MESSAGE value="OrderService interface methods are modified" />
     <MESSAGE value="methods are modified" />
     <MESSAGE value="Errors are rectified" />
@@ -688,7 +689,8 @@
     <MESSAGE value="added update status" />
     <MESSAGE value="update done" />
     <MESSAGE value="added fav methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fav methods" />
+    <MESSAGE value="corrected the error" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected the error" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

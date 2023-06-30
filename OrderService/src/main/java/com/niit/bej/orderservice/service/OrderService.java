@@ -14,21 +14,19 @@ public interface OrderService {
 
     User getUser(String userId) throws UserNotFoundException;
 
-    User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException;
+    User addOrder(List<Dish> dishes, String userId) throws UserNotFoundException, OrderAlreadyExistsException;
 
-//    Order addDishesToOrder(Dish dish, int orderId, String userId) throws UserNotFoundException, DishAlreadyExistsException, OrderNotFoundException;
 
     List<Order> getAllOrders(String userId) throws UserNotFoundException, OrderNotFoundException;
 
-    boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException;
 
-    boolean deleteOrder(int orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
+    boolean deleteOrder(String orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
 
 User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException;
 
     List<Restaurant> getRestaurants(String userId) throws UserNotFoundException, RestaurantNotFoundException;
 
-    User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException, DishAlreadyPresentException;
+    User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException;
 
     List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException;
 

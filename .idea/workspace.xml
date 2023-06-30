@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added fav methods">
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/AdminServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/AdminDoesNotExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/MerchantAlreadyExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminService/src/test/java/com/niit/bej/AdminServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,29 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "/Users/vishnu/Downloads/final_capstone_backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "2bd9dc8f676f61990858c486b76b6d17",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vishnu/Downloads/final_capstone_backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2bd9dc8f676f61990858c486b76b6d17&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>

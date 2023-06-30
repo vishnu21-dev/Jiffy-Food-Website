@@ -100,12 +100,12 @@ public class OrderController {
     }
 
 
-    @PostMapping("user/addRestaurants")
-    public ResponseEntity<?> addRestaurantToFavourites(HttpServletRequest request, @RequestBody Restaurant restaurant) {
+    @PostMapping("user/addRestaurantToFavourites")
+    public ResponseEntity<?> addRestaurantToFavourites(@RequestBody Restaurant restaurant, HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
         try {
             User restaurant1 = orderService.addRestaurantToFavorites(emailId, restaurant);
-            return new ResponseEntity<>(restaurant1, HttpStatus.OK);
+            return new ResponseEntity<>(restaurant1, HttpStatus.CREATED);
         } catch (UserNotFoundException | RestaurantAlreadyPresentException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         }

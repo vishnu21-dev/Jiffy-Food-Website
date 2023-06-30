@@ -13,7 +13,6 @@ public class Merchant {
     private String emailId;
     private String merchantName;
     private String password;
-
     private String location;
     private List<Restaurant> restaurants;
 

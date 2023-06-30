@@ -10,7 +10,6 @@ public class Restaurant {
 
     @MongoId
     private String name;
-
     private String imageUrl;
     private List<Dish> dishes;
     private String location;

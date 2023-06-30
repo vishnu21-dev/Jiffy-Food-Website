@@ -51,10 +51,10 @@ public class OrderController {
     }
 
     @PostMapping("/user/addOrder")
-    public ResponseEntity<?> addOrder(@RequestBody Order order, HttpServletRequest httpServletRequest) {
+    public ResponseEntity<?> addOrder(@RequestBody List<Dish> dishes, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            User user = orderService.addOrder(order, emailId);
+            User user = orderService.addOrder(dishes, emailId);
             return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (UserNotFoundException | OrderAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
@@ -75,7 +75,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/user/deleteOrder/{orderId}")
-    public ResponseEntity<?> deleteOrder(@PathVariable int orderId, HttpServletRequest request) {
+    public ResponseEntity<?> deleteOrder(@PathVariable String orderId, HttpServletRequest request) {
         String emailId = request.getAttribute("emailId").toString();
         try {
             boolean deleted = orderService.deleteOrder(orderId, emailId);
@@ -86,18 +86,6 @@ public class OrderController {
     }
 
 
-    @DeleteMapping("/user/deleteDishFromOrder/{orderId}/{dishName}")
-    public ResponseEntity<?> deleteDishFromOrder(HttpServletRequest request, @PathVariable String dishName, @PathVariable int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException {
-        String emailId = request.getAttribute("emailId").toString();
-        try {
-            boolean dishFromOrder = orderService.deleteDishFromOrder(emailId, dishName, orderId);
-            return new ResponseEntity<>(dishFromOrder, HttpStatus.ACCEPTED);
-
-        } catch (OrderNotFoundException | UserNotFoundException | DishNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-
-    }
 
 
     @PostMapping("user/addRestaurantToFavourites")

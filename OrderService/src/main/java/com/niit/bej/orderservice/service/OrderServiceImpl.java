@@ -47,25 +47,30 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
+    public User addOrder(List<Dish> dishes, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
         User loggedInUser;
         if (orderRepository.findById(userId).isPresent()) {
             loggedInUser = orderRepository.findById(userId).get();
             List<Order> orderList = loggedInUser.getOrders();
             if (orderList == null) {
+                Order orderObj = new Order();
+                orderObj.generateOrderId();
+                String orderId = orderObj.getOrderId();
+                Order order = new Order(orderId, dishes);
                 loggedInUser.setOrders(Collections.singletonList(order));
+                orderRepository.save(loggedInUser);
+                return loggedInUser;
             } else {
-                if (orderList.stream().anyMatch(item -> item.getOrderId() == order.getOrderId())) {
-                    throw new OrderAlreadyExistsException("Order already exists!");
-                } else {
-                    orderList.add(order);
-                    loggedInUser.setOrders(orderList);
-                }
+                Order orderObj = new Order();
+                orderObj.generateOrderId();
+                String orderId = orderObj.getOrderId();
+                Order order = new Order(orderId, dishes);
+                orderList.add(order);
+                loggedInUser.setOrders(orderList);
             }
-        } else {
-            throw new UserNotFoundException("User does not exists!");
         }
-        return orderRepository.save(loggedInUser);
+        throw new UserNotFoundException("User Not found");
+
     }
 
 
@@ -81,50 +86,28 @@ public class OrderServiceImpl implements OrderService {
         } else throw new UserNotFoundException("User Not found");
     }
 
-    @Override
-    public boolean deleteDishFromOrder(String userId, String dishName, int orderId) throws OrderNotFoundException, UserNotFoundException, DishNotFoundException {
-        if (orderRepository.findById(userId).isPresent()) {
-            Optional<Dish> requestedDish;
-            User user = orderRepository.findById(userId).get();
-            List<Order> orderList = user.getOrders();
-            Optional<Order> requestedOrder = orderList.stream().filter(f -> f.getOrderId() == orderId).findFirst();
-            if (requestedOrder.isPresent()) {
-                Order order = requestedOrder.get();
-                List<Dish> dishList = order.getDishes();
-                if (dishList.isEmpty()) {
-                    throw new DishNotFoundException("The Requested Dish is not present");
-                } else requestedDish = dishList.stream().filter(f -> f.getName().equals(dishName)).findAny();
-                if (requestedDish.isPresent()) {
-                    dishList.remove(requestedDish);
-                    order.setDishes(dishList);
-                    orderRepository.save(user);
-                    return true;
-                }
-            } else throw new OrderNotFoundException("The Requested Order is not Present");
-        }
-        throw new UserNotFoundException("User Not Found");
-    }
 
     @Override
-    public boolean deleteOrder(int orderId, String userId) throws UserNotFoundException, OrderNotFoundException {
+    public boolean deleteOrder(String orderId, String userId) throws UserNotFoundException, OrderNotFoundException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Order> orderList = user.getOrders();
-            Optional<Order> requestedOrder = orderList.stream().filter(f -> f.getOrderId() == orderId).findFirst();
+            Optional<Order> requestedOrder = orderList.stream().filter(f -> f.getOrderId().equals(orderId)).findFirst();
+
             if (requestedOrder.isPresent()) {
                 orderList.remove(requestedOrder);
                 user.setOrders(orderList);
                 orderRepository.save(user);
                 return true;
+            } else {
+                throw new OrderNotFoundException("The requested order is not Found");
             }
-            throw new OrderNotFoundException("The requested order is not Found");
         }
         throw new UserNotFoundException("User Not found");
     }
 
     @Override
-    public User addRestaurantToFavorites(String userId, Restaurant restaurant)
-            throws UserNotFoundException, RestaurantAlreadyExistsException {
+    public User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> userFav = user.getFavouriteRestaurant();
@@ -137,7 +120,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
             if (userFav.contains(restaurant)) {
-                throw new RestaurantAlreadyExistsException("Restaurant already exists!");
+                throw new RestaurantAlreadyPresentException("Already present ");
             } else {
                 userFav.add(restaurant);
                 user.setFavouriteRestaurant(userFav);
@@ -156,7 +139,7 @@ public class OrderServiceImpl implements OrderService {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> restaurantList = user.getFavouriteRestaurant();
             if (restaurantList.isEmpty()) {
-                throw new RestaurantNotFoundException("Restaurant Not Found!");
+                throw new RestaurantNotFoundException("No Restaurant Found");
             }
             return restaurantList;
 
@@ -178,7 +161,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
             if (dishList.contains(dish)) {
-                throw new DishAlreadyExistsException("Dish Already Exists");
+                throw new DishAlreadyExistsException(" Dish Already present");
             } else {
                 dishList.add(dish);
                 user.setFavouriteDish(dishList);
@@ -186,7 +169,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
         } else {
-            throw new UserNotFoundException("User does not exist!");
+            throw new UserNotFoundException("User does not exists!");
         }
     }
 
@@ -196,12 +179,12 @@ public class OrderServiceImpl implements OrderService {
             User user = orderRepository.findById(userId).get();
             List<Dish> dishList = user.getFavouriteDish();
             if (dishList.isEmpty()) {
-                throw new DishNotFoundException("Dish not found!");
+                throw new DishNotFoundException("No dish Found");
             }
             return dishList;
 
         }
-        throw new UserNotFoundException("User not found!");
+        throw new UserNotFoundException("User not found");
     }
 
     @Override
@@ -211,9 +194,7 @@ public class OrderServiceImpl implements OrderService {
             User user = userOptional.get();
 
             List<Restaurant> restaurantList = user.getFavouriteRestaurant();
-            Optional<Restaurant> restaurantOptional = restaurantList.stream()
-                    .filter(f -> f.getName().equalsIgnoreCase(restaurantName))
-                    .findAny();
+            Optional<Restaurant> restaurantOptional = restaurantList.stream().filter(f -> f.getName().equalsIgnoreCase(restaurantName)).findAny();
             if (restaurantOptional.isPresent()) {
                 restaurantList.remove(restaurantOptional.get());
                 user.setFavouriteRestaurant(restaurantList);
@@ -235,9 +216,7 @@ public class OrderServiceImpl implements OrderService {
             User user = userOptional.get();
 
             List<Dish> dishList = user.getFavouriteDish();
-            Optional<Dish> dishOptional = dishList.stream()
-                    .filter(f -> f.getName().equalsIgnoreCase(dishName))
-                    .findAny();
+            Optional<Dish> dishOptional = dishList.stream().filter(f -> f.getName().equalsIgnoreCase(dishName)).findAny();
             if (dishOptional.isPresent()) {
                 dishList.remove(dishOptional.get());
 

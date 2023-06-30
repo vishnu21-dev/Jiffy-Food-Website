@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="added fav methods">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/AdminServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/domain/Restaurant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/AdminDoesNotExistException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/exception/MerchantAlreadyExistException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/repository/AdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/java/com/niit/bej/service/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminService/src/test/java/com/niit/bej/AdminServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Merchant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/main/java/com/niit/bej/merchantservice/domain/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MerchantService/src/test/java/com/niit/bej/merchantservice/repository/MerchantRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderService/src/main/java/com/niit/bej/orderservice/controller/OrderController.java" afterDir="false" />
-    </list>
+    <list default="true" id="78e2bba7-66d9-491d-b39a-defde7a4f4c4" name="Changes" comment="modifications made in MerchantRepositoryTest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -661,7 +638,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688053445035</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,7 +660,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AdminService" />
     </ignored-roots>
-    <MESSAGE value="DishAlreadyExistsException class is created" />
     <MESSAGE value="OrderService interface methods are modified" />
     <MESSAGE value="methods are modified" />
     <MESSAGE value="Errors are rectified" />
@@ -708,7 +684,8 @@
     <MESSAGE value="added update status" />
     <MESSAGE value="update done" />
     <MESSAGE value="added fav methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fav methods" />
+    <MESSAGE value="modifications made in MerchantRepositoryTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifications made in MerchantRepositoryTest" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

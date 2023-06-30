@@ -106,7 +106,7 @@ public class OrderController {
         try {
             User restaurant1 = orderService.addRestaurantToFavorites(emailId, restaurant);
             return new ResponseEntity<>(restaurant1, HttpStatus.CREATED);
-        } catch (UserNotFoundException | RestaurantAlreadyPresentException e) {
+        } catch (UserNotFoundException | RestaurantAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         }
     }

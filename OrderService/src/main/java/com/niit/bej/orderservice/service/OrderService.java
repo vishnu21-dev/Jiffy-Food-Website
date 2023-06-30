@@ -24,11 +24,11 @@ public interface OrderService {
 
     boolean deleteOrder(int orderId, String userId) throws UserNotFoundException, OrderNotFoundException;
 
-User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException;
+    User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyExistsException;
 
     List<Restaurant> getRestaurants(String userId) throws UserNotFoundException, RestaurantNotFoundException;
 
-    User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException, DishAlreadyPresentException;
+    User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException;
 
     List<Dish> getDishFromFavourites(String userId) throws DishNotFoundException, UserNotFoundException;
 

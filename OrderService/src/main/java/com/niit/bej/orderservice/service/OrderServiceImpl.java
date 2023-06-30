@@ -124,7 +124,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public User addRestaurantToFavorites(String userId, Restaurant restaurant)
-            throws UserNotFoundException, RestaurantAlreadyPresentException {
+            throws UserNotFoundException, RestaurantAlreadyExistsException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> userFav = user.getFavouriteRestaurant();
@@ -137,7 +137,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
             if (userFav.contains(restaurant)) {
-                throw new RestaurantAlreadyPresentException("Already present ");
+                throw new RestaurantAlreadyExistsException("Restaurant already exists!");
             } else {
                 userFav.add(restaurant);
                 user.setFavouriteRestaurant(userFav);
@@ -156,7 +156,7 @@ public class OrderServiceImpl implements OrderService {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> restaurantList = user.getFavouriteRestaurant();
             if (restaurantList.isEmpty()) {
-                throw new RestaurantNotFoundException("No Restaurant Found");
+                throw new RestaurantNotFoundException("Restaurant Not Found!");
             }
             return restaurantList;
 
@@ -165,7 +165,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyPresentException {
+    public User addDishToFavourites(String userId, Dish dish) throws UserNotFoundException, DishAlreadyExistsException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Dish> dishList = user.getFavouriteDish();
@@ -178,7 +178,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
             if (dishList.contains(dish)) {
-                throw new DishAlreadyPresentException(" Dish Already present");
+                throw new DishAlreadyExistsException("Dish Already Exists");
             } else {
                 dishList.add(dish);
                 user.setFavouriteDish(dishList);
@@ -186,7 +186,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
         } else {
-            throw new UserNotFoundException("User does not exists!");
+            throw new UserNotFoundException("User does not exist!");
         }
     }
 
@@ -196,12 +196,12 @@ public class OrderServiceImpl implements OrderService {
             User user = orderRepository.findById(userId).get();
             List<Dish> dishList = user.getFavouriteDish();
             if (dishList.isEmpty()) {
-                throw new DishNotFoundException("No dish Found");
+                throw new DishNotFoundException("Dish not found!");
             }
             return dishList;
 
         }
-        throw new UserNotFoundException("User not found");
+        throw new UserNotFoundException("User not found!");
     }
 
     @Override

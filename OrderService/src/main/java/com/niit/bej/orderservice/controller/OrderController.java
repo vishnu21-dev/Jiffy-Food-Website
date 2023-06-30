@@ -51,10 +51,10 @@ public class OrderController {
     }
 
     @PostMapping("/user/addOrder")
-    public ResponseEntity<?> addOrder(@RequestBody List<Dish> dishes, HttpServletRequest httpServletRequest) {
+    public ResponseEntity<?> addOrder(@RequestBody Order order, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            User user = orderService.addOrder(dishes, emailId);
+            User user = orderService.addOrder(order, emailId);
             return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (UserNotFoundException | OrderAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
@@ -79,7 +79,7 @@ public class OrderController {
         String emailId = request.getAttribute("emailId").toString();
         try {
             boolean deleted = orderService.deleteOrder(orderId, emailId);
-            return ResponseEntity.ok(deleted);
+            return new ResponseEntity<>(deleted, HttpStatus.OK);
         } catch (UserNotFoundException | OrderNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
@@ -157,11 +157,11 @@ public class OrderController {
         }
     }
 
-    @PostMapping("/update")
-    public ResponseEntity<?> updateUser(@RequestBody User user) {
+    @PostMapping("/user/updateUser")
+    public ResponseEntity<?> updateUser(@RequestBody User updatedUser) {
         try {
-            User user1 = orderService.updateUser(user);
-            return new ResponseEntity<>(user, HttpStatus.OK);
+            User user1 = orderService.updateUser(updatedUser);
+            return new ResponseEntity<>(user1, HttpStatus.OK);
         } catch (UserNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }

@@ -47,30 +47,29 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User addOrder(List<Dish> dishes, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
-        User loggedInUser;
-        if (orderRepository.findById(userId).isPresent()) {
-            loggedInUser = orderRepository.findById(userId).get();
+    public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
+        Optional<User> userOptional = orderRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            User loggedInUser = userOptional.get();
             List<Order> orderList = loggedInUser.getOrders();
+            // Check if order with the same dishes already exists
+            if (orderList.stream().anyMatch(item -> item.getDishes().equals(order))) {
+                throw new OrderAlreadyExistsException("Order already exists with the same dishes");
+            }
+            Order orderObj = new Order();
+            orderObj.generateOrderId();
+            String orderId = orderObj.getOrderId();
+            Order order1 = new Order(orderId, order.getDishes());
             if (orderList == null) {
-                Order orderObj = new Order();
-                orderObj.generateOrderId();
-                String orderId = orderObj.getOrderId();
-                Order order = new Order(orderId, dishes);
-                loggedInUser.setOrders(Collections.singletonList(order));
-                orderRepository.save(loggedInUser);
-                return loggedInUser;
+                loggedInUser.setOrders(Collections.singletonList(order1));
             } else {
-                Order orderObj = new Order();
-                orderObj.generateOrderId();
-                String orderId = orderObj.getOrderId();
-                Order order = new Order(orderId, dishes);
-                orderList.add(order);
+                orderList.add(order1);
                 loggedInUser.setOrders(orderList);
             }
+            orderRepository.save(loggedInUser);
+            return loggedInUser;
         }
-        throw new UserNotFoundException("User Not found");
-
+        throw new UserNotFoundException("User not found");
     }
 
 
@@ -93,21 +92,20 @@ public class OrderServiceImpl implements OrderService {
             User user = orderRepository.findById(userId).get();
             List<Order> orderList = user.getOrders();
             Optional<Order> requestedOrder = orderList.stream().filter(f -> f.getOrderId().equals(orderId)).findFirst();
-
             if (requestedOrder.isPresent()) {
-                orderList.remove(requestedOrder);
+                orderList.remove(requestedOrder.get()); // Use requestedOrder.get() to obtain the Order object
                 user.setOrders(orderList);
                 orderRepository.save(user);
                 return true;
             } else {
-                throw new OrderNotFoundException("The requested order is not Found");
+                throw new OrderNotFoundException("The requested order is not found");
             }
         }
-        throw new UserNotFoundException("User Not found");
+        throw new UserNotFoundException("User not found");
     }
 
     @Override
-    public User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyPresentException {
+    public User addRestaurantToFavorites(String userId, Restaurant restaurant) throws UserNotFoundException, RestaurantAlreadyExistsException {
         if (orderRepository.findById(userId).isPresent()) {
             User user = orderRepository.findById(userId).get();
             List<Restaurant> userFav = user.getFavouriteRestaurant();
@@ -120,7 +118,7 @@ public class OrderServiceImpl implements OrderService {
                 return user;
             }
             if (userFav.contains(restaurant)) {
-                throw new RestaurantAlreadyPresentException("Already present ");
+                throw new RestaurantAlreadyExistsException("Already present ");
             } else {
                 userFav.add(restaurant);
                 user.setFavouriteRestaurant(userFav);
@@ -232,37 +230,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User updateUser(User updatedUser) throws UserNotFoundException {
-
-
-        Optional<User> optionalUser = orderRepository.findById(updatedUser.getEmailId());
-
-        if (optionalUser.isPresent()) {
-            User user = optionalUser.get();
-
-            if (updatedUser.getImageUrl() != null) {
-                user.setImageUrl(updatedUser.getImageUrl());
-            }
-            if (updatedUser.getName() != null) {
-                user.setName(updatedUser.getName());
-            }
-            if (updatedUser.getPassword() != null) {
-                user.setPassword(updatedUser.getPassword());
-            }
-            if (updatedUser.getPhoneNo() != null) {
-                user.setPhoneNo(updatedUser.getPhoneNo());
-            }
-            if (updatedUser.getCity() != null) {
-                user.setCity(updatedUser.getCity());
-            }
-            if (updatedUser.getAddress() != null) {
-                user.setAddress(updatedUser.getAddress());
-            }
-            orderRepository.save(user);
-            return user;
-        } else throw new UserNotFoundException("User not found ");
-
-
+    public User updateUser(User updatedUser) {
+        String emailId = updatedUser.getEmailId();
+        Optional<User> userOptional = orderRepository.findById(emailId);
+        if (userOptional.isPresent()) {
+            User userToUpdate = userOptional.get();
+            // Update the user fields
+            userToUpdate.setImageUrl(updatedUser.getImageUrl());
+            userToUpdate.setName(updatedUser.getName());
+            userToUpdate.setPassword(updatedUser.getPassword());
+            userToUpdate.setPhoneNo(updatedUser.getPhoneNo());
+            userToUpdate.setCity(updatedUser.getCity());
+            userToUpdate.setAddress(updatedUser.getAddress());
+            userToUpdate.setOrders(updatedUser.getOrders());
+            userToUpdate.setFavouriteDish(updatedUser.getFavouriteDish());
+            userToUpdate.setFavouriteRestaurant(updatedUser.getFavouriteRestaurant());
+            // Save the updated user
+            User savedUser = orderRepository.save(userToUpdate);
+            return savedUser;
+        }
+        // Throw an exception or return null if user is not found
+        throw new RuntimeException("User not found");
     }
 
 

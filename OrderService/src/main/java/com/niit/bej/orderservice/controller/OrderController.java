@@ -157,7 +157,7 @@ public class OrderController {
         }
     }
 
-    @PostMapping("/user/updateUser")
+    @PutMapping("/user/updateUser")
     public ResponseEntity<?> updateUser(@RequestBody User updatedUser) {
         try {
             User user1 = orderService.updateUser(updatedUser);

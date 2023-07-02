@@ -230,27 +230,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public User updateUser(User updatedUser) {
-        String emailId = updatedUser.getEmailId();
-        Optional<User> userOptional = orderRepository.findById(emailId);
+    public User updateUser(User user) throws UserNotFoundException {
+        Optional<User> userOptional = orderRepository.findById(user.getEmailId());
         if (userOptional.isPresent()) {
             User userToUpdate = userOptional.get();
             // Update the user fields
-            userToUpdate.setImageUrl(updatedUser.getImageUrl());
-            userToUpdate.setName(updatedUser.getName());
-            userToUpdate.setPassword(updatedUser.getPassword());
-            userToUpdate.setPhoneNo(updatedUser.getPhoneNo());
-            userToUpdate.setCity(updatedUser.getCity());
-            userToUpdate.setAddress(updatedUser.getAddress());
-            userToUpdate.setOrders(updatedUser.getOrders());
-            userToUpdate.setFavouriteDish(updatedUser.getFavouriteDish());
-            userToUpdate.setFavouriteRestaurant(updatedUser.getFavouriteRestaurant());
+            userToUpdate.setEmailId(user.getEmailId());
+            userToUpdate.setImageUrl(user.getImageUrl());
+            userToUpdate.setName(user.getName());
+            userToUpdate.setPassword(user.getPassword());
+            userToUpdate.setPhoneNo(user.getPhoneNo());
+            userToUpdate.setCity(user.getCity());
+            userToUpdate.setAddress(user.getAddress());
+            userToUpdate.setOrders(user.getOrders());
+            userToUpdate.setFavouriteDish(user.getFavouriteDish());
+            userToUpdate.setFavouriteRestaurant(user.getFavouriteRestaurant());
             // Save the updated user
             User savedUser = orderRepository.save(userToUpdate);
             return savedUser;
         }
         // Throw an exception or return null if user is not found
-        throw new RuntimeException("User not found");
+        throw new UserNotFoundException("User not found");
     }
 
 

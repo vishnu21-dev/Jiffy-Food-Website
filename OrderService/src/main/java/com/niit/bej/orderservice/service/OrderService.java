@@ -14,7 +14,8 @@ public interface OrderService {
 
     User getUser(String userId) throws UserNotFoundException;
 
-    User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException;
+    User addOrder(List<Dish> dishes, String userId) throws UserNotFoundException, OrderAlreadyExistsException;
+
 
 
     List<Order> getAllOrders(String userId) throws UserNotFoundException, OrderNotFoundException;

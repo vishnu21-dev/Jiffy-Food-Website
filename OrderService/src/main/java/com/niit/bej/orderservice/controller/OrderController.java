@@ -50,18 +50,18 @@ public class OrderController {
         }
     }
 
-    @PostMapping("/user/addOrder")
-    public ResponseEntity<?> addOrder(@RequestBody Order order, HttpServletRequest httpServletRequest) {
+        @PostMapping("/user/addOrder")
+    public ResponseEntity<?> addOrder(@RequestBody List<Dish> dishes, HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {
-            User user = orderService.addOrder(order, emailId);
+            User user = orderService.addOrder(dishes, emailId);
             return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (UserNotFoundException | OrderAlreadyExistsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         }
     }
 
-    @GetMapping("/user/getAllOrders")
+        @GetMapping("/user/getAllOrders")
     public ResponseEntity<?> getAllOrders(HttpServletRequest httpServletRequest) {
         String emailId = httpServletRequest.getAttribute("emailId").toString();
         try {

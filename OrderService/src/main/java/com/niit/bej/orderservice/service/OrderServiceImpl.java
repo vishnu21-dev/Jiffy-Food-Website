@@ -47,10 +47,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
-
-
     @Override
-    public User addOrder(List<Dish> dishes, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
+    public User addOrder(List<Dish> dishes, String userId, String date, double price) throws UserNotFoundException, OrderAlreadyExistsException {
         Optional<User> optionalUser = orderRepository.findById(userId);
         if (optionalUser.isPresent()) {
             User loggedInUser = optionalUser.get();
@@ -59,7 +57,7 @@ public class OrderServiceImpl implements OrderService {
                 Order orderObj = new Order();
                 orderObj.generateOrderId();
                 String orderId = orderObj.getOrderId();
-                Order order = new Order(orderId, dishes);
+                Order order = new Order(orderId, date, dishes, price);
                 loggedInUser.setOrders(Collections.singletonList(order));
                 orderRepository.save(loggedInUser);
                 return loggedInUser;
@@ -67,7 +65,7 @@ public class OrderServiceImpl implements OrderService {
                 Order orderObj = new Order();
                 orderObj.generateOrderId();
                 String orderId = orderObj.getOrderId();
-                Order order = new Order(orderId, dishes);
+                Order order = new Order(orderId, date, dishes, price);
                 orderList.add(order);
                 loggedInUser.setOrders(orderList);
                 orderRepository.save(loggedInUser);
@@ -78,43 +76,6 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public User addOrder(Order order, String userId) throws UserNotFoundException, OrderAlreadyExistsException {
-//        Optional<User> userOptional = orderRepository.findById(userId);
-//        if (userOptional.isPresent()) {
-//            User loggedInUser = userOptional.get();
-//            List<Order> orderList = loggedInUser.getOrders();
-//            // Check if order with the same dishes already exists
-//            if (orderList.stream().anyMatch(item -> item.getDishes().equals(order))) {
-//                throw new OrderAlreadyExistsException("Order already exists with the same dishes");
-//            }
-//            Order orderObj = new Order();
-//            orderObj.generateOrderId();
-//            String orderId = orderObj.getOrderId();
-//            Order order1 = new Order(orderId, order.getDishes());
-//            if (orderList == null) {
-//                loggedInUser.setOrders(Collections.singletonList(order1));
-//            } else {
-//                orderList.add(order1);
-//                loggedInUser.setOrders(orderList);
-//            }
-//            orderRepository.save(loggedInUser);
-//            return loggedInUser;
-//        }
-//        throw new UserNotFoundException("User not found");
-//    }
 
 
     @Override

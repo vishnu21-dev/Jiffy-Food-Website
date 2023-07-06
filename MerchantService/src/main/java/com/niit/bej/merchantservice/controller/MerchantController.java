@@ -178,4 +178,15 @@ public class MerchantController {
         return responseEntity;
     }
 
+    @PutMapping("/setStatus/{merchantId}")
+    public ResponseEntity<?> updateStatus(@PathVariable String merchantId, @RequestBody Restaurant restaurant) throws MerchantNotFoundException, RestaurantNotFoundException {
+
+        try {
+            responseEntity = new ResponseEntity<>(merchantService.updateStatus(merchantId, restaurant), HttpStatus.OK);
+        } catch (MerchantNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        return responseEntity;
+    }
+
 }

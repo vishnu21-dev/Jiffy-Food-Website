@@ -13,14 +13,17 @@ public class Dish {
     private String category;
     private String imageUrl;
     private String description;
+    private String type;
 
-    public Dish(String name, String cuisine, int price, String category, String imageUrl, String description) {
+
+    public Dish(String name, String cuisine, int price, String category, String imageUrl, String description, String type) {
         this.name = name;
         this.cuisine = cuisine;
         this.price = price;
         this.category = category;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.type = type;
     }
 
     public Dish() {
@@ -74,17 +77,25 @@ public class Dish {
         this.description = description;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dish dish = (Dish) o;
-        return price == dish.price && Objects.equals(name, dish.name) && Objects.equals(cuisine, dish.cuisine) && Objects.equals(category, dish.category) && Objects.equals(imageUrl, dish.imageUrl) && Objects.equals(description, dish.description);
+        return price == dish.price && Objects.equals(name, dish.name) && Objects.equals(cuisine, dish.cuisine) && Objects.equals(category, dish.category) && Objects.equals(imageUrl, dish.imageUrl) && Objects.equals(description, dish.description) && Objects.equals(type, dish.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, cuisine, price, category, imageUrl, description);
+        return Objects.hash(name, cuisine, price, category, imageUrl, description, type);
     }
 
     @Override
@@ -96,6 +107,7 @@ public class Dish {
                 ", category='" + category + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

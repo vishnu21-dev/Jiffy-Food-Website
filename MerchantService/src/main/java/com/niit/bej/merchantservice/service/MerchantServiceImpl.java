@@ -72,7 +72,6 @@ public class MerchantServiceImpl implements MerchantService {
             list.add(restaurant);
             merchant1.setRestaurants(list);
         }
-        restaurantRepository.save(merchant1.getRestaurants().get(0));
         return merchantRepository.save(merchant1);
     }
 
@@ -289,7 +288,7 @@ public class MerchantServiceImpl implements MerchantService {
             for (Merchant merchant : merchantList) {
                 List<Restaurant> restaurants = merchant.getRestaurants();
                 for (Restaurant restaurant : restaurants) {
-                    if (restaurant.getLocation().equals(restaurantLocation)) {
+                    if (restaurant.getLocation().equalsIgnoreCase(restaurantLocation)) {
                         restaurantList.add(restaurant);
                     }
                 }
@@ -311,7 +310,11 @@ public class MerchantServiceImpl implements MerchantService {
             List<Restaurant> restaurantList = merchant.getRestaurants();
             Optional<Restaurant> restaurant1 = restaurantList.stream().filter(f -> f.getName().equals(restaurant.getName())).findAny();
             if (restaurant1.isPresent()) {
-                restaurant1.get().setStatus(true);
+                if (restaurant.getStatus() == false) {
+                    restaurant1.get().setStatus(true);
+                } else {
+                    restaurant1.get().setStatus(false);
+                }
 
                 merchant.setRestaurants(restaurantList);
                 merchantRepository.save(merchant);
@@ -324,6 +327,9 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public List<Merchant> getAllMerchants() throws MerchantNotFoundException {
+
+        List<Merchant> mar = merchantRepository.findAll();
+
         if (merchantRepository.findAll().isEmpty()) {
             throw new MerchantNotFoundException("merchant not found");
         }
